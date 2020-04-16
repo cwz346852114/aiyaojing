@@ -1,0 +1,9 @@
+<view class="userinfo">
+    <image style="width:140rpx;height:140rpx;border-radius:50%;margin-top:360rpx" src="/image/huli.png"></image>
+    <button wx:if="{{show==false}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"  style="border:0px solid red;background-color:black;color:white;width:330rpx;font-size:36rpx;margin-top:60rpx" plain='true'>
+        微信登录
+    </button>
+      <button  wx:if="{{show}}"  style="border:0px solid red;background-color:black;color:white;width:330rpx;font-size:36rpx;margin-top:60rpx" plain='true'>
+        登录中
+    </button>
+</view>

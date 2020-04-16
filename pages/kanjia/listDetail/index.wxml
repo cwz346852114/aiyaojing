@@ -1,0 +1,60 @@
+<view class="all">
+    <view class="box">
+        <view wx:key="index" class="list_box">
+            <view class="left_img">
+                <image src="{{share.logo}}" alt="" />
+            </view>
+            <view class="right_content">
+                <view class="title">
+                    <text>{{share.title}}</text>
+                </view>
+                <view class="pingjia">
+                    <view>
+                        <van-count-down style="display:inline-block;" use-slot time="{{ time }}" bind:change="onChange">
+                            <text class="he">{{ timeData.hours }}</text>
+                            <text class="he">{{ timeData.minutes }}</text>
+                            <text class="he">{{ timeData.seconds }}</text>
+                        </van-count-down>
+                        <text>后砍价过期</text>
+                    </view>
+                    <view class="kan">砍到{{bargain.end_price}}元拿</view>
+                </view>
+            </view>
+        </view>
+        <view class="title1">
+            已砍
+            <text class="text1">{{list1.bargain_price}}</text>
+            元，还差
+            <text class="text1">{{new_price}}</text>
+            元
+        </view>
+        <view class="progress">
+            <progress percent="10" activeColor="yellow" backgroundColor="#DDDDDD"></progress>
+        </view>
+        <!-- <view class="content">再邀请{{bargain.shared_time-list1.shared_time}}人帮砍价，可以再砍一刀</view> -->
+        <button catch:tap="seekHelp" wx:if="{{trade_swi!=0&&myself_swi==0&&arrived==0 &&bargain.start_price-bargain_price!=0 &&swi==111}}" class="bgImg" openType="share">
+            喊好友砍一刀
+        </button>
+        <view class="bgImg" wx:if="{{new_price==0 &&swi==111}}" bind:tap="pay">
+            立即付款
+        </view>
+        <view  wx:if="{{swi=='222'}}" class="fui-navbar">
+            <view bind:tap="kan" class="bgImg">我也要砍</view>
+            <view bindtap="cutPrice" class="bgImg">帮砍一刀</view>
+        </view>
+    </view>
+</view>
+<view class="footerBox">
+    <view class="title1">砍价记录</view>
+    <view wx:for="{{list}}" wx:key="{{index}}" class="list">
+        <view class="left">
+            <image src="{{item.head_image}}"></image>
+            <text>完成微信分享</text>
+        </view>
+        <view class="right">
+            <image src="/image/icon_kanjia.png"></image>
+            <text>{{item.bargain_price}}元</text>
+        </view>
+    </view>
+    <view class="gengduo">查看更多</view>
+</view>

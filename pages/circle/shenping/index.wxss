@@ -1,0 +1,204 @@
+.bgImg {
+  background: url('https://admin.ayjpet.com/attachment/images/22/2019/09/znm42T3T9cz3ec1Ce3e39aNMDNT32h.png') no-repeat;
+  background-size: 100%;
+  margin-bottom: 20rpx;
+  width: 100%;
+  padding-top: 20rpx;
+}
+.bgImg .head {
+  display: flex;
+  width: 670rpx;
+  margin-left: 20rpx;
+  background: white;
+  border-radius: 30rpx;
+  padding: 20rpx;
+}
+.bgImg .head .left {
+  flex: 1;
+}
+.bgImg .head .left image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+.bgImg .head .neirong {
+  font-size: 26rpx;
+  line-height: 82rpx;
+  font-weight: bold;
+  flex: 3;
+}
+.bgImg .head .right {
+  border-bottom: 1px solid #f2f2f2;
+  flex: 1;
+  font-size: 22rpx;
+  line-height: 80rpx;
+  background: white;
+  text-align: center;
+}
+.bgImg .head .right text {
+  display: inline-block;
+  border: 1.5px solid black;
+  line-height: 48rpx;
+  width: 120rpx;
+  border-radius: 30rpx;
+}
+.bgImg .title {
+  margin-top: 20rpx;
+  background: #FDF8DB;
+  padding: 30rpx 20rpx 30rpx 40rpx;
+  display: flex;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+}
+.bgImg .title .left {
+  flex: 1;
+  color: black;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.bgImg .title .right {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  width: 100%;
+  text-align: right;
+}
+.bgImg .title .right .add text {
+  font-size: 26rpx;
+  color: #666666;
+  vertical-align: middle;
+}
+.bgImg .title .right .add image {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.content {
+  position: relative;
+}
+.content .shen {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  height: 38rpx;
+  width: 38rpx;
+}
+.content .list {
+  border-bottom: 1px solid #f2f2f2;
+  background: white;
+}
+.content .list .pinlun {
+  display: flex;
+  padding: 16rpx 20rpx 16rpx 39rpx;
+}
+.content .list .pinlun .one {
+  flex: 1;
+}
+.content .list .pinlun .one image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}
+.content .list .pinlun .two {
+  flex: 6;
+}
+.content .list .pinlun .two .top {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.content .list .pinlun .two .di {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 9rpx;
+}
+.content .list .pinlun .three {
+  flex: 1;
+  line-height: 80rpx;
+}
+.content .list .pinlun .three image {
+  width: 33rpx;
+  height: 33rpx;
+}
+.content .list .pinlun .four {
+  flex: 1;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 64rpx;
+}
+.content .list .pinlun .four image {
+  width: 33rpx;
+  height: 33rpx;
+  vertical-align: middle;
+}
+.content .list .pinlun .four text {
+  vertical-align: middle;
+}
+.content .list .text {
+  margin-left: 123rpx;
+}
+.content .list .text .biaoti {
+  font-size: 26rpx;
+  margin-bottom: 35rpx;
+}
+.content .list .text image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10px;
+}
+.content .list .small {
+  margin-top: 35rpx;
+  width: 568rpx;
+  background: #f2f2f2;
+  padding: 0rpx 19rpx;
+  margin-left: 123rpx;
+  border-radius: 10px;
+  margin-bottom: 63rpx;
+}
+.content .list .small .hui .left {
+  font-size: 24rpx;
+}
+.content .list .small .hui .right {
+  font-size: 24rpx;
+  color: #666666;
+}
+.content .list .small .chakan {
+  font-size: 24rpx;
+  padding: 15rpx 0rpx;
+  color: #FC4056;
+}
+.footer {
+  border-top: 1px solid #f2f2f2;
+  width: 100%;
+  padding: 21rpx 20rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  background: white;
+}
+.footer image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.footer .inp {
+  border-radius: 50rpx;
+  display: inline-block;
+  width: 450rpx;
+  height: 56rpx;
+  padding-left: 30rpx;
+  background: #f2f2f2;
+}
+.footer .fabu {
+  display: inline-block;
+  width: 120rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  background: yellow;
+  border-radius: 30rpx;
+  vertical-align: top;
+  padding: 0rpx 10rpx;
+  margin: 0rpx 20rpx;
+}
+.footer .pla {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}

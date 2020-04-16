@@ -1,0 +1,14 @@
+
+page{
+  background: #f2f2f2;
+  max-width: 100%;
+  overflow-x:hidden;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+} 

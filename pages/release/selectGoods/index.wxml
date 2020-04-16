@@ -1,0 +1,25 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="nav-search">
+            <!-- 搜索 -->
+            <view  class="search">
+                <image class="serchImg" src="/image/serch.png" />
+                <input placeholder="{{type==1?'搜索商品':'搜索话题'}}" bindinput="shuru" value="{{key}}"  bindconfirm="sousuo" placeholder-class="placeholderStyle" class="search-input" type="text" />
+            </view>
+            <view style="flex:1"></view>
+        </view>
+        <view class="list_box">
+            <view bindtap="select" wx:for="{{list}}" wx:key="{{index}}" data-title="{{item.title}}" data-logo="{{item.logo}}" data-id="{{item.id}}" data-index="{{index}}" class="li">
+                <view class="title">
+                    <image src="{{type==2?item.logo:item.thumb}}"></image>
+                </view>
+                <view class="content">
+                    <view>{{item.title}}</view>
+                    <view>{{item.subtitle}}</view>
+                </view>
+                
+            </view>
+          
+        </view>
+    </view>
+</view>

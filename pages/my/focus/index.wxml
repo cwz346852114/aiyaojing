@@ -1,0 +1,27 @@
+<view class="bgImg">
+    <scroll-view scoll-y>
+        <view class="my_box">
+            <view class="title">
+                <view class="left">我关注的</view>
+            </view>
+            <view wx:for="{{list}}" bind:tap="ToLieBiao"  data-openid="{{item.openid}}" data-topetid="{{item.topetid}}" wx:key="{{index}}" class="content">
+                <view class="flex">
+                    <view class="left">
+                        <image src="{{approot+item.head_img}}"></image>
+                    </view>
+                    <view class="center">
+                        <view class="shang">{{item.pet_name}}</view>
+                       
+                    </view>
+                    <view class="right">
+                        <text catch:tap="Quxiao" data-topetid="{{item.topetid}}">取消关注</text>
+                    </view>
+                </view>
+            </view>
+            <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

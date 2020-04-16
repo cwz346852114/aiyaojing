@@ -1,0 +1,238 @@
+.container {
+  background: #f2f2f2;
+  min-height: 1000rpx;
+  .shouquan {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 1);
+    z-index: 5000;  
+    display: flex;
+    .left{
+        flex: 1;
+    }
+    .center{
+        flex: 2;
+        margin-top: 480rpx;
+      
+        view{
+            background: #ffcc33;
+            color: black;
+            padding: 30rpx;
+            border-radius: 50rpx;
+            text-align: center;
+        }
+    }
+   
+  }
+  .bgPic {
+    width: 100%;
+    background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+    background-size: 100%;
+    .head {
+      padding: 20rpx;
+
+      image {
+        width: 96rpx;
+        height: 96rpx;
+        border-radius: 50%;
+        vertical-align: middle;
+
+      }
+
+      text {
+        margin-left: 20rpx;
+        color: #333333;
+        font-size: 32rpx;
+        vertical-align: middle;
+      }
+    }
+
+    .nav {
+      width: 710rpx;
+      margin-left: 20rpx;
+      background: white;
+      border-radius: 30rpx;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      padding: 24rpx 0rpx 31rpx 0rpx;
+
+      image {
+        width: 58rpx;
+        height: 58rpx;
+      }
+
+      view {
+        font-size: 24rpx;
+        color: #666666;
+      }
+
+      .left {
+        flex: 1;
+
+      }
+
+      .right {
+        flex: 1;
+        position: relative;
+        .icons{
+          position: absolute;
+          top:-10rpx;
+          min-width: 30rpx;
+          padding: 5rpx;
+          right: 52rpx;
+          background: red;
+          color: white;
+          border-radius: 50%;
+          line-height: 12rpx;
+          height: 30rpx;
+          
+        }
+      }
+    }
+
+    .nav2 {
+      width: 710rpx;
+      margin-left: 20rpx;
+      border-radius: 30rpx;
+      overflow: hidden;
+      margin-top: 20rpx;
+      background: white;
+
+      .tupian {
+        display: flex;
+        text-align: center;
+        
+
+        view {
+          flex: 1;
+          padding: 30rpx 0rpx;
+          position: relative;
+          .icons{
+            position: absolute;
+            right: 20rpx;
+            top:10rpx; 
+            display: inline-block;
+            width: 32rpx;
+            height: 32rpx;
+            border-radius: 50%;
+            background: red;
+            color: white;
+            font-size: 24rpx
+          }
+          image {
+            width: 50rpx;
+            height: 50rpx;
+
+          }
+
+          text {
+            display: block;
+            color: #666666;
+            font-size: 24rpx;
+          }
+        }
+      }
+      .box{
+        display: flex;
+        .list{
+          flex: 1;
+          display: flex;
+          line-height: 40rpx;
+          padding: 45rpx 0rpx 55rpx 44rpx;
+          .left{
+            flex: 1;
+            image{
+              width: 70rpx;
+              height: 70rpx;
+            }
+          }
+          .right{
+            flex: 3;
+            .one{
+              font-size: 26rpx;
+              color: #333333;
+            }
+            .two{
+              font-size: 22rpx;
+              color: #999999;
+            }
+          }
+          
+        }
+      }
+    }
+  
+    .nav3 {
+      margin-left: 20rpx;
+      width: 710rpx;
+      border-radius: 30rpx;
+      overflow: hidden;
+      margin-top: 20rpx;
+      background: white;
+  
+      
+      .box{
+        display: flex;
+        .list{
+          flex: 1;
+          display: flex;
+          line-height: 40rpx;
+          padding: 45rpx 0rpx 55rpx 44rpx;
+          .left{
+            flex: 1;
+            image{
+              width: 70rpx;
+              height: 70rpx;
+            }
+          }
+          .right{
+            flex: 3;
+            .one{
+              font-size: 26rpx;
+              color: #333333;
+            }
+            .two{
+              font-size: 22rpx;
+              color: #999999;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+  
+}
+.whiteBox {
+  background: white;
+  width: 600rpx;
+  height: 300rpx;
+
+  .top {
+    margin-top: 50rpx;
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: 600;
+    padding-top: 50rpx;
+  }
+
+  .bottom {
+
+    text-align: center;
+    margin-top: 30rpx;
+
+    .left {
+      display: inline-block;
+      width: 150rpx;
+      margin: 0rpx 20rpx;
+      background: #ffcc33;
+      padding: 30rpx 30rpx;
+      border-radius: 50rpx;
+      color: black;
+    }
+
+  }
+}

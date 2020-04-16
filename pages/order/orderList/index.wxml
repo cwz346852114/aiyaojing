@@ -1,0 +1,162 @@
+<view>
+    <view>
+        <van-tabs nav-class="nav-class" active="{{ active }}" bind:change="onChange">
+            <van-tab title="全部">
+                <view wx:for="{{list}}" bind:tap="ToDetail" data-index="{{index}}" wx:key="{{index}}" data-id="{{item.id}}" class="list_box">
+                    <view class="head">
+                        <view class="left">{{item.createtime}}</view>
+                        <view class="right">{{item.statusstr}}</view>
+                    </view>
+                    <view wx:for="{{item.goods[0].goods}}" wx:key="i" class="center">
+                        <view class="left">
+                            <image src="{{item.thumb}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="top">{{item.title}}</view>
+                            <view class="bottom">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                    <view class="order">订单号：{{item.ordersn}}</view>
+                    <view class="footer">
+                        <view>
+                            实付金额：
+                            <text>{{item.price}}</text>
+                        </view>
+                    </view>
+                    <view wx:if="{{item.status==0}}" data-index="{{index}}" catch:tap="pay" class="footer1">
+                        <view>付款</view>
+                    </view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">
+                        暂无数据
+                    </view>
+                </view>
+            </van-tab>
+            <van-tab title="待付款">
+                <view wx:for="{{list}}" bind:tap="ToDetail" wx:key="{{i}}" data-index="{{index}}" data-id='{{item.id}}' class="list_box">
+                    <view class="head">
+                        <view class="left">{{item.createtime}}</view>
+                        <view class="right">{{item.statusstr}}</view>
+                    </view>
+                    <view wx:for="{{item.goods[0].goods}}" wx:key="i" class="center">
+                        <view class="left">
+                            <image src="{{item.thumb}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="top">{{item.title}}</view>
+                            <view class="bottom">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                    <view class="order">订单号：{{item.ordersn}}</view>
+                    <view class="footer">
+                        <view>
+                            实付金额：
+                            <text>{{item.price}}</text>
+                        </view>
+                    </view>
+                    <view data-index="{{index}}" catch:tap="pay" class="footer1">
+                        <view>付款</view>
+                    </view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">
+                        暂无数据
+                    </view>
+                </view>
+            </van-tab>
+            <van-tab title="待发货">
+                <view wx:for="{{list}}" bind:tap="ToDetail" wx:key="index" data-id='{{item.id}}' class="list_box">
+                    <view class="head">
+                        <view class="left">{{item.createtime}}</view>
+                        <view class="right">{{item.statusstr}}</view>
+                    </view>
+                    <view wx:for="{{item.goods[0].goods}}" wx:key="i" class="center">
+                        <view class="left">
+                            <image src="{{item.thumb}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="top">{{item.title}}</view>
+                            <view class="bottom">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                    <view class="order">订单号：{{item.ordersn}}</view>
+                    <view class="footer">
+                        <view>
+                            实付金额：
+                            <text>{{item.price}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">
+                        暂无数据
+                    </view>
+                </view>
+            </van-tab>
+            <van-tab title="已发货">
+                <view wx:for="{{list}}" bind:tap="ToDetail" wx:key="index" data-id='{{item.id}}' class="list_box">
+                    <view class="head">
+                        <view class="left">{{item.createtime}}</view>
+                        <view class="right">{{item.statusstr}}</view>
+                    </view>
+                    <view wx:for="{{item.goods[0].goods}}" wx:key="i" class="center">
+                        <view class="left">
+                            <image src="{{item.thumb}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="top">{{item.title}}</view>
+                            <view class="bottom">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                    <view class="order">订单号：{{item.ordersn}}</view>
+                    <view class="footer">
+                        <view>
+                            实付金额：
+                            <text>{{item.price}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">
+                        暂无数据
+                    </view>
+                </view>
+            </van-tab>
+            <van-tab title="已签收">
+                <view wx:for="{{list}}" bind:tap="ToDetail" wx:key="index" data-id='{{item.id}}' class="list_box">
+                    <view class="head">
+                        <view class="left">{{item.createtime}}</view>
+                        <view class="right">{{item.statusstr}}</view>
+                    </view>
+                    <view wx:for="{{item.goods[0].goods}}" wx:key="i" class="center">
+                        <view class="left">
+                            <image src="{{item.thumb}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="top">{{item.title}}</view>
+                            <view class="bottom">￥{{item.price}}</view>
+                        </view>
+                    </view>
+                    <view class="order">订单号：{{item.ordersn}}</view>
+                    <view class="footer">
+                        <view>
+                            实付金额：
+                            <text>{{item.price}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">
+                        暂无数据
+                    </view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>

@@ -1,0 +1,133 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="nav-search">
+            <!-- 搜索 -->
+            <view class="search">
+                <image class="serchImg" src="/image/serch.png" />
+                <text bind:tap="sousuo" class="placeholderStyle">输入商品、品牌、话题、用户</text>
+            </view>
+            <view style="flex:1"></view>
+        </view>
+        <!-- 轮播图 -->
+        <!-- 左右广告 -->
+    </view>
+    <!-- 轮播图 -->
+    <view class="scroll_box">
+        <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;margin:0rpx 20rpx;">
+            <view class="item_list" wx:for="{{imgUrls}}" wx:key="i">
+                <image src="{{approot}}{{item.thumb}}" bind:tap="tiao" data-link="{{item.link}}" class="item_book_img" mode="aspectFill"></image>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 滑块 -->
+    <!-- <view style="width:100%;">
+        <van-tabs swipeable>
+            <van-tab wx:for="{{items2}}" data-id="{{item.id}}" wx:key="{{index}}" title="{{item.comment_name}}"></van-tab>
+        </van-tabs>
+    </view> -->
+    <view class="classify">
+        <view catchtouchmove="noneEnoughPeople" class="one" bindtap="showPopup1">
+            {{pinzhong_name?pinzhong_name:items[0].text}}
+            <image src="/image/goodjt.png"></image>
+        </view>
+        <view catchtouchmove="noneEnoughPeople" bindtap="showPopup2">
+            {{type_name?type_name:"类型"}}
+            <image src="/image/goodjt.png"></image>
+        </view>
+        <view catchtouchmove="noneEnoughPeople" bindtap="showPopup3">
+            {{name?name:"总评"}}
+            <image src="/image/goodjt.png"></image>
+        </view>
+        <view catchtouchmove="noneEnoughPeople" bindtap="showPopup4">
+            <text>筛选</text>
+            <image src="/image/goodjt.png"></image>
+        </view>
+        <view class="meng" wx:if="{{ show }}">
+            <view wx:if="{{leixing==1||leixing==2}}">
+                <view class="slect-tree">
+                    <van-tree-select wx:if="{{leixing==1}}" main-item-class="main-item-class" content-item-class='content-item-class' content-active-class='content-active-class' main-active-class='main-active-class' items="{{ items }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
+                    <van-tree-select main-item-class="main-item-class" wx:if="{{leixing==2}}" content-item-class='content-item-class' content-active-class='content-active-class' main-active-class='main-active-class' items="{{ items1 }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
+                </view>
+            </view>
+            <view class="list" wx:if="{{leixing==3}}">
+                <view class="text {{col==true?'active':'text'}}" bind:tap="search" data-name="{{item.comment_name}}" data-id="{{item.id}}" wx:for="{{items2}}" data-index="{{index}}" wx:key="{{index}}">
+                    {{item.comment_name}}
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{show}}" catchtouchmove="noneEnoughPeople" bind:tap="close" class="mengban"></view>
+    </view>
+    <!-- 筛选框 -->
+    <!-- list列表 -->
+    <view class="list_content">
+        <view wx:for="{{list}}" wx:key="index" bind:tap="routeShopDetail" id="{{item.id}}" class="list_box">
+            <view class="left_img">
+                <image src="{{item.thumb}}" alt="" />
+            </view>
+            <view class="right_content">
+                <view class="title">
+                    <text>{{item.title}}</text>
+                    <image wx:if="{{item.buy_status==1}}" src="/image/home/mai.png" alt="" />
+                    <image wx:if="{{item.ranking==1}}" style="margin-left:10rpx;" src="/image/home/gold.png" alt="" />
+                    <image wx:if="{{item.ranking==2}}" style="margin-left:10rpx;" src="/image/home/silver.png" alt="" />
+                    <image wx:if="{{item.ranking==3}}" style="margin-left:10rpx;" src="/image/home/tong.png" alt="" />
+                </view>
+                <view class="pingjia">
+                    <van-rate size="12" readonly style="display:inline-block" value="{{ item.grand_average}}" allow-half />
+                    <text>{{item.sum_start}}</text>
+                    <text>{{item.branches}}条</text>
+                    <text>参考价：￥{{item.reference_value}}</text>
+                </view>
+                <view class="money">￥{{item.marketprice}}</view>
+                <view class="dianping">{{item.pet_total}}</view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0 &&zanwu==true}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </view>
+</view>
+<van-popup show="{{ show1 }}" position="right" bind:close="onClose">
+    <view wx:if="{{leixing==4 }}" class="shaixuan">
+        <view wx:for="{{items}}" wx:key="{{index}}" class="box">
+            <view class="title">{{item.filtrate_name}}</view>
+            <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange" style="display:inline-block" wx:for="{{item.children}}" data-checked="{{item.checked}}" wx:key="{{i}}" data-index="{{index}}" data-id="{{item.id}}" bind:change="onChange">
+                <view class="list">
+                    <view class="{{item.checked?'text2':'text1'}}">{{item.filtrate_name}}</view>
+                </view>
+            </van-checkbox>
+        </view>
+        <view class="box">
+            <view class="title">购买状态</view>
+            <van-cell>
+                <view slot="title">
+                    <van-radio style="display:inline-block;margin-left:97rpx;vertical-align: middle;" use-icon-slot value="{{ lei }}" name="" bind:change="zhuangtai3">
+                        <view class="{{lei==''?'sex1':'sex'}}">全部</view>
+                    </van-radio>
+                    <van-radio style="display:inline-block;margin-left:97rpx;vertical-align: middle;" use-icon-slot value="{{ lei }}" name="1" bind:change="zhuangtai1">
+                        <view class="{{lei==1?'sex1':'sex'}}">可购买</view>
+                    </van-radio>
+                    <van-radio style="display:inline-block;margin-left:42rpx;vertical-align: middle;" use-icon-slot value="{{ lei }}" name="0" bind:change="zhuangtai2">
+                        <view class="{{lei==0&&lei?'sex1':'sex'}}">不可购买</view>
+                    </van-radio>
+                  
+                </view>
+            </van-cell>
+            <view class="title">价格</view>
+            <view class="footer">
+                <input placeholder-class="placeholder-class" type="number" bindinput="min" value="{{minValue}}" placeholder="最低价" type="text" />
+                <view></view>
+                <input placeholder-class='placeholder-class' type="number" bindinput="max" value="{{maxValue}}" placeholder="最高价" type="text" />
+            </view>
+            <view class="nav">
+                <view class="left">
+                    <view class="bgImg1" bindtap="onClose4">重置</view>
+                </view>
+                <view class="right">
+                    <view class="bgImg2" bindtap="onClose3">确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</van-popup>

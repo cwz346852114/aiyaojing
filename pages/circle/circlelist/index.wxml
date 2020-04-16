@@ -1,0 +1,32 @@
+<view class="bgImg">
+    <scroll-view scoll-y>
+        <view class="my_box">
+            <view class="title">
+                <view class="left">话题</view>
+            </view>
+            <view wx:for="{{list}}" bind:tap="ToGuan" data-id="{{item.id}}" wx:key="{{index}}" class="content">
+                <view class="flex">
+                    <view class="left">
+                        <image src="{{approot}}{{item.logo}}"></image>
+                    </view>
+                    <view class="center">
+                        <view class="shang">{{item.title}}</view>
+                        <view class="xia">{{item.total}}      {{item.follower?item.follower:'无'}}</view>
+                    </view>
+                    <view class="right">
+                        <view wx:if="{{show==1}}" catch:tap="List" data-id="{{item.id}}">进入</view>
+                        <view wx:if="{{show==2}}" catch:tap="Quxiao" data-index="{{index}}" data-id="{{item.id}}">
+                            取消关注
+                        </view>
+                        <view wx:if="{{show==3}}" catch:tap="guanzhu" data-id="{{item.id}}" data-index="{{index}}">
+                            {{item.is_deleted==true?'取消关注':"关注"}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="font-size:24rpx;color:black;text-align:center;line-height:60rpx;margin-top:100rpx" wx:if="{{list.length==0}}">
+                暂无数据
+            </view>
+        </view>
+    </scroll-view>
+</view>

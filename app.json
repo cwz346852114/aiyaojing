@@ -1,0 +1,183 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/login/login/index",
+      "pages/id/caijian/index",
+    "pages/id/haibao/index",
+    "pages/shopping/shopDetailImg/index",
+    "pages/shopping/shopDetailList/index",
+    "pages/search/detail/index",
+    "pages/search/home/index",
+    "pages/pintuan/Detail/index",
+    "pages/order/list/index",
+    "pages/search/result/index",
+    "pages/circle/yindao/index",
+    "pages/kanjia/list/index",
+    "pages/kanjia/listDetail/index",
+    "pages/fenxiao/Detail/index",
+    "pages/Socialcontact/MyGuan/index",
+    "pages/Socialcontact/paihang/index",
+    "pages/Socialcontact/list/index",
+    "pages/Socialcontact/otherList/index",
+    "pages/my/bargaining/index",
+    "pages/my/SpellGroup/index",
+    "pages/my/focus/index",
+    "pages/my/kefu/index",
+    "pages/my/gongzhonghao/index",
+    "pages/my/collection/index",
+    "pages/id/list/index",
+    "pages/my/message/index",
+    "pages/id/headPortrait/index",
+    "pages/Socialcontact/jiLu/index",
+    "pages/select/index",
+    "pages/logs/index",
+    "pages/id/PhotoList/index",
+    "pages/circle/home/index",
+    "pages/miaosha/index",
+    "pages/tehui/index",
+    "pages/touguantou/list/index",
+    "pages/xinren/index",
+    "pages/circle/shenping/index",
+    "pages/circle/tieDetail/index",
+    "pages/circle/addTie/index",
+    "pages/circle/lahei/index",
+    "pages/circle/admin/index",
+    "pages/circle/pingDetail/index",
+    "pages/circle/fenxiang/index",
+    "pages/circle/god/index",
+    "pages/circle/circlelist/index",
+    "pages/circle/addCircle/index",
+    "pages/circle/tiebalist/index",
+    "pages/order/specialOrderDetail/index",
+    "pages/order/orderDetail/index",
+    "pages/my/list/index",
+    "pages/my/edit/index",
+    "pages/order/orderList/index",
+    "pages/list/index",
+    "pages/my/home/index",
+    "pages/release/photo/index",
+    "pages/release/selectGoods/index",
+    "pages/release/review/index",
+    "pages/release/home/index",
+    "pages/my/detail/index",
+    "pages/id/CommentDetail/index",
+    "pages/id/PhotoDetail/index",
+    "pages/id/CommentList/index",
+    "pages/id/choose/index",
+    "pages/id/editHead/index",
+    "pages/order/results/index",
+    "pages/shoppingcart/index",
+    "pages/index/index",
+    "pages/logs/quizDetail/index",
+    "pages/shopping/shopDetail/index",
+    "pages/order/address/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+
+    "onReachBottomDistance": 50,
+    "backgroundTextStyle": "dark"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-count-down": "/vant/count-down/index",
+    "van-button": "/vant/button/index",
+    "van-field": "/vant/field/index",
+    "van-picker": "/vant/picker/index",
+    "van-radio": "/vant/radio/index",
+    "van-rate": "/vant/rate/index",
+    "van-search": "/vant/search/index",
+    "van-slider": "/vant/slider/index",
+    "van-stepper": "/vant/stepper/index",
+    "van-switch": "/vant/switch/index",
+    "van-switch-cell": "/vant/switch-cell/index",
+    "van-cell": "/vant/cell/index",
+    "van-icon": "/vant/icon/index",
+    "van-row": "/vant/row/index",
+    "van-col": "/vant/col/index",
+    "van-popup": "/vant/popup/index",
+    "van-transition": "/vant/transition/index",
+    "van-checkbox": "/vant/checkbox/index",
+    "van-datetime-picker": "/vant/datetime-picker/index",
+    "van-action-sheet": "/vant/action-sheet/index",
+    "van-dialog": "/vant/dialog/index",
+    "van-loading": "/vant/loading/index",
+    "van-notify": "/vant/notify/index",
+    "van-swipe-cell": "/vant/swipe-cell/index",
+    "van-toast": "/vant/toast/index",
+    "van-collapse": "/vant/collapse/index",
+    "van-collapse-item": "/vant/collapse-item/index",
+    "van-notice-bar": "/vant/notice-bar/index",
+    "van-panel": "/vant/panel/index",
+    "van-progress": "/vant/progress/index",
+    "van-steps": "/vant/steps/index",
+    "van-tag": "/vant/tag/index",
+    "van-tree-select": "/vant/tree-select/index",
+    "van-badge": "/vant/badge/index",
+    "van-badge-group": "/vant/badge-group/index",
+    "van-nav-bar": "/vant/nav-bar/index",
+    "van-tab": "/vant/tab/index",
+    "van-tabs": "/vant/tabs/index",
+    "van-tabbar": "/vant/tabbar/index",
+    "van-area": "/vant/area/index",
+    "van-card": "/vant/card/index",
+    "van-submit-bar": "/vant/submit-bar/index",
+    "van-goods-action": "/vant/goods-action/index",
+    "van-goods-action-icon": "/vant/goods-action-icon/index",
+    "van-goods-action-button": "/vant/goods-action-button/index"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+
+        "text": "首页",
+
+        "iconPath": "/image/home/001.png",
+
+        "selectedIconPath": "/image/home/01.png"
+      },
+      {
+        "pagePath": "pages/id/list/index",
+
+        "text": "身份证",
+
+        "iconPath": "/image/home/002.png",
+
+        "selectedIconPath": "/image/home/02.png"
+      },
+      {
+        "pagePath": "pages/release/home/index",
+
+        "iconPath": "/image/home/05.png",
+        "selectedIconPath": "/image/home/05.png"
+      },
+      {
+        "pagePath": "pages/circle/home/index",
+
+        "text": "兴趣圈子",
+
+        "iconPath": "/image/home/003.png",
+
+        "selectedIconPath": "/image/home/03.png"
+      },
+      {
+        "pagePath": "pages/my/home/index",
+
+        "text": "我的",
+
+        "iconPath": "/image/home/004.png",
+
+        "selectedIconPath": "/image/home/04.png"
+      }
+    ]
+  }
+}

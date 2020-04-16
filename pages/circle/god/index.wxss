@@ -1,0 +1,121 @@
+.bgImg {
+  background: url('https://admin.ayjpet.com/attachment/images/22/2019/09/znm42T3T9cz3ec1Ce3e39aNMDNT32h.png') no-repeat;
+  background-size: 100%;
+  margin-bottom: 20rpx;
+  width: 100%;
+  padding-top: 20rpx;
+}
+.bgImg .bgImg1 {
+  background: url('https://admin.ayjpet.com/attachment/images/22/2019/10/Y0MZ3MQP9XP0yqmpQMl6q8cCyq0mcQ.png') no-repeat;
+  background-size: 100%;
+  width: 710rpx;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #666666;
+  height: 275rpx;
+}
+.bgImg .bgImg1 .box {
+  padding: 91rpx 51rpx 89rpx 51rpx;
+}
+.list {
+  border-radius: 30rpx;
+  background: white;
+  margin-top: 20rpx;
+  overflow: hidden;
+  margin-bottom: 112rpx;
+}
+.list .head {
+  background: #FDF8DB;
+  display: flex;
+  text-align: center;
+  padding: 30rpx 0rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.list .head view {
+  flex: 1;
+}
+.list .bottom {
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+.list .bottom .left {
+  flex: 1;
+  padding: 22rpx 0rpx;
+  font-size: 26rpx;
+  color: #666666;
+}
+.list .bottom .left image {
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 70rpx;
+}
+.list .bottom .left view {
+  line-height: 70rpx;
+}
+.list .bottom .center {
+  text-align: left;
+  flex: 1;
+  vertical-align: middle;
+  padding: 17rpx 0rpx;
+}
+.list .bottom .center image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.list .bottom .center text {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.list .bottom .right {
+  font-size: 26rpx;
+  color: #FC4056;
+  flex: 1;
+  padding: 37rpx 0rpx;
+}
+.footer {
+  position: fixed;
+  padding: 20rpx;
+  width: 100%;
+  bottom: 0rpx;
+  left: 0rpx;
+  background: #FDF3A9;
+}
+.footer .left {
+  display: inline-block;
+  vertical-align: middle;
+}
+.footer .left image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+.footer .center {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 25rpx;
+  width: 447rpx;
+}
+.footer .center .title {
+  font-size: 28rpx;
+}
+.footer .center .content {
+  font-size: 24rpx;
+  color: #FC4056;
+}
+.footer .right {
+  vertical-align: middle;
+  display: inline-block;
+}
+.footer .right image {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.footer .right text {
+  font-size: 26rpx;
+  color: #666666;
+}

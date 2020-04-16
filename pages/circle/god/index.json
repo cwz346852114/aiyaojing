@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+ 
+  "navigationBarBackgroundColor": "#FFE000",
+  "navigationBarTitleText": "大神榜",
+  "navigationBarTextStyle": "black"
+}

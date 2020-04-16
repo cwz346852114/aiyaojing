@@ -1,0 +1,179 @@
+<import src="../../utils/wxParse/wxParse.wxml"></import>
+<view class="container">
+    <view class="bgPic">
+        <view style='text-align:right;margin-right:40rpx'>
+            <image wx:if="{{isfavorite==0 || isfavorite==false}}" bindtap="shoucang" class="shoucang" src="/image/shoucang.png"></image>
+            <image wx:if="{{isfavorite==1 || isfavorite==true}}" bindtap="shoucang" class="shoucang" src="/image/idcard/shoucang.png"></image>
+            <button class="btn" openType="share">
+                <image class="shoucang" src="/image/idcard/fenxiang.png"></image>
+            </button>
+        </view>
+        <!-- 轮播图 -->
+        <view bind:tap="ToImgList" class="detailImg">
+            <image src="{{list.thumbs[0]?list.thumbs[0]:list.thumb}}" alt=""></image>
+            <view class="top">
+                <image src="/image/img.png"></image>
+                <view>{{VideoNum}}</view>
+            </view>
+            <view class="bottom">
+                <image src="/image/tupian.png"></image>
+                <view>{{ImageNum}}</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{options==1}}" class="diPic">
+        <view class="left">￥{{list.marketprice}}</view>
+        <view class="right">￥{{list.productprice}}</view>
+    </view>
+    <!-- 砍价==3 -->
+    <view wx:if="{{options==3}}" class="diPic1">
+        <view class="yangshi">
+            <view class="left">
+                <text class="top">￥{{seckillinfo.price}}</text>
+                <text class="bottom">￥{{list.marketprice}}</text>
+            </view>
+            <view class="right">
+                <view class="top">
+                    <progress percent="10" border-radius="30rpx" font-size="24rpx" show-info activeColor="black" backgroundColor="#f2f2f2"></progress>
+                </view>
+                <view class="bottom">
+                    距离结束
+                    <van-count-down style="display:inline-block;" time="{{ time }}" format="HH:mm:ss" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="shop_box">
+        <view class="shopTitle">
+            <text class="title1">{{list.title}}</text>
+            <text class="money">
+                <image></image>
+                参考价：￥{{list.reference_value}}
+            </text>
+        </view>
+    </view>
+    <view class="pingjia">
+        <view bind:tap="toGoodDetail" class="ping_view">
+            <view class="one">
+                <view>{{list.sum_start}}</view>
+                <view style="margin-top:-30rpx">
+                    <van-rate readonly allow-half size="10" value="{{ list.grand_average }}" />
+                </view>
+            </view>
+            <view></view>
+            <view class="two">
+                <view>
+                    <image wx:for="{{imgs1}}" wx:key="{{index}}" src="{{item.url}}" alt="" />
+                </view>
+                <view>
+                    <image wx:for="{{imgs2}}" wx:key="{{index}}" src="{{item.url}}" alt="" />
+                </view>
+                <view>
+                    <image wx:for="{{imgs3}}" wx:key="{{index}}" src="{{item.url}}" alt="" />
+                </view>
+                <view>
+                    <image wx:for="{{imgs4}}" wx:key="{{index}}" src="{{item.url}}" alt="" />
+                </view>
+                <view>
+                    <image src="/image/1x.png" alt="" />
+                </view>
+            </view>
+            <view class="three">
+                <progress percent="{{list.start_list.five_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                <progress percent="{{list.start_list.four_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                <progress percent="{{list.start_list.three_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                <progress percent="{{list.start_list.two_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                <progress percent="{{list.start_list.one_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                <text>{{list.pet_total}}</text>
+            </view>
+            <view style="flex:3;text-align:right;">
+                <view class="icons">
+                    <van-icon name="arrow" />
+                </view>
+            </view>
+        </view>
+        <view class="ping_text">
+            <view wx:key="{{index}}" wx:for="{{list.remarks_comment_list}}">
+                {{item.comment_name}}:{{item.average_score}}
+            </view>
+        </view>
+    </view>
+    <view class="setting">
+        <van-cell title="品牌" bind:click="showPopup1" border="{{false}}" is-link value="{{list.attribute[0].value}}" />
+        <van-cell title="参数" bind:click="showPopup2" border="{{false}}" is-link value="{{list.params[0].value}}" />
+    </view>
+    <view class="quest">
+        <van-cell title="问大家({{list.question_total}})" border="{{false}}" is-link value="查看全部" bind:tap="tiaozhuan" />
+        <view class="footer">
+            <view wx:if="{{index<2}}" wx:for="{{list.question_list}}" bind:tap="Hui" data-id="{{item.id}}" wx:key="{{index}}" class="footer_view1">
+                <text class="footer_one">{{item.question}}</text>
+                <text class="footer_two">{{item.total}}个回答</text>
+            </view>
+        </view>
+    </view>
+    <!-- 编辑器 -->
+    <view class="content">
+        <view class="title">
+            <image src="/image/biao.png"></image>
+        </view>
+        <!-- <rich-text nodes='{{list.content}}'></rich-text> -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+    <!-- 底部tabbar -->
+    <van-goods-action wx:if="{{options==2}}">
+        <van-goods-action-icon bindtap="ToDianpin" icon="chat-o" text="我要点评" />
+         <van-goods-action-icon disabled='{{disabled}}' bindtap="TOgouwuche" icon="cart-o" text="购物车" info="{{list.cartcount}}" />
+        <van-goods-action-button bindtap="showPopup3" text="加入购物车" type="warning" />
+        <van-goods-action-button bindtap="showPopup4" text="立即购买" />
+    </van-goods-action>
+    <!-- 新人或砍价 -->
+     <van-goods-action wx:if="{{options!=2}}">
+        <van-goods-action-icon bindtap="ToDianpin" icon="chat-o" text="我要点评" />
+        <van-goods-action-button bindtap="onClose5" text="立即购买" />
+    </van-goods-action>
+    <!-- 商品属性列表 -->
+    <van-popup show="{{ show1 }}" round="true" position="bottom" bind:close="onClose1">
+        <view class="pin_detail">
+            <image src='/image/zu37.png'></image>
+        </view>
+        <view wx:for="{{list.attribute}}" wx:key="{{index}}" class="brand">
+            <text class="brand_title">{{item.title}}</text>
+            <text class="brand_content">{{item.value}}</text>
+        </view>
+        <view class="bgImg" bind:tap="onClose1">完成</view>
+    </van-popup>
+    <!-- 商品参数列表 -->
+    <van-popup show="{{ show2 }}" round="true" position="bottom" bind:close="onClose2">
+        <view class="pin_detail">
+            <image src='/image/chanpin.png'></image>
+        </view>
+        <van-cell-group wx:for="{{list.params}}" wx:key="{{index}}">
+            <van-field value="{{item.value}}" label="{{item.title}}" disabled border="{{ false }}" />
+        </van-cell-group>
+        <view class="bgImg" bind:tap="onClose2">完成</view>
+    </van-popup>
+    <!-- 点击购买 -->
+    <van-popup show="{{show3}}" round="true" position="bottom" bind:close='onClose3'>
+        <view class="title">
+            <image bindtap='onClose3' src="/image/icon_close.png"></image>
+        </view>
+        <view class="detail">
+            <view class="imgs">
+                <image src="{{list.thumb}}"></image>
+            </view>
+            <view class="content">
+                <view class="text1">{{list1.title}}</view>
+                <view class="money">￥{{list1.marketprice}}</view>
+            </view>
+        </view>
+        <view class="bor"></view>
+        <view class="gouwu">
+            <view>购买数量</view>
+            <view style="text-align:right;">
+                <van-stepper value="{{ number }}" integer bind:change="onChange" />
+            </view>
+        </view>
+        <view class="bgImg" style="margin-top:66rpx" bindtap="onClose4">完成</view>
+    </van-popup>
+</view>
+<image bind:tap="Tokefu"  class="imgs1" src="/image/home/kefu.png"> </image>

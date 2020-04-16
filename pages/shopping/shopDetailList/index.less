@@ -1,0 +1,202 @@
+.container {
+    background: #f2f2f2;
+    height: 5000rpx;
+
+    .bgPic {
+        width: 100%;
+        background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+
+        .title {
+            padding: 26rpx 20rpx;
+        }
+
+        .pingjia {
+            margin-left: 20rpx;
+            background: url('https://file.icaohejing.com/Files/Images/20190909/023098058ab945f08c18ad1db620476c.png')no-repeat;
+            background-size: 100%;
+            width: 710rpx;
+            height: 280rpx;
+            position: relative;
+
+            .ping_view {
+                padding: 20rpx;
+                height: 280rpx;
+                display: flex;
+
+                .one {
+                    flex: 5;
+                    font-size: 48rpx;
+                    font-weight: 600;
+                    margin-top: 40rpx;
+
+                    view {
+                        text-align: center;
+                    }
+                }
+
+                .two {
+                    flex: 4;
+                    text-align: right;
+                    margin-right: 10rpx;
+                    margin-top: -20rpx;
+
+                    view {
+                        height: 24rpx;
+                        padding: 5rpx;
+
+                        image {
+                            width: 24rpx;
+                            height: 24rpx;
+                            margin: 0rpx 3rpx;
+                        }
+                    }
+
+                }
+
+                .three {
+                    flex: 7;
+                    text-align: right;
+
+                    progress:nth-child(1) {
+                        margin-top: 0rpx;
+                    }
+
+                    progress {
+                        margin-top: 20rpx;
+                    }
+
+                    text {
+
+                        font-size: 22rpx;
+                        color: #403B3B;
+                    }
+                }
+            }
+
+            .ping_text {
+                display: flex;
+                position: absolute;
+                width: 100%;
+                left: 0rpx;
+                bottom: 0rpx;
+                width: 100%;
+                view {
+                    flex: 1;
+                    text-align: center;
+                    margin: 15rpx 0rpx;
+                    font-size: 24rpx;
+                    font-weight: bold;
+                }
+              }
+
+        }
+    }
+
+    .list_box {
+        background: white;
+        min-height: 700rpx;
+        width: 100%;
+        margin-top: 20rpx;
+        border-radius: 30rpx 30rpx 0rpx 0rpx;
+
+        .list_detail {
+            display: flex;
+            padding: 20rpx;
+
+            .list_img {
+                flex: 1;
+
+                image {
+                    width: 63rpx;
+                    height: 63rpx;
+                    border-radius: 50%;
+                }
+            }
+
+            .list_content {
+                position: relative;
+                flex: 8;
+                padding: 0rpx 30rpx 0rpx 0rpx;
+
+                text {
+                    font-size: 22rpx;
+                    color: #333;
+                    margin-left: 10rpx;
+                }
+
+                .actFont {
+                    color: black;
+                }
+
+                .content {
+                    margin-top: 28rpx;
+                    line-height: 38rpx;
+                    text-align: justify;
+                    font-size: 24rpx;
+                    color: #666666;
+                }
+
+                .content1 {
+                    margin-top: 28rpx;
+                    line-height: 38rpx;
+                    text-align: justify;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 24rpx;
+                    color: #666666;
+                }
+
+                .tupian {
+                    .image {
+                        width: 72rpx;
+                        height: 30rpx;
+                    }
+                }
+
+                .imgList {
+                    margin-top: 40rpx;
+
+                    image:nth-child(1) {
+                        margin-left: 0rpx;
+                    }
+
+                    image:nth-child(4) {
+                        margin-left: 0rpx;
+                    }
+
+                    image:nth-child(7) {
+                        margin-left: 0rpx;
+                    }
+                    image {
+                        margin-left: 20rpx;
+                        margin-bottom: 20rpx;
+                        width: 160rpx;
+                        height: 160rpx;
+                    }
+                    video{
+                        width: 100%;
+                    }
+                }
+
+                .pinglun {
+                    text-align: right;
+                    font-size: 20rpx;
+                    color: #666666;
+
+                    text {
+                        vertical-align: middle;
+                    }
+
+                    image {
+                        width: 48rpx;
+                        height: 48rpx;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,81 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="container">
+    <view class="bgPic">
+        <view class="list">
+            <view class="content">
+                <view class="box">
+                    <view class="left">
+                        <image src="{{approot+list.head_img}}"></image>
+                    </view>
+                    <view class="center">
+                        <view>{{list.pet_name}}</view>
+                        <view>{{list.create_time}}</view>
+                    </view>
+                    <view class="right">
+                        <image catch:tap="dianzan" data-id="{{list.id}}" style=" vertical-align: middle" src="{{list.deleted?img:img1}}"></image>
+                        <text style="font-size:20rpx;color:#6666666;display:inline-block;">
+                            {{list.zan_count}}
+                        </text>
+                        <button class="btn" openType="share">
+                            <image style=" vertical-align: middle;margin-left:20rpx;" src="/image/idcard/fenxiang.png"></image>
+                        </button>
+                    </view>
+                </view>
+                <view class="neirong">{{list.remark}}</view>
+                <view class="detail">
+                    <view class="title">{{list.title}}</view>
+                    <view class="star">
+                        <image src="{{approot+list.thumb}}"></image>
+                        <van-rate style="display:inline-block;vertical-align: middle;;margin-left:20rpx;" readonly  allow-half value="{{ list.grand_average }}" />
+                        <text>{{list.sum_start}}</text>
+                    </view>
+                </view>
+                <view class="review">
+                    <view class="left">
+                        <view class="title">{{list.sum_start}}</view>
+                        <view>
+                            <van-rate allow-half readonly size="12" style="padding-top:-10rpx;" value="{{ list.grand_average }}" />
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view wx:for="{{list.remarks_list}}" wx:if="{{index<5}}" wx:key="index">
+                            <text>{{item.comment_name}}</text>
+                            <van-rate size="10" readonly style="display:inline-block;vertical-align: middle;" value="{{ item.start }}" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="tupianList">
+                <image wx:if="{{index>0}}" bind:tap="fangda" mode="aspectFill" data-index="{{index}}" wx:for="{{list.images}}" wx:key="{{index}}" src="{{approot+item.image}}"></image>
+                <image wx:if="{{index<1}}" bind:tap="fangda" mode="aspectFill" data-index="{{index}}" wx:for="{{list.images}}" wx:key="{{index}}" src="{{approot+item.image}}"></image>
+            </view>
+             <view class="tupianList">
+                <video  data-index="{{index}}" wx:for="{{list.videos}}" wx:key="{{index}}" src="{{item.video}}"></video>
+            </view>
+        </view>
+        <view  wx:if="{{questionlist.length>0}}" class="box_List">
+            <view class="title">评论</view>
+            <view wx:for="{{questionlist}}" wx:key="{{index}}" class="content">
+                <view class="left">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.nickname}}</view>
+                    <view class="center">{{filter.numberToFixed(item.answer_time)}}</view>
+                    <view class="bottom">{{item.content}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+  <van-popup style="height:40rpx" show="true" overlay="{{shows}}" position="{{positions}}" bind:close="onClose">
+    <view style="height:120rpx;"></view>
+    <view class="footer">
+      <view class="left">
+        <input type="text" bindtap="getfouces" adjust-position="{{false}}" maxlength="40" value="{{inputValue}}" bindinput="bindKeyInput" placeholder-style="font-size:24rpx;margin-left:37rpx;" placeholder="向大家提问，4-40字"/>
+      </view>
+      <view class="right">
+        <image bind:tap="tiwen" src="/image/tiwen.png"></image>
+      </view>
+    </view>
+  </van-popup>

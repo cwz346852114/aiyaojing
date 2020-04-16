@@ -1,0 +1,94 @@
+.container {
+    background: #f2f2f2;
+    min-height: 100vh;
+}
+
+.bgPic {
+    width: 100%;
+    background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+    background-size: 100%;
+    padding-bottom: 80rpx;
+    .header_title {
+        font-size: 24rpx;
+        color: #F95D6F;
+        text-align: center;
+        padding: 34rpx 0rpx 29rpx;
+
+        .title {
+            width: 350rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .list{
+        padding: 22rpx 20rpx 26rpx 24rpx;
+        background: white;
+        border-radius: 30rpx;
+        width: 670rpx;
+        margin-left: 20rpx;
+        margin-bottom: 17rpx;
+        image{
+            width: 38rpx;
+            height: 38rpx;
+            vertical-align: middle;
+        }
+        .one{
+            font-size: 28rpx;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .two{
+            margin-top: 10rpx;
+            font-size: 24rpx;
+            vertical-align: middle;
+            color: #333333;
+        }
+        .three{
+            margin-top:25rpx;
+            display: flex;
+            font-size: 18rpx;
+            color: #999999;
+            view{
+                flex:1;
+            }
+            .three_left{
+                margin-left: 5rpx;
+            }
+            .three_right{
+                text-align: right;
+                margin-right:20rpx;
+            }
+        }
+    }
+}
+.footer{
+    background: white;
+    width: 750rpx;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    display: flex;
+    .left{
+        flex:6;
+        input{
+            border-radius: 30rpx;
+            height: 75rpx;
+            background: #F2F2F2;
+            margin: 23rpx 20rpx 0rpx 20rpx;
+            padding-left: 30rpx;
+        }
+    }
+    .right{
+        flex:1;
+        line-height: 96rpx;
+        image{
+            width: 82rpx;
+            height: 82rpx;
+            margin:17rpx 7rpx 7rpx 7rpx;
+        }
+    }
+}

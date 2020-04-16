@@ -1,0 +1,52 @@
+<view class="bgImg">
+    <scroll-view scroll-x="true" class="scroll-view_H list-liu">
+        <view wx:for="{{times}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" class="scroll-view-item_H swiper-tab-list " data-current="{{index}}" bindtap="swichNav" hover-class="eee">
+            <view class="{{currentTab==index?'on':'out'}}">{{item.time}}:00</view>
+            <view class="{{currentTab==index?'title':'content'}}">{{item.status==0?"进行中":"即将开枪"}}</view>
+        </view>
+    </scroll-view>
+    <view class="swiper-position">
+        <swiper indicator-dots indicator-color="white" indicator-active-color="red" circular duration="500" autoplay="true">
+            <swiper-item wx:for="{{imgUrls}}" wx:key="i">
+                <navigator url="{{item.link}}">
+                    <image style="border-radius:30rpx;height:300rpx;" src="{{approot}}{{item.thumb}}" class="slide-image"></image>
+                    <textarea name id cols="30" rows="10"></textarea>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="swiper-box" duration="300" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
+        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+            <view class="list_content">
+                <view wx:for="{{goodlist}}" wx:key="{{index}}"  data-id="{{item.id}}" class="list_box">
+                    <view class="left_img">
+                        <image src="{{item.thumb}}" alt="" />
+                    </view>
+                    <view class="right_content">
+                        <view class="title">
+                            <text>{{item.title}}</text>
+                        </view>
+                        <view class="pingjia">
+                            <van-rate size="12" readonly style="display:inline-block" value="{{ item.grand_average }}" allow-half />
+                            <text>{{item.sum_start}}</text>
+                            <text>{{item.branches}}条</text>
+                            <text class="grey">参考价：￥{{item.reference_value}}</text>
+                        </view>
+                        <view class="xia">
+                            <view class="left">
+                                <progress percent="10" border-radius="30rpx" font-size="24rpx" show-info activeColor="black" backgroundColor="#f2f2f2"></progress>
+                                <view class="money">
+                                    ￥{{item.price}}
+                                    <text class="cankao">￥{{item.marketprice}}</text>
+                                </view>
+                            </view>
+                            <view class="right">
+                                <view bind:tap="ToKan" data-id="{{item.goodsid}}" class="bgBtn">去抢购</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

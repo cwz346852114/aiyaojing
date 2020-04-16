@@ -1,0 +1,165 @@
+<view class="container">
+    <view  wx:if="{{!openid}}" class="shouquan">
+        <view class="left"></view>
+        <view class="center" >  
+            <view bindtap="tankuang">微信登录</view>
+        </view>
+        <view class="left"></view>
+    </view>
+    <view class="bgPic">
+        <view class="head">
+            <image src="{{list.avatar}}"></image>
+            <text>{{list.nickname}}</text>
+        </view>
+        <view class="nav">
+            <view class="left">
+                <image src="/image/zu17.png"></image>
+                <view>罐头总数</view>
+            </view>
+            <view bind:tap="ToGuan" class="right">
+                <image src="/image/y-heart.png"></image>
+                <view>我的关注</view>
+            </view>
+            <view class="right">
+                <view bind:tap="ToShop">
+                    <text wx:if="{{list.statics.cart!=0}}" class="icons">
+                        {{list.statics.cart}}
+                    </text>
+                    <image src="/image/my/car.png"></image>
+                    <view>购物车</view>
+                </view>
+            </view>
+        </view>
+        <view class="nav2">
+            <van-cell border="{{false}}" bind:tap="allOrder" title="我的订单" is-link value="查看全部订单" />
+            <view style="height:1px;background:#f2f2f2;"></view>
+            <view class="tupian">
+                <view bind:tap="Todetail" data-id="0">
+                    <text wx:if="{{list.statics.order_0!=0}}" class="icons">
+                   
+                        <text  style="text-align:center;font-size:22rpx;color:#fff">{{list.statics.order_0}}</text>
+                    </text>
+                    <image src="/image/my/daifukuan.png"></image>
+                    <text>待付款</text>
+                </view>
+                <view bind:tap="Todetail" data-id="1">
+                    <text wx:if="{{list.statics.order_1!=0}}" class="icons">
+                    <text  style="text-align:center;font-size:22rpx;color:#fff">{{list.statics.order_1}}</text>
+               
+                    </text>
+                    <image src="/image/my/daifahuo.png"></image>
+                    <text>待发货</text>
+                </view>
+                <view bind:tap="Todetail" data-id="2">
+                    <text wx:if="{{list.statics.order_2!=0}}" class="icons">
+                     <text  style="text-align:center;font-size:22rpx;color:#fff">{{list.statics.order_2}}</text>
+                 
+                    </text>
+                    <image src="/image/my/yifahuo.png"></image>
+                    <text>已发货</text>
+                </view>
+                <view bind:tap="Todetail" data-id="3">
+                    <text wx:if="{{list.statics.order_4!=0}}" class="icons">
+                     <text  style="text-align:center;font-size:22rpx;color:#fff">{{list.statics.order_4}}</text>
+                   
+                    </text>
+                    <image src="/image/my/qianshou.png"></image>
+                    <text>已签收</text>
+                </view>
+            </view>
+        </view>
+        <view class="nav3">
+            <van-cell border="{{false}}" title="必备工具" />
+            <view style="height:1px;background:#f2f2f2;"></view>
+            <view class="box">
+                <view bind:tap="Topintuan" class="list">
+                    <view class="left">
+                        <image src="/image/my/pintuan.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">我的拼团</view>
+                        <view class="two">共参与过一次拼团</view>
+                    </view>
+                </view>
+                <view bind:tap="Tokanjia" class="list">
+                    <view class="left">
+                        <image src="/image/my/kanjia.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">我的砍价</view>
+                        <view class="two">共发起过2次砍价</view>
+                    </view>
+                </view>
+            </view>
+            <view class="box">
+                <view bind:tap="shouhuodizhi" class="list">
+                    <view class="left">
+                        <image src="/image/my/dz.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">收货地址</view>
+                        <view class="two">我的地址管理</view>
+                    </view>
+                </view>
+                <view bind:tap="Tochongwu" class="list">
+                    <view class="left">
+                        <image src="/image/my/cwk.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">我的宠物卡</view>
+                        <view class="two">我的宠物卡管理</view>
+                    </view>
+                </view>
+            </view>
+            <view class="box">
+                <view bind:tap="Toshoucang" class="list">
+                    <view class="left">
+                        <image src="/image/my/sc.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">我的收藏</view>
+                        <view class="two">我的收藏</view>
+                    </view>
+                </view>
+                <view bind:tap="ToMyMessage" class="list">
+                    <view class="left">
+                        <image src="/image/my/xx.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">我的信息</view>
+                        <view class="two">我的个人信息</view>
+                    </view>
+                </view>
+            </view>
+            <view class="box">
+                <view bind:tap="Tokefu" class="list">
+                    <view class="left">
+                        <image src="/image/my/kf.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">联系客服</view>
+                        <view class="two">联系客户人员</view>
+                    </view>
+                </view>
+                <view bind:tap="Tokefu1" class="list">
+                    <view class="left">
+                        <image src="/image/my/wx.png"></image>
+                    </view>
+                    <view class="right">
+                        <view class="one">微信公众号</view>
+                        <view class="two">官方公众号</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{shows}}" z-index="9999" bind:close="onClose1">
+  <view class="whiteBox">
+    <view class="top">您还未登录，请您登录</view>
+    <view class="bottom">
+      <view class="left" bind:tap="onClose1">取消登录</view>
+      <view class="left" bind:tap="login">微信登录</view>
+    </view>
+  </view>
+</van-popup>

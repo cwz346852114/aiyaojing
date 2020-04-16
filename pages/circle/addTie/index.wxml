@@ -1,0 +1,46 @@
+<view class="bgImg">
+    <view class="box">
+        <view class="title">
+            <image bind:tap="submit" src="/image/cricle/fabu.png"></image>
+        </view>
+        <view class="content">
+            <van-cell-group>
+                <textarea value="{{ value }}" placeholder="我的快乐源泉..." placeholder-style="font-size:26rpx" border="{{ false }}" bindinput="onChange" />
+            </van-cell-group>
+        </view>
+        <view class="img" wx:for="{{img}}" wx:key="{{index}}">
+            <image class="imgs" catch:tap="remove1" data-index="{{index}}" src="/image/cricle/delete.png"></image>
+            <image mode="aspectFill" src="{{post1}}{{item.image}}"></image>
+        </view>
+       <view class="video">
+                <view style="display:inline-block">
+                    <image class="imgs" wx:if="{{src}}" catch:tap="removeVideo" src="/image/cricle/esc.png"></image>
+                    <video wx:if="{{src}}" wx:key="{{index}}" src="{{src}}" class="ved"></video>
+                </view>
+            </view>
+        <view wx:if="{{show}}" class="smallBox">
+            <image src="{{post}}{{list.thumb}}"></image>
+            <text>{{list.title}}</text>
+            <image bind:tap="remove" class="imgs" src="/image/cricle/delete.png"></image>
+        </view>
+           <van-cell class="box1" bind:tap="goSelect1" is-link>
+            <view slot="title">
+                <image src="{{approot+circle.logo}}"></image>
+                <view style="display:inline-block;margin-left:30rpx;margin-top:13rpx" class="van-cell-text">
+                    {{circle.title?circle.title:'可以选择其他话题发帖'}}
+                </view>
+            </view>
+        </van-cell>
+    </view>
+</view>
+<view class="footer">
+    <view>
+        <image bind:tap="uploadImg" src="/image/cricle/creame.png"></image>
+    </view>
+    <view>
+        <image bind:tap="uploadVideo" src="/image/cricle/video.png"></image>
+    </view>
+    <view>
+        <image bind:tap="goSelect" src="/image/cricle/lianjie.png"></image>
+    </view>
+</view>

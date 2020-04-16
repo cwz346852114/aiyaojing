@@ -1,0 +1,288 @@
+.container .shouquan {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  z-index: 5000;
+}
+.container .bgPic {
+  width: 100%;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/u4i4AZAKA44hLkaPja4JAAdI4ZKZNJ.png') no-repeat;
+  background-size: 100%;
+}
+.container .nav-search {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  max-width: 100%;
+  margin: 20rpx;
+  z-index: 999;
+}
+.container .nav-search .wu {
+  display: inline-block;
+  width: 74rpx;
+  height: 62rpx;
+  vertical-align: middle;
+}
+.container image {
+  width: 100%;
+}
+.container .select {
+  position: relative;
+  height: 40rpx;
+  margin-top: -10rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.container .select view {
+  font-size: 28rpx;
+  display: inline-block;
+  width: 100rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .select image {
+  height: 18rpx;
+  width: 18rpx;
+  margin-top: 23rpx;
+}
+.container .search {
+  padding: 0rpx;
+  border-radius: 30rpx;
+  display: inline-block;
+  background: white;
+  margin-left: 30rpx;
+  height: 54rpx;
+  border: 2px solid black;
+  vertical-align: middle;
+  width: 500rpx;
+}
+.container .serchImg {
+  float: left;
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 12rpx;
+  margin-left: 50rpx;
+}
+.container .search-input {
+  float: left;
+  margin-top: 4rpx;
+  margin-left: 11rpx;
+}
+.container .placeholderStyle {
+  font-size: 26rpx;
+  color: #bbbbbb;
+  vertical-align: middle;
+}
+.container .swiper-position {
+  position: absolute;
+  top: 100rpx;
+  width: 710rpx;
+  height: 300rpx;
+}
+.container .swiper-position swiper {
+  height: 300rpx;
+}
+.container .nav-bar {
+  position: absolute;
+  top: 420rpx;
+  width: 710rpx;
+  height: 300rpx;
+  border-radius: 20rpx;
+  background: white;
+}
+.container .nav-bar image {
+  width: 58rpx;
+  height: 58rpx;
+}
+.container .nav-bar .uls1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container .nav-bar .uls1 .lis {
+  margin: 20rpx;
+  width: 103rpx;
+  text-align: center;
+  height: 70rpx;
+  border-radius: 8px;
+  margin-top: 35rpx;
+}
+.container .nav-bar .uls1 .lis view {
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #666666;
+  letter-spacing: 1rpx;
+}
+.container .nav-bar .uls1 .lis:nth-child(6) {
+  margin-top: 41rpx;
+}
+.container .nav-bar .uls1 .lis:nth-child(7) {
+  margin-top: 41rpx;
+}
+.container .nav-bar .uls1 .lis:nth-child(8) {
+  margin-top: 41rpx;
+}
+.container .nav-bar .uls1 .lis:nth-child(9) {
+  margin-top: 41rpx;
+}
+.container .nav-bar .uls1 .lis:nth-child(10) {
+  margin-top: 41rpx;
+}
+.container .advertising {
+  position: absolute;
+  left: 0rpx;
+  top: 742rpx;
+  display: flex;
+  margin-left: 20rpx;
+}
+.container .advertising .advertising-left {
+  flex: 1;
+}
+.container .advertising .advertising-right {
+  flex: 1;
+}
+.container .advertising image {
+  width: 350rpx;
+  height: 160rpx;
+}
+.container .tu {
+  position: absolute;
+  left: 0rpx;
+  top: 920rpx;
+  height: 307rpx;
+  background: url('https://pro.idowe.com/attachment/images/11/2019/09/WkpBR25eRRZ2L7lr1Ki5R2DpobaOur.png') no-repeat;
+  background-size: 100%;
+  width: 750rpx;
+}
+.container .tu .title {
+  text-align: center;
+  font-size: 30rpx;
+  margin: 37rpx 0rpx 32rpx;
+}
+.container .tu .box {
+  width: 710rpx;
+  margin: 0rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .tu .box .box-img {
+  width: 350rpx;
+  background: white;
+  border-radius: 30rpx;
+  margin-bottom: 20rpx;
+  height: 100%;
+  height: 570rpx;
+}
+.container .tu .box .box-img image {
+  width: 350rpx;
+  height: 454rpx;
+}
+.container .tu .box .box-img .video {
+  width: 350rpx;
+  height: 454rpx;
+}
+.container .tu .box .box-img .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  padding: 0rpx 28rpx 0rpx 12rpx;
+  text-align: justify;
+}
+.container .tu .box .box-img .footer {
+  display: flex;
+  font-size: 20rpx;
+  margin: 21rpx 0rpx 21rpx 0rpx;
+  border-radius: 20rpx;
+}
+.container .tu .box .box-img .footer view {
+  flex: 1;
+}
+.container .tu .box .box-img .footer text {
+  margin-left: 9rpx;
+  vertical-align: middle;
+}
+.container .tu .box .box-img .headImg {
+  height: 32rpx;
+  width: 32rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.container .tu .box .box-img .heartImg {
+  height: 30rpx;
+  width: 30rpx;
+  vertical-align: middle;
+}
+.container .tu .box .box-img span {
+  margin-left: 10rpx;
+  vertical-align: middle;
+}
+.container .tu .box .box-img:nth-child(even) {
+  margin-left: 10rpx;
+}
+.text {
+  font-size: 22rpx;
+  padding: 20rpx;
+  color: black;
+}
+.active {
+  color: red;
+}
+.bg {
+  width: 550rpx;
+  height: 776rpx;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/OZ6s0PpPZfKKV7aujf7PUPZFA7A6l7.png') no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.bg .img1 {
+  position: absolute;
+  bottom: 20rpx;
+  left: 33%;
+  width: 196rpx;
+  height: 68rpx;
+}
+.img2 {
+  margin-left: 45%;
+  margin-top: 40rpx;
+  width: 52rpx;
+  height: 52rpx;
+}
+.whiteBox {
+  background: white;
+  width: 600rpx;
+  height: 300rpx;
+}
+.whiteBox .top {
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 600;
+  padding-top: 50rpx;
+}
+.whiteBox .bottom {
+  text-align: center;
+  margin-top: 30rpx;
+}
+.whiteBox .bottom .left {
+  display: inline-block;
+  width: 150rpx;
+  margin: 0rpx 20rpx;
+  background: #ffcc33;
+  padding: 30rpx 30rpx;
+  border-radius: 50rpx;
+  color: black;
+}
+.fuceng {
+  width: 750rpx;
+}

@@ -1,0 +1,50 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+  
+    <view class="title">
+        <view class="left">评论</view>
+        <view class="right">
+            <view class="add">
+                <text>最热</text>
+                <image src="/image/cricle/sort.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <image wx:if="{{list.length>0}}" class="shen" src="/image/cricle/tuoyuan.png"></image>
+        <view wx:for="{{list}}" wx:key="{{index}}"   bind:tap="ToDetail" data-id="{{item.id}}" data-index="{{item.index}}" class="list">
+            <view class="pinlun">
+                <view class="one">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="two">
+                    <view class="top">{{item.nickname}}</view>
+                    <view class="di">{{filter.numberToFixed(item.createtime)}}</view>
+                </view>
+                <view class="three">
+                    <image src="/image/idcard/fenxiang.png"></image>
+                </view>
+                <view catch:tap="dianzan" data-index="{{index}}" data-id="{{item.id}}" class="four">
+                    <image src="{{item.is_deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                </view>
+            </view>
+            <view class="text">
+                <view class="biaoti">{{item.reply_msg}}</view>
+            </view>
+            <view wx:if="{{item.reply_list.length>0}}" wx:for="{{item.reply_list}}" wx:key="{{i}}" class="small">
+                <view wx:if="{{index<2}}" class="hui">
+                    <text class="left">{{item.from_nickname}}</text>
+                    <text class="right">{{item.reply_msg}}...</text>
+                </view>
+                <view class="chakan">{{item.reply_num}}</view>
+            </view>
+        </view>
+      
+    </view>
+</view>
+<view class="footer">
+
+    <input class="inp" value="{{inputValue}}" bindinput="bindKeyInput" type="text" placeholder-class="pla" placeholder="没有你的评论是不完整的" />
+        <text bind:tap="submit" class="fabu">发布</text>
+</view>

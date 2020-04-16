@@ -1,0 +1,73 @@
+.container .box {
+  width: 710rpx;
+  background: white;
+  height: 268rpx;
+  border-radius: 30rpx;
+  margin-top: 20rpx;
+}
+.container .box .head {
+  display: flex;
+  height: 180rpx;
+  border-bottom: 1px solid #f2f2f2;
+  margin: 0rpx 20rpx;
+}
+.container .box .head .left {
+  flex: 1;
+}
+.container .box .head .center {
+  margin-top: 20rpx;
+  flex: 12;
+}
+.container .box .head .center view {
+  margin-top: 20rpx;
+}
+.container .box .head .center .title {
+  color: #333333;
+  font-size: 26rpx;
+}
+.container .box .head .center .phone {
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+.container .box .head .center .content {
+  margin-top: 7rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.container .box .head .right {
+  flex: 2;
+  text-align: right;
+}
+.container .box .footer {
+  padding: 20rpx;
+  display: flex;
+}
+.container .box .footer .left {
+  flex: 1;
+}
+.container .box .footer .left .text {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .box .footer .right {
+  flex: 1;
+  text-align: right;
+}
+.container .box .footer .right image {
+  margin-left: 34rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.container .address {
+  width: ;
+}
+.container .bgImg {
+  width: 100%;
+  height: 78rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190910/2aae4628830c47ba994c548cd6502b2e.png') no-repeat center;
+  background-size: 80% 90%;
+  text-align: center;
+  line-height: 78rpx;
+}

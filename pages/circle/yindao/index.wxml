@@ -1,0 +1,8 @@
+<view class="container">
+    <view bindtap="create" class="top">创建话题</view>
+    <view bind:tap="onChange" class="bottom">
+        <van-checkbox label-class="checkbox"  value="{{ checked }}" >
+            已阅读和了解以上话题规则，并知晓爱妖经官方可能接管或解散一段时间内没有发帖的话题。
+        </van-checkbox>
+    </view>
+</view>

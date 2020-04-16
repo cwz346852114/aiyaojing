@@ -1,0 +1,38 @@
+<wxs module="filter" src="../wxs/index.wxs"></wxs>
+<view class="container">
+  <view class="bgPic">
+    <view wx:if="{{list.length>0}}" class="header_title">
+      <text class="title">{{good_title}}</text>
+      <text style="display:inline-block;vertical-align: middle;">的{{quest}}个问题</text>
+    </view>
+    <view wx:if="{{list.length==0}}" class="header_title">
+    
+      <text style="display:inline-block;vertical-align: middle;">暂无回答，来创建一个提问吧</text>
+    </view>
+    <view wx:for="{{list}}" bind:tap="toDetail" data-id='{{item.id}}' wx:key="{{index}}"  class="list">
+      <view class="one">
+        <image src="/image/wen.png" alt="" />
+        <text>{{item.question}}</text>
+      </view>
+      <view wx:if="{{item.answer}}" class="two">
+        <image src="/image/da.png" alt="" />
+        <text>{{item.answer.content}}</text>
+      </view>
+      <view class="three">
+        <view  class="three_left" >{{item.answer_total==0?'暂无回答':'全部'+item.answer_total+'个回答'}}</view>
+        <view class="three_right">{{filter.numberToFixed(item.create_time)}}</view>
+      </view>
+    </view>
+  </view>
+  <van-popup style="height:40rpx" show="true" overlay="{{shows}}" position="{{positions}}" bind:close="onClose">
+    <view style="height:120rpx;"></view>
+    <view class="footer">
+      <view class="left">
+        <input type="text" bindtap="getfouces" adjust-position="{{false}}" maxlength="40" value="{{inputValue}}" bindinput="bindKeyInput" placeholder-style="font-size:24rpx;margin-left:37rpx;" placeholder="向大家提问，4-40字"/>
+      </view>
+      <view class="right">
+        <image bind:tap="tiwen" src="/image/tiwen.png"></image>
+      </view>
+    </view>
+  </van-popup>
+</view>

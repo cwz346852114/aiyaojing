@@ -1,0 +1,74 @@
+.bgImg {
+  background: url('https://admin.ayjpet.com/attachment/images/22/2019/09/znm42T3T9cz3ec1Ce3e39aNMDNT32h.png') no-repeat;
+  background-size: 100%;
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 188rpx;
+}
+.bgImg .my_box {
+  width: 710rpx;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+  background: white;
+  height: 1200rpx;
+}
+.bgImg .my_box .title {
+  line-height: 104rpx;
+  background: #FDF8DB;
+  padding: 0rpx 20rpx;
+  display: flex;
+}
+.bgImg .my_box .title .left {
+  flex: 1;
+  color: black;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.bgImg .my_box .title .right {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+.bgImg .my_box .title .right .add {
+  background: url('https://admin.ayjpet.com/attachment/images/22/2019/09/KLsnFudzKfS08OvfZFKFfdrU5cKrdZ.png') no-repeat;
+  background-size: 100%;
+  width: 140rpx;
+  line-height: 57rpx;
+  margin-top: 24rpx;
+  margin-left: 196rpx;
+}
+.bgImg .my_box .content {
+  background: white;
+}
+.bgImg .my_box .content .Add {
+  padding: 70rpx 0rpx;
+  text-align: center;
+}
+.bgImg .my_box .content .Add image {
+  width: 144rpx;
+  height: 144rpx;
+}
+.bgImg .my_box .content .Add view {
+  color: #999999;
+  font-size: 24rpx;
+}
+.bgImg .my_box .content .titles {
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.bgImg .my_box .content .inp {
+  margin: 0rpx 20rpx;
+  background: #f2f2f2;
+  width: 80%;
+}
+.bgImg .my_box .content .inp1 {
+  display: block;
+  margin: 0rpx 45rpx;
+  background: #f2f2f2;
+  width: 73%;
+  min-height: 140rpx;
+}

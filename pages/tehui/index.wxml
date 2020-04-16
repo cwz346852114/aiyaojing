@@ -1,0 +1,75 @@
+<wxs module="filter" src="../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view class="swiper-position">
+        <swiper indicator-dots indicator-color="white" indicator-active-color="red" circular duration="500" :current="swiperCurrent" autoplay="true">
+            <swiper-item wx:for="{{imgUrls}}" wx:key="i">
+                <navigator url="{{item.link}}">
+                    <image style="border-radius:30rpx;height:300rpx;" src="{{approot}}{{item.thumb}}" class="slide-image"></image>
+                    <textarea name id cols="30" rows="10"></textarea>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+<van-tabs color="black" custom-class="yellow" bind:click="onClick" type="card">
+    <van-tab title="超值特卖">
+        <view class="list_content">
+            <view wx:for="{{list}}" wx:key="index"  id="{{item.id}}" class="list_box">
+                <view class="left_img">
+                    <image src="{{item.thumb}}" alt="" />
+                </view>
+                <view class="right_content">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="pingjia">
+                        <van-rate size="12" readonly style="display:inline-block" value="{{ item.grand_average }}" allow-half />
+                       <text>{{item.sum_start}}</text>
+                <text>{{item.branches>10000?filter.numberToFixed3(item.branches/10000)+'W':item.branches}}条</text>
+                <text class="grey">参考价￥{{item.reference_value}}</text>
+                    </view>
+                    <view class="xia">
+                        <view class="left">
+                            <view class="money1">罐头可抵用￥{{item.feed?item.feed:0}}元</view>
+                            <view class="money">
+                                ￥{{item.marketprice}}
+                                <text class="cankao">￥{{item.productprice}}</text>
+                            </view>
+                        </view>
+                        <view class="right">
+                           <view bind:tap="chaozhi" data-id="{{item.id}}" data-panduan="{{item.is_bargain}}">去抢购</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-tab>
+    <van-tab title="超值拼团">
+         <view class="list_content">
+            <view wx:for="{{list1}}" wx:key="index" bind:tap="routeShopDetail" id="{{item.id}}" class="list_box">
+                <view class="left_img">
+                    <image src="{{item.thumb}}" alt="" />
+                </view>
+                <view class="right_content">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="pingjia">
+                        <van-rate size="12" readonly style="display:inline-block" value="{{ item.grand_average }}" allow-half />
+                        <text>{{item.sum_start}}</text>
+                        <text>{{item.branches>10000?(item.branches/10000)+'W':item.branches}}条</text>
+                        <text class="grey">参考价：￥{{item.reference_value}}</text>
+                    </view>
+                    <view class="xia">
+                        <view class="left">
+                            <view style="margin-top:30rpx" class="money">{{item.groupnum}}人团￥{{item.groupsprice}}</view>
+                        </view>
+                        <view class="right">
+                        <view bind:tap="pintuan" data-id="{{item.id}}" data-panduan="{{item.is_bargain}}">去拼团</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </van-tab>
+</van-tabs>

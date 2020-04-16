@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="nav-search">
+            <!-- 搜索 -->
+            <view class="search">
+                <image class="serchImg" src="/image/serch.png" />
+                <input placeholder="输入品种" value="{{key}}" bindinput="shuru" bindconfirm="sousuo" placeholder-class="placeholderStyle" class="search-input" type="text" />
+            </view>
+            <view style="flex:1"></view>
+        </view>
+        <view class="list_box">
+            <view bind:tap="getId" wx:for="{{list}}" wx:if="{{list.length>0}}" data-index="{{index}}" data-id="{{item.id}}" wx:key="index" class="li">
+                <view class="title">
+                    <image src="{{qianzhui}}{{item.img}}"></image>
+                </view>
+                <view class="content">{{item.breed_name}}</view>
+            </view>
+            <view style="text-align: center;" wx:if="{{list.length==0}}">
+                <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                <view style="padding: 40rpx 0rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+            </view>
+        </view>
+    </view>
+</view>

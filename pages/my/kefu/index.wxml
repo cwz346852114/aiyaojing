@@ -1,0 +1,6 @@
+<view class="box">
+    <text style="color:#FC4056;font-size:'28rpx';display:block;text-align:center;margin-top:160rpx">{{list[0].advname}}
+    </text>
+     <image style="width:100%;background:url({{approot+list[0].thumb}}) no-repeat fixed center" class="img" src=""></image>
+    
+</view>

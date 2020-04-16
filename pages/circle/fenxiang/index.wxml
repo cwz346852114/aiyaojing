@@ -1,0 +1,20 @@
+<view class="bgImg">
+    <view class="box">
+        <view class="title">天气不错，遛遛狗和主人</view>
+        <view class="imgs">
+            <image src="/image/01.png"></image>
+        </view>
+    </view>
+</view>
+ <view class="shenpin">
+                    <view class="header">
+                        <view class="left">
+                            <image src="/image/cricle/icon_shenping.png"></image>
+                        </view>
+                        <view class="right">
+                            <image src="/image/wheart.png"></image>
+                            <text>361</text>
+                        </view>
+                    </view>
+                    <view class="footer">超级好用，超有意思！</view>
+                </view>

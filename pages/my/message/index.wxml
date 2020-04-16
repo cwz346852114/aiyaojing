@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="bgPic">
+        <van-field value="{{ name }}" label="姓名："  border="{{ false }}" bind:change="onChange1" />
+        <van-field value="{{ phone }}" label="手机号：" maxlength="11"  border="{{ false }}" bind:change="onChange2" />
+          <van-cell>
+                    <view slot="title">
+                        <view class="van-cell-text" style="display:inline-block;vertical-align: middle;">
+                            性别:
+                        </view>
+                        <van-radio style="display:inline-block;margin-left:97rpx;vertical-align: middle;" use-icon-slot value="{{ sex }}" name="1" bind:change="onChange3">
+                            <view class="{{sex==1?'sex1':'sex'}}">男</view>
+                        </van-radio>
+                        <van-radio style="display:inline-block;margin-left:42rpx;vertical-align: middle;" use-icon-slot value="{{ sex }}" name="2" bind:change="onChange4">
+                            <view class="{{sex==2?'sex1':'sex'}}">女</view>
+                        </van-radio>
+                    </view>
+                </van-cell>
+       <van-cell bind:tap="shengri" border="{{ false }}" is-link>
+                    <view slot="title">
+                        <view class="van-cell-text" style="display:inline-block;">生日:</view>
+                        <text style="display:inline;margin-left:50rpx">{{birthday}}</text>
+                    </view>
+                </van-cell>
+    </view>
+    <view class="bgImg" style="margin-top:66rpx" bindtap="submit">提交</view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <van-datetime-picker bind:confirm="onInput" bind:cancel="onClose" type="date"  min-date="{{minTime}}" value="{{ llist.birthday }}"  />
+</van-popup>

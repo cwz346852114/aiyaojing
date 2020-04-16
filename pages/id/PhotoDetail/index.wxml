@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="list">
+            <view class="head">
+                <view class="left">
+                    <image src="{{approot+list.head_img}}"></image>
+                </view>
+                <view class="center">{{list.pet_name}}</view>
+                    <image class="img" catch:tap="dianzan" data-id="{{list.id}}"  src="{{list.isfavorite?img:img1}}"></image>
+                <view class="right">
+                    <button class="btn" openType="share">
+                      <image src="/image/idcard/fenxiang.png"></image>
+                    </button>
+                  
+                </view>
+            </view>
+            <view class="imgList">
+                <image wx:for="{{list.images_list}}" mode="aspectFill" bind:tap="fangda" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{index}}" data-id src="{{approot}}{{item.image}}"></image>
+            </view>
+        </view>
+    </view>
+</view>

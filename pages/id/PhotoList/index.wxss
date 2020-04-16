@@ -1,0 +1,63 @@
+.bgImg {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.bgImg .box {
+  width: 710rpx;
+  background: white;
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+}
+.bgImg .box .head {
+  background: #000000;
+  height: 104rpx;
+  line-height: 104rpx;
+}
+.bgImg .box .head text {
+  vertical-align: top;
+  color: white;
+  display: inline-block;
+  width: 430rpx;
+  font-size: 24rpx;
+}
+.bgImg .box .head image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin: 0rpx 20rpx;
+}
+.bgImg .box .head .title {
+  padding: 0rpx 20rpx;
+}
+.bgImg .box .ImgList {
+  padding: 0rpx 20rpx;
+}
+.bgImg .box .ImgList .box {
+  display: flex;
+  width: 670rpx;
+}
+.bgImg .box .ImgList .box view {
+  flex: 1;
+  vertical-align: middle;
+}
+.bgImg .box .ImgList .box .right {
+  text-align: right;
+  vertical-align: top;
+}
+.bgImg .box .ImgList .box .right .img {
+  vertical-align: top;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+.bgImg .box .ImgList .fangda {
+  width: 330rpx;
+  height: 330rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+}
+.bgImg .box .ImgList image:nth-of-type(even) {
+  margin-left: 10rpx;
+}

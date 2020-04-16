@@ -1,0 +1,83 @@
+.container {
+    background: #f2f2f2;
+    min-height: 100vh;
+
+    .bgPic {
+        width: 100%;
+        background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+        .list{
+            width: 710rpx;
+            margin-left: 20rpx;
+            border-radius: 30rpx;
+            background: white;
+            .head{
+                display: flex;
+                vertical-align: middle;
+                padding: 20rpx;
+                border-bottom: 1px solid #f2f2f2;
+                .left{
+                   
+                    flex: 1;
+                    image{
+                        width: 64rpx;
+                        height: 64rpx;
+                        vertical-align: middle;
+                    }
+                }
+                .center{
+                    flex: 7;
+                    margin-left: 20rpx;
+                    vertical-align: middle;
+                    font-size: 26rpx;
+                   line-height: 64rpx;
+                    color: #000000;
+                    font-weight: bold;
+                    
+                    
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    
+                }
+                .img{
+                    width: 50rpx;
+                    height: 50rpx;
+                }
+                .right{
+                    flex: 1;
+                    text-align: right;
+                    line-height: 64rpx;
+                    
+
+                    .btn{
+                        display: inline-block;
+                       
+                        line-height: 0rpx;
+                        padding-left: 0rpx;
+                        padding-right: 0rpx;
+                        image{
+                            width: 32rpx;
+                            height: 32rpx;
+                            vertical-align: middle;
+                             
+                        }
+                      }
+                      button::after{display:none}
+                
+                }
+            }
+            .imgList{
+                padding: 0rpx 20rpx;
+                image{
+                    width: 330rpx;
+                    height: 330rpx;
+                    margin-top: 20rpx;
+                    border-radius: 20rpx;
+                }
+                image:nth-child(even){
+                    margin-left:10rpx;
+                  }
+            }
+        }
+    }
+}

@@ -1,0 +1,203 @@
+.container {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.container .bgPic {
+  background: url('https://file.icaohejing.com/Files/Images/20190909/023098058ab945f08c18ad1db620476c.png') no-repeat;
+  background-size: 100%;
+  width: 710rpx;
+  border-radius: 30rpx;
+  background: white;
+  margin-bottom: 130rpx;
+}
+.container .bgPic .list .content {
+  padding: 26rpx 0rpx 18rpx 20rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.container .bgPic .list .content .box {
+  display: flex;
+}
+.container .bgPic .list .content .box .left {
+  flex: 1;
+}
+.container .bgPic .list .content .box .left image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.container .bgPic .list .content .box .center {
+  margin-left: 20rpx;
+  flex: 8;
+}
+.container .bgPic .list .content .box .center view:nth-child(1) {
+  font-size: 26rpx;
+  color: #000000;
+}
+.container .bgPic .list .content .box .center view:nth-child(2) {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 4rpx;
+}
+.container .bgPic .list .content .box .right {
+  flex: 3;
+  vertical-align: middle;
+  text-align: center;
+}
+.container .bgPic .list .content .box .right image {
+  width: 44rpx;
+  height: 44rpx;
+  display: inline-block;
+}
+.container .bgPic .list .content .box .right .btn {
+  display: inline-block;
+  line-height: 0rpx;
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+  background: white;
+  vertical-align: middle;
+}
+.container .bgPic .list .content .box .right button::after {
+  display: none;
+}
+.container .bgPic .list .content .neirong {
+  font-size: 26rpx;
+  color: #666666;
+}
+.container .bgPic .list .content .detail {
+  padding: 22rpx 21rpx;
+  width: 630rpx;
+  background: #f2f2f2;
+  border-radius: 30rpx;
+}
+.container .bgPic .list .content .detail .title {
+  font-size: 26rpx;
+  width: 500rpx;
+  word-break: break-all;
+  /*允许在单词内换行*/
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+  /*不换行 控制单行文本*/
+}
+.container .bgPic .list .content .detail .star {
+  vertical-align: middle;
+  padding: 13rpx 0rpx 34rpx 0rpx;
+}
+.container .bgPic .list .content .detail .star image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+.container .bgPic .list .content .detail .star text {
+  font-size: 22rpx;
+  color: black;
+  vertical-align: middle;
+  margin-left: 11rpx;
+}
+.container .bgPic .list .content .review {
+  margin-top: 19rpx;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/LL3L85RpfaLf8svTr45L1jM3mmmV5f.png') no-repeat;
+  background-size: 100% 100%;
+  width: 670rpx;
+  height: 222rpx;
+  position: relative;
+}
+.container .bgPic .list .content .review .left {
+  position: absolute;
+  left: 40rpx;
+  top: 34rpx;
+  text-align: center;
+}
+.container .bgPic .list .content .review .left .title {
+  line-height: 48rpx;
+  font-size: 48rpx;
+}
+.container .bgPic .list .content .review .right {
+  position: absolute;
+  right: 140rpx;
+  top: 12rpx;
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.container .bgPic .list .content .review .right text {
+  display: inline-block;
+  width: 100rpx;
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.container .bgPic .list .tupianList {
+  margin-top: 55rpx;
+}
+.container .bgPic .list .tupianList image {
+  margin-left: 30rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+.container .bgPic .list .tupianList video {
+  width: 100%;
+}
+.container .bgPic .box_List {
+  background: white;
+}
+.container .bgPic .box_List .title {
+  font-size: 30rpx;
+  padding: 20rpx 30rpx;
+}
+.container .bgPic .box_List .content {
+  border-top: 1px solid #f2f2f2;
+  display: flex;
+  padding: 30rpx;
+}
+.container .bgPic .box_List .content .left {
+  flex: 1;
+}
+.container .bgPic .box_List .content .left image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.container .bgPic .box_List .content .right {
+  flex: 8;
+}
+.container .bgPic .box_List .content .right .top {
+  font-size: 26rpx;
+}
+.container .bgPic .box_List .content .right .center {
+  font-size: 22rpx;
+  color: #999999;
+}
+.container .bgPic .box_List .content .right .bottom {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.footer {
+  background: white;
+  width: 750rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  display: flex;
+}
+.footer .left {
+  flex: 6;
+}
+.footer .left input {
+  border-radius: 30rpx;
+  height: 75rpx;
+  background: #F2F2F2;
+  margin: 23rpx 20rpx 0rpx 20rpx;
+  padding-left: 30rpx;
+}
+.footer .right {
+  flex: 1;
+  line-height: 96rpx;
+}
+.footer .right image {
+  width: 82rpx;
+  height: 82rpx;
+  margin: 17rpx 7rpx 7rpx 7rpx;
+}

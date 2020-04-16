@@ -1,0 +1,16 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view class="box">
+        <view wx:for="{{list}}" wx:key="{{index}}" class="list">
+  
+            <view class="tiao" wx:for="{{list}}" wx:key="{{index}}">
+                <image class="one" src="/image/idcard/tou.png"></image>
+                <text class="two">{{item.pet_name}}</text>
+                <text decode="{{true}}" class="three">
+                      关注了 <text class="two">我</text>&nbsp;<text style="color:red"></text> 
+                </text>
+                <text class="four">{{filter.numberToFixed(item.createtime)}}</text>
+            </view>
+        </view>
+    </view>
+</view>

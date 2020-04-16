@@ -1,0 +1,36 @@
+<view class="container">
+    <view  wx:if="{{!openid}}" class="shouquan">
+        <view class="left"></view>
+        <view class="center" >  
+            <view bindtap="tankuang">微信登录</view>
+        </view>
+        <view class="left"></view>
+    </view>
+   <view class="position">
+    <view bind:tap="dianping">
+        <image  src="/image/release/dianp.png"></image>
+        <text>发布点评</text>
+    </view>
+    <view bind:tap="xiezhen">
+        <image  src="/image/release/xiezhen.png"></image>
+         <text>发布写真</text>
+    </view>
+    <view>
+        <image bind:tap="cricle" src="/image/release/quanzi.png"></image>
+         <text>发布圈子</text>
+    </view>
+    <view bind:tap="id">
+        <image  src="/image/release/shenfenzheng.png"></image>
+         <text>发布身份证</text>
+    </view>
+</view> 
+</view>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{shows}}" z-index="9999" bind:close="onClose1">
+  <view class="whiteBox">
+    <view class="top">您还未登录，请您登录</view>
+    <view class="bottom">
+      <view class="left" bind:tap="onClose1">取消登录</view>
+      <view class="left" bind:tap="login">微信登录</view>
+    </view>
+  </view>
+</van-popup>

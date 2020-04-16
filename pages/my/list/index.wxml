@@ -1,0 +1,39 @@
+<view class="container">
+    <view>
+     
+            <view wx:for="{{list1}}" bind:tap="SelectDizhi" data-id="{{item.id}}" wx:key="index" class="box">
+                <view class="head">
+                    <view class="left"></view>
+                    <view class="center">
+                        <view>
+                            <text class="title">{{item.realname}}</text>
+                            <text class="phone">{{item.mobile}}</text>
+                        </view>
+                        <view class="content">{{item.province}}{{item.city}}{{item.area}}{{item.address}}</view>
+                    </view>
+                    <view style="line-height:180rpx"    class="right">
+                        <van-icon data-id="{{item.id}}" catchtap="detail" name="arrow" />
+                    </view>
+                </view>
+                <view class="footer">
+                   <van-radio use-icon-slot data-index="{{index}}" value="{{ item.isdefault }}" name="{{item.id}}" bind:change="onChange">
+                    <view class="left">
+                        <image slot="icon" style="width:32rpx;height:32rpx;vertical-align: middle" src="{{ item.isdefault == '1' ? icon.active : icon.normal }}" />
+                        <text class="text">设为默认地址</text>
+                    </view>
+                    </van-radio>
+                    <view class="right">
+                        <image catchtap="detail" data-id="{{item.id}}" src="/image/my/icon_bianji.png"></image>
+                        <image catchtap="remove" data-index="{{index}}" data-id="{{item.id}}" src="/image/my/icon_delete.png"></image>
+                    </view>
+                </view>
+            </view>
+         
+         <view style="margin-top:80rpx;text-align: center;" wx:if="{{list1.length==0}}">
+        <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+        <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+      </view>
+          
+    </view>
+   <view class="bgImg" style="margin:66rpx 0rpx" bindtap="add">新建收货地址</view>
+</view>

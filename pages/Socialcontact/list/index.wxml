@@ -1,0 +1,27 @@
+<view class="bgImg">
+    <scroll-view scoll-y>
+        <view class="my_box">
+            <view class="content">
+                <view wx:if="{{list.length>0}}" wx:for="{{list}}" data-index="{{index}}" wx:key="{{index}}" class="bottom">
+                    <view class="left">
+                        <image src="{{approot+item.head_img}}"></image>
+                        <text>{{item.pet_name}}</text>
+                    </view>
+                    <view class="center">
+                        <view>
+                            <text style="color:red;">{{item.integral}}</text>
+                            罐头
+                        </view>
+                    </view>
+                    <view class="right">
+                        <text bind:tap="touguantou" data-id="{{item.id}}" data-openid="{{item.openid}}" class="bgs">偷罐头</text>
+                    </view>
+                </view>
+                  <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

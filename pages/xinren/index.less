@@ -1,0 +1,115 @@
+.box {
+    width: 100%;
+    background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+    background-size: 100%;
+
+    .bg {
+        background: url('https://admin.ayjpet.com/attachment//images/applet/22/Kxbi4vHT44XckxZTX9f4GCKhFmG9It.png')no-repeat;
+        background-size: 100%;
+        width: 710rpx;
+        margin-left: 20rpx;
+        height: 285rpx;
+        
+    }
+    
+    .list_box {
+        display: flex;
+        width: 710rpx;
+        height: 200rpx;
+        border-radius: 20rpx;
+        background: white;
+        margin-left: 20rpx;
+        margin-bottom: 64rpx;
+        border: 1px solid black;
+      }
+      
+      .left_img {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        /* 水平居中 */
+        align-items: center;
+      
+        /* 垂直居中 */
+        image {
+          width: 140rpx;
+          height: 140rpx;
+          margin-left: 30rpx;
+      
+        }
+      }
+      
+      .right_content {
+        padding: 18rpx;
+        flex: 3;
+      
+        .title {
+          font-size: 26rpx;
+          font-weight: 600;
+      
+          text {
+            display: inline-block;
+            width: 400rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 10rpx;
+          }
+      
+          image {
+            width: 38rpx;
+            height: 38rpx;
+          }
+        }
+      
+        .pingjia {
+          font-size: 22rpx;
+      
+          text {
+            margin: 0rpx 5rpx;
+          }
+          .grey{
+              color: #333333;
+          }
+        }
+      .xia{
+          display: flex;
+          .left{
+              flex:1;
+            .money1 {
+                color: red;
+                font-size: 24rpx;
+              }
+            .money {
+                margin-top: 18rpx;
+              color: red;
+              font-size: 28rpx;
+              .cankao{
+                  text-decoration: line-through;
+                  font-size: 24rpx;
+                  color: #999999;
+              }
+            }
+          }
+          .right{
+              flex: 1;
+              text-align: right;
+              position: relative;
+              image{
+                  position: absolute;
+                  right: 0rpx;
+                  top: 0rpx;
+                  margin-top: 14rpx;
+                  width: 174rpx;
+                  height: 142rpx;
+              }
+          }
+      }
+      
+        .dianping {
+          font-size: 22rpx;
+          color: #999999;
+          margin-top: 30rpx;
+        }
+      }
+}

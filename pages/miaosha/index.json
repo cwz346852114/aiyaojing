@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+ 
+  "navigationBarBackgroundColor": "#FFE000",
+  "navigationBarTitleText": "限时购",
+  "navigationBarTextStyle": "black"
+}

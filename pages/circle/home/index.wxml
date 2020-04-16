@@ -1,0 +1,153 @@
+  <view  wx:if="{{!openid}}" class="shouquan">
+        <view class="left"></view>
+        <view class="center" >  
+            <view bindtap="tankuang">微信登录</view>
+        </view>
+        <view class="left"></view>
+    </view>
+<view>
+    <view class="bg">
+        <view bind:tap="sousuo" class="search">
+            <image  class="serchImg" src="/image/serch.png"></image>
+            <text class="placeholderStyle">输入商品、品牌、话题、用户</text>
+        </view>
+    </view>
+     <!-- 会导致页面横向溢出 -->
+            <view class="my_box">
+                <view class="title">
+                    <view class="left">猜你喜欢</view>
+                    <view class="right">
+                        <view bind:tap="ToGengduo" class="add">更多</view>
+                    </view>
+                </view>
+                <view class="scroll_box">
+                    <scroll-view class="scroll-view_x" scroll-x style="box-sizing:border-box; auto;overflow:hidden;">
+                        <view class="item_list" catch:tap="like" data-id="{{item.id}}" wx:for="{{list.mylike}}" wx:key="{{i}}">
+                            <view class="left">
+                                <image src="{{apolosize}}{{item.logo}}"></image>
+                            </view>
+                            <view class="right">
+                                <view class="shang">{{item.title}}</view>
+                                <view class="xia">{{item.total}}     {{item.follower?item.follower:'无'}}</view>
+                            </view>
+                        </view>
+                        <view style="font-size:24rpx;color:black;text-align:center;line-height:60rpx;margin-top:100rpx" wx:if="{{list.mylike.length==0}}">
+                            暂无数据
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+    <van-tabs custom-class="bottom" bind:click="onClick">
+        <van-tab style="margin-bottom:20rpx" title="广场">
+            <view wx:for="{{list1}}" bind:tap="TieDetail" wx:key="{{index}}" wx:for-index="bindex" data-index="{{index}}" data-id="{{item.id}}" class="box">
+                <view class="head">
+                    <image catch:tap="ToChong"  data-openid="{{item.openid}}" src="{{item.avatar}}"></image>
+                    <text>{{item.nickname}}</text>
+                </view>
+                <view class="content">{{item.content}}</view>
+                <view class="imgs">
+                    <image wx:if="{{index>0}}" wx:for="{{item.images}}" mode="aspectFill" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{i}}" src="{{apolosize}}{{item.image}}"></image>
+                    <image wx:if="{{index<1}}" wx:for="{{item.images}}" mode="widthFix" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{i}}" src="{{apolosize}}{{item.image}}"></image>
+                </view>
+                <view wx:if="{{item.video.length>0}}" class="imgs">
+                    <video src="{{item.video[0].video}}"></video>
+                </view>
+                <view catch:tap="ToGoods" data-good_id="{{item.good_id}}" wx:if="{{item.thumb}}" class="smallBox">
+                    <image src="{{apolosize}}{{item.thumb}}"></image>
+                    <text>{{item.good_title}}</text>
+                </view>
+                <view catch:tap="ToQuan" data-id="{{item.bid}}" class="tag">
+                    <image src="{{apolosize+item.logo}}"></image>
+                    <text>{{item.title}} ></text>
+                </view>
+                <view catch:tap="shenping" wx:if="{{item.comment_list.length>0}}" data-id="{{item.comment_list[0].id}}" class="shenpin">
+                    <view class="header">
+                        <view class="left">
+                            <image src="/image/cricle/icon_shenping.png"></image>
+                        </view>
+                        <view catch:tap="pinzan" data-index="{{bindex}}" data-id="{{item.comment_list[0].id}}" class="right">
+                            <image src="{{item.comment_list[0].deleted?img:img1}}"></image>
+                            <text>{{item.comment_list[0].zan_count}}</text>
+                        </view>
+                    </view>
+                    <view class="footer">{{item.comment_list[0].reply_msg}}</view>
+                </view>
+                <view class="di">
+                    <view class="left">
+                    <button  catch:tap="fenxiang" class="btn" openType="share">
+                           <image src="/image/idcard/fenxiang.png"></image>
+                    </button>
+                     
+                        <text>0</text>
+                    </view>
+                    <view class="center">
+                        <image src="/image/cricle/icon_xinxi.png"></image>
+                        <text>{{item.replynum}}</text>
+                    </view>
+                    <view catch:tap="tiezan" data-id="{{item.id}}" data-index="{{bindex}}" class="right">
+                        <image src="{{item.deleted?img:img1}}"></image>
+                        <text>{{item.zan_count}}</text>
+                    </view>
+                </view>
+            </view>
+            <view style="font-size:24rpx;color:black;text-align:center;line-height:60rpx;margin-top:100rpx" wx:if="{{list.length==0}}">
+                暂无数据
+            </view>
+        </van-tab>
+        <van-tab title="我的">
+            <view class="my_box">
+                <view class="title">
+                    <view class="left">我的圈子</view>
+                    <view class="right">
+                        <view bind:tap="add" class="add">创建</view>
+                    </view>
+                </view>
+                <view wx:if="{{list.mylist.length>0}}" class="content">
+                    <view wx:if="{{index<2}}" wx:for="{{list.mylist}}" wx:key="{{index}}" class="flex">
+                        <view class="left">
+                            <image src="{{apolosize}}{{item.logo}}"></image>
+                        </view>
+                        <view class="center">{{item.title}}</view>
+                        <view class="right">
+                            <text data-id="{{item.id}}" bind:tap="ToMy">进入</text>
+                        </view>
+                    </view>
+                    <view bind:tap="ToCircleDetail" class="footer">更多</view>
+                </view>
+                <view wx:if="{{list.mylist.length==0}}" class="content">
+                    <view class="font">暂无数据</view>
+                </view>
+            </view>
+            <view class="my_box">
+                <view class="title">
+                    <view class="left">我关注的</view>
+                </view>
+                <view wx:if="{{list.myattention.length>0}}" class="content">
+                    <view wx:if="{{index<2}}" wx:for="{{list.myattention}}" wx:key="{{index}}" class="flex">
+                        <view class="left">
+                            <image src="{{apolosize}}{{item.logo}}"></image>
+                        </view>
+                        <view class="center">{{item.title}}</view>
+                        <view class="right">
+                            <text data-id="{{item.id}}" bind:tap="ToGuan">进入</text>
+                        </view>
+                    </view>
+                    <view bind:tap="ToGuanDetail" class="footer">更多</view>
+                </view>
+                <view wx:if="{{list.myattention.length==0}}" class="content">
+                    <view class="font">暂无数据</view>
+                </view>
+            </view>
+         
+        </van-tab>
+    </van-tabs>
+</view>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{shows}}" z-index="9999" bind:close="onClose1">
+  <view class="whiteBox">
+    <view class="top">您还未登录，请您登录</view>
+    <view class="bottom">
+      <view class="left" bind:tap="onClose1">取消登录</view>
+      <view class="left" bind:tap="login">微信登录</view>
+    </view>
+  </view>
+</van-popup>

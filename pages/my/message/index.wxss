@@ -1,0 +1,32 @@
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.container .bgImg {
+  width: 100%;
+  height: 78rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190910/2aae4628830c47ba994c548cd6502b2e.png') no-repeat center;
+  background-size: 80% 90%;
+  text-align: center;
+  line-height: 78rpx;
+}
+.container .sex {
+  width: 100rpx;
+  height: 43rpx;
+  border-radius: 19rpx;
+  background: #dddddd;
+  text-align: center;
+  font-size: 24rpx;
+  vertical-align: middle;
+  color: #666666;
+}
+.container .sex1 {
+  width: 100rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  background: yellow;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666666;
+}

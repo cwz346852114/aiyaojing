@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="list">
+        <view bind:tap="toDetail" wx:for="{{list1}}" data-index="{{index}}" data-id="{{item.id}}" wx:key="{{index}}" class="content">
+                    <view class="time">{{item.create_time}}</view>
+                    <view class="title">
+                        <text class="left">点评了</text>
+                        <text class="right">{{item.title}}</text>
+                    </view>
+                    <view class="star">
+                        <image src="{{item.thumb}}"></image>
+                        <van-rate size="12" readonly style="display:inline-block;vertical-align: middle;;margin-left:20rpx;" value="{{ item.grand_average }}" />
+                        <text>{{item.sum_start}}</text>
+                    </view>
+                    <view class="review">
+                        <view class="left">
+                            <view class="title">{{item.sum_start}}</view>
+                            <view>
+                                <van-rate allow-half size="12" style="padding-top:-10rpx;" readonly value="{{ item.grand_average}}" />
+                            </view>
+                        </view>
+                        <view class="right">
+                            <view  wx:if="{{index<5}}"  wx:for="{{item.remarks_list}}" wx:key="index" >
+                                <text>{{item.comment_name}}</text>
+                                <van-rate size="10" readonly  style="display:inline-block;vertical-align: middle;;margin-left:20rpx;"  value="{{ item.start/2 }}" />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+        </view>
+    </view>
+</view>

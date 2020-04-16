@@ -1,0 +1,80 @@
+.container {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.container .bgPic .box {
+  width: 710rpx;
+  margin-top: 83rpx;
+  margin-left: 20rpx;
+  background: white;
+  border-radius: 30rpx;
+}
+.container .bgPic .box .head {
+  width: 100%;
+  height: 113rpx;
+}
+.container .bgPic .box .head image {
+  width: 140rpx;
+  position: absolute;
+  left: 40%;
+  top: 10rpx;
+  height: 140rpx;
+  background: black;
+  border-radius: 50%;
+}
+.container .bgPic .box .from .fenge {
+  height: 1px;
+  background: #f2f2f2;
+}
+.container .bgPic .box .from .sex {
+  width: 100rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  background: #dddddd;
+  text-align: center;
+  font-size: 24rpx;
+  vertical-align: middle;
+  color: #666666;
+}
+.container .bgPic .box .from .sex1 {
+  width: 100rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  background: yellow;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .bgPic .box .from .yes {
+  font-size: 24rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #666666;
+  background: yellow;
+}
+.container .bgPic .box .from .no {
+  font-size: 24rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #806969;
+  background: #DDDDDD ;
+}
+.container .bgImg {
+  width: 100%;
+  height: 78rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190910/2aae4628830c47ba994c548cd6502b2e.png') no-repeat center;
+  background-size: 80% 90%;
+  text-align: center;
+  line-height: 78rpx;
+}

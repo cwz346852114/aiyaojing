@@ -1,0 +1,106 @@
+.container {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.bgPic {
+  width: 100%;
+  padding-bottom: 90rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+}
+.bgPic .list {
+  padding: 22rpx 20rpx 26rpx 24rpx;
+  background: white;
+  border-radius: 30rpx;
+  width: 670rpx;
+  margin-left: 20rpx;
+  margin-bottom: 17rpx;
+}
+.bgPic .list image {
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.bgPic .list .one {
+  font-size: 28rpx;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.bgPic .list .two {
+  margin: 19rpx 0rpx 0rpx 9rpx;
+  font-size: 20rpx;
+  vertical-align: middle;
+  color: #999999;
+}
+.bgPic .header_title {
+  font-size: 24rpx;
+  color: #F95D6F;
+  text-align: center;
+  padding: 34rpx 0rpx 29rpx;
+}
+.bgPic .pinglun {
+  width: 710rpx;
+  margin-left: 20rpx;
+  min-height: 200rpx;
+  background: white;
+  border-radius: 30rpx;
+}
+.bgPic .pinglun .box {
+  display: flex;
+}
+.bgPic .pinglun .box .tupian {
+  flex: 1;
+  text-align: center;
+}
+.bgPic .pinglun .box .tupian image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+.bgPic .pinglun .box .peopleDetail {
+  margin-right: 30rpx;
+  flex: 5;
+}
+.bgPic .pinglun .box .peopleDetail .title {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.bgPic .pinglun .box .peopleDetail .date {
+  margin-top: 4rpx;
+  font-size: 20rpx;
+  color: #999999;
+}
+.bgPic .pinglun .box .pinglun_content {
+  font-size: 24rpx;
+  color: #333333;
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+.footer {
+  background: white;
+  width: 750rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  display: flex;
+}
+.footer .left {
+  flex: 6;
+}
+.footer .left input {
+  border-radius: 30rpx;
+  height: 75rpx;
+  background: #F2F2F2;
+  margin: 23rpx 20rpx 0rpx 20rpx;
+  padding-left: 30rpx;
+}
+.footer .right {
+  flex: 1;
+  line-height: 96rpx;
+}
+.footer .right image {
+  width: 82rpx;
+  height: 82rpx;
+  margin: 17rpx 7rpx 7rpx 7rpx;
+}

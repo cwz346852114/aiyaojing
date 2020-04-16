@@ -1,0 +1,28 @@
+.container {
+  background: url("https://admin.ayjpet.com/attachment//images/applet/22/hBpb14P50K010umM5p5JeB00S1zP15.png") no-repeat;
+  background-size: 100%;
+  width: 750rpx;
+  height: 1520rpx;
+  position: relative;
+}
+.container .top {
+  position: absolute;
+  bottom: 200rpx;
+  left: 30%;
+  background: url("https://admin.ayjpet.com/attachment//images/applet/22/kRjrzFPSTTpVrHHDfRrpr4rVvPzstF.png") no-repeat;
+  background-size: 100%;
+  width: 280rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+.container .bottom {
+  margin: 0rpx 20rpx 0rpx 37rpx;
+  position: absolute;
+  bottom: 60rpx;
+  left: 0rpx;
+}
+.container .bottom .checkbox {
+  font-size: 24rpx;
+  color: #999999;
+}

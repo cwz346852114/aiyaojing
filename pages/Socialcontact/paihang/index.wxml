@@ -1,0 +1,43 @@
+<view class="bgImg">
+    <scroll-view scoll-y>
+        <view class="bottom1">
+            <view class="left">
+                <view>{{my[0].ranking}}</view>
+            </view>
+            <view class="center">
+                <image src="{{approot+my[0].head_img}}"></image>
+                <text>{{my[0].pet_name}}</text>
+            </view>
+            <view class="center"></view>
+            <view class="center">
+                <text>{{my[0].integral}}</text>
+                罐头
+            </view>
+        </view>
+        <view class="my_box">
+            <view class="content">
+                <view wx:for="{{list}}" data-index="{{index}}" wx:key="{{index}}" class="bottom">
+                    <view class="left">
+                        <image wx:if="{{index==0}}" src="/image/idcard/jin.png"></image>
+                        <image wx:elif="{{index==1}}" src="/image/idcard/yin.png"></image>
+                        <image wx:elif="{{index==2}}" src="/image/idcard/tong.png"></image>
+                        <view wx:else>{{item.ranking}}</view>
+                    </view>
+                    <view class="center">
+                        <image src="{{approot+item.head_img}}"></image>
+                        <text>{{item.pet_name}}</text>
+                    </view>
+                    <view class="center">
+                        <view>
+                            <text style="color:red;">{{item.integral}}</text>
+                            罐头
+                        </view>
+                    </view>
+                    <view bind:tap="toukan" data-openid="{{item.openid}}" data-id="{{item.id}}" class="right">
+                        <text class="bgs">偷看一下</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

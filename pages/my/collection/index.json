@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+ 
+  "navigationBarBackgroundColor": "#FFE000",
+  "navigationBarTitleText": "我的收藏",
+  "navigationBarTextStyle": "black"
+}

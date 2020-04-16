@@ -1,0 +1,30 @@
+<view class="box">
+    <view class="bg"></view>
+    <view wx:for="{{list}}" wx:key="index" bindtap="ToXiangqing" data-id="{{item.id}}" class="list_box">
+        <view class="left_img">
+            <image src="{{item.thumb}}" alt="" />
+        </view>
+        <view class="right_content">
+            <view class="title">
+                <text>{{item.title}}</text>
+            </view>
+            <view class="pingjia">
+                <van-rate size="12" readonly style="display:inline-block" value="{{item.grand_average }}" allow-half />
+                <text>{{item.sum_start}}</text>
+                <text>{{item.branches}}条</text>
+                <text class="grey">参考价：￥{{item.reference_value}}</text>
+            </view>
+            <view class="xia">
+                <view class="left">
+                    <view class="money">
+                        ￥{{item.marketprice}}
+                        <text class="cankao">￥{{item.productprice}}</text>
+                    </view>
+                </view>
+                <view class="right">
+                    <image src="/image/xinrenzhuanxiang.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

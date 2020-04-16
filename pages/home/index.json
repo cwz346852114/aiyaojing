@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#FFE000",
+  "navigationBarTitleText": "爱妖经",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

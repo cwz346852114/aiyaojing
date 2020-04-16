@@ -1,0 +1,79 @@
+<view class="big">
+    <view class="header">
+        <view class="search">
+            <image class="serchImg" src="/image/serch.png"></image>
+            <input placeholder="输入商品、品牌、话题、用户" bindinput="shuru" value="{{key}}" bindconfirm="sousuo" placeholder-class="placeholderStyle" class="search-input" type="text" />
+        </view>
+        <view bindtap="clear" class="clear">取消</view>
+    </view>
+</view>
+<van-tabs  nav-class="nav-class" bind:change="onChange" active="{{ active }}">
+    <van-tab  wx:if="{{show==1}}"   title="商品">
+        <view class="list top">
+            <view wx:if="{{good_list&&good_list.length>0}}"  bind:tap="ToGood" wx:key="{{index}}" wx:for="{{good_list}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{good_list.length==0||!good_list}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab  wx:if="{{show==1}}"   title="品牌">
+        <view class="list top">
+            <view wx:for="{{brandlist}}"  bind:tap="ToPin" wx:if="{{brandlist&&brandlist.length>0}}" wx:key="{{index}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.approot+item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{brandlist.length==0||!brandlist}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+     <van-tab  wx:if="{{show==2}}" title="圈子">
+        <view class="list top">
+            <view wx:if="{{circleList&&circleList.length>0}}" bind:tap="ToHua" wx:key="{{index}}" wx:for="{{circleList}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{approot+item.logo}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.desc}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{circleList.length==0 ||!circleList}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab  wx:if="{{show==2}}"  title="帖子">
+        <view class="list top">
+            <view wx:for="{{tieList}}" bind:tap="ToTie" wx:if="{{tieList&&tieList.length>0}}" wx:key="{{index}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.nickname}}</view>
+                    <view class="bottom">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{tieList.length==0 ||!tieList}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+</van-tabs>

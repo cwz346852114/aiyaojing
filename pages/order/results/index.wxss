@@ -1,0 +1,45 @@
+.container {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.container .car {
+  margin-top: 64rpx;
+}
+.container .car image {
+  width: 252rpx;
+  height: 234rpx;
+}
+.container .title {
+  color: #333333;
+  font-size: 36rpx;
+  margin-top: 44rpx;
+}
+.container .text {
+  color: #999999;
+  font-size: 24rpx;
+  margin-top: 37rpx;
+}
+.container .nav {
+  display: flex;
+}
+.container .nav view {
+  flex: 1;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 76rpx;
+  text-align: center;
+}
+.container .nav .bgImg1 {
+  width: 266rpx;
+  height: 76rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190912/38a10e62d7214d3a9175bfa800c6a027.png') no-repeat center;
+  background-size: 100% 100%;
+  margin-right: 32rpx;
+}
+.container .nav .bgImg2 {
+  width: 262rpx;
+  height: 76rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190911/8ece4d2775e648f2a61ab810b1069d8c.png') no-repeat center;
+  background-size: 100% 100%;
+  margin-left: 32rpx;
+}

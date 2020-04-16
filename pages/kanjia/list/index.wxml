@@ -1,0 +1,45 @@
+<view class="box">
+    <view class="bg"></view>
+    <view wx:for="{{list}}" wx:key="index"  id="{{item.id}}" class="list_box">
+        <view class="left_img">
+            <image src="{{item.thumb}}" alt="" />
+        </view>
+        <view class="right_content">
+            <view class="title">
+                <text>{{item.title}}</text>
+            </view>
+            <view class="pingjia">
+                <van-rate size="12" readonly style="display:inline-block" value=" {{item.grand_average}} " allow-half />
+                <text>{{item.sum_start}}</text>
+                <text>{{item.branches}}条</text>
+                <text class="grey">参考价：￥{{item.reference_value}}</text>
+            </view>
+            <view class="xia">
+                <view class="left">
+                    <view class="money">
+                        最低砍至
+                        <text style="color:red">{{item.end_price}}</text>
+                        元
+                    </view>
+                    <view class="cankao">原价{{item.marketprice}}</view>
+                </view>
+                <view class="right">
+                    <view bind:tap="kanjia" data-id="{{item.id}}" data-panduan="{{item.is_bargain}}">{{item.is_bargain?"继续砍价":"去砍价"}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-popup custom-style="background: transparent;" show="{{ show }}" bind:close="onClose">
+    <view class="meng">
+        <view class="top">您已砍了</view>
+        <view class="center">{{cutPrice}}元</view>
+        <view class="footer">分享给好友,可以多砍一刀哦</view>
+        <button class="btn" openType="share">
+                <image src="/image/weixin.png"></image>
+        </button>
+        <view class="tofenxiang">去微信分享</view>
+
+    </view>
+</van-popup>

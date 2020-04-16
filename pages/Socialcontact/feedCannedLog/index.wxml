@@ -1,0 +1,17 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view class="box">
+        <view wx:for="{{list}}" wx:key="{{index}}" class="list">
+            <view class="title">{{item.date}}</view>
+            <image wx:if="{{index<1}}" class="dengpao" src="/image/idcard/diandengpao.png"></image>
+            <view class="tiao" wx:for="{{item.children}}" wx:key="{{index}}">
+                <image class="one" src="/image/idcard/tou.png"></image>
+                <text class="two">{{item.from_pet_name}}</text>
+                <text decode="{{true}}" class="three">
+                      投喂了 <text class="two">{{item.to_pet_name}}</text>&nbsp;<text style="color:red">{{item.num}}</text> 个罐头
+                </text>
+                <text class="four">{{filter.numberToFixed1(item.createtime)}}</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,27 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="container">
+    <view class="bgPic">
+        <view  wx:for="{{list}}" data-id="{{item.id}}" wx:key="{{index}}" class="list_box">
+            <view class="head">
+                <view class="left">{{filter.numberToFixed(item.createtime)}}</view>
+                <view wx:if="{{item.status==0}}" class="right">待付款</view>
+                <view wx:if="{{item.status==1}}" class="right">待发货</view>
+                <view wx:if="{{item.status==2}}" class="right">已发货</view>
+                <view wx:if="{{item.status==3}}" class="right">已完成</view>
+            </view>
+            <view class="center">
+                <view class="left">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">￥{{item.groupsprice}}</view>
+                </view>
+            </view>
+            <view class="footer">
+                <view bind:tap="ToPay" wx:if="{{item.status==0}}" data-teamid="{{item.teamid}}" data-id="{{item.id}}" class="right">待付款</view>
+                <view wx:if="{{item.status!=0}}" catch:tap="ToDetail" data-teamid="{{item.teamid}}"  class="right">查看拼团</view>
+            </view>
+        </view>
+    </view>
+</view>

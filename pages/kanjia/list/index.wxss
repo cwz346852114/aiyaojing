@@ -1,0 +1,150 @@
+.box {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.box .bg {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/Hr5R95RvG1nGKknG2j5a75AEJNlg9g.png') no-repeat;
+  background-size: 100%;
+  width: 710rpx;
+  margin-left: 20rpx;
+  height: 323rpx;
+}
+.box .list_box {
+  margin-bottom: 20rpx;
+  padding: 20rpx 0rpx;
+  display: flex;
+  width: 710rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  background: white;
+  margin-left: 20rpx;
+}
+.box .left_img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+}
+.box .left_img image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 30rpx;
+}
+.box .right_content {
+  padding: 18rpx;
+  flex: 3;
+}
+.box .right_content .title {
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.box .right_content .title text {
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 10rpx;
+}
+.box .right_content .title image {
+  width: 38rpx;
+  height: 38rpx;
+}
+.box .right_content .pingjia {
+  font-size: 22rpx;
+}
+.box .right_content .pingjia text {
+  margin: 0rpx 5rpx;
+}
+.box .right_content .pingjia .grey {
+  color: #333333;
+}
+.box .right_content .xia {
+  display: flex;
+  margin-top: 10rpx;
+}
+.box .right_content .xia .left {
+  flex: 2;
+}
+.box .right_content .xia .left .money {
+  margin-top: 18rpx;
+  color: black;
+  font-size: 28rpx;
+}
+.box .right_content .xia .left .cankao {
+  text-decoration: line-through;
+  font-size: 24rpx;
+  color: #999999;
+}
+.box .right_content .xia .right {
+  flex: 1;
+  text-align: right;
+}
+.box .right_content .xia .right view {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/paRfvF4z4f5YF01vyGrgZokOf41Fr9.png') no-repeat;
+  font-size: 28rpx;
+  background-size: 100%;
+  width: 186rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+.box .right_content .dianping {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 30rpx;
+}
+.meng {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/F56z0SDawaffzQSFDGgfQUxKQGf0V6.png') no-repeat;
+  width: 750rpx;
+  height: 858rpx;
+  background-size: 100%;
+  position: relative;
+  text-align: center;
+}
+.meng .top {
+  font-size: 36rpx;
+  position: absolute;
+  top: 268rpx;
+  left: 306rpx;
+}
+.meng .center {
+  color: #FC4056;
+  font-size: 72rpx;
+  position: absolute;
+  top: 348rpx;
+  width: 100%;
+  text-align: center;
+}
+.meng .footer {
+  font-size: 30rpx;
+  position: absolute;
+  top: 480rpx;
+  left: 192rpx;
+}
+.meng .btn {
+  position: absolute;
+  left: 330rpx;
+  bottom: 180rpx;
+  line-height: 0rpx;
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+  vertical-align: middle;
+  background: white;
+}
+.meng .btn image {
+  width: 92rpx;
+  height: 92rpx;
+}
+.meng button::after {
+  display: none;
+}
+.meng .tofenxiang {
+  position: absolute;
+  left: 330rpx;
+  bottom: 140rpx;
+  font-size: 24rpx;
+  color: #666666;
+}

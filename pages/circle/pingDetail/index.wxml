@@ -1,0 +1,51 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="content">
+    <image class="shen" wx:if="{{list.fairytale}}" src="/image/cricle/tuoyuan.png"></image>
+    <view class="list">
+        <view class="pinlun">
+            <view catch:tap="ToChong" data-openid="{{list.openid}}" class="one">
+                <image src="{{list.avatar}}"></image>
+            </view>
+            <view class="two">
+                <view class="top">{{list.nickname}}</view>
+                <view class="di">{{filter.numberToFixed(list.createtime)}}</view>
+            </view>
+            <view class="three">
+                <image src="/image/cricle/icon_xinxi.png"></image>
+                <text>{{list.reply_num}}</text>
+            </view>
+            <view catch:tap="dianzan" class="three">
+                <image src="{{list.deleted?img:img1}}"></image>
+                <text>{{list.zan_count}}</text>
+            </view>
+        </view>
+        <view class="text">
+            <view class="biaoti">{{list.reply_msg}}</view>
+        </view>
+    </view>
+</view>
+<view class="bgImg">
+    <view class="title">
+        <view class="left">评论详情</view>
+    </view>
+    <view wx:if="{{list.reply}}" wx:for="{{list.reply}}" wx:key="{{index}}" class="content">
+        <view class="list">
+            <view class="pinlun">
+                <view catch:tap="ToChong" data-openid="{{item.from_openid}}" class="one">
+                    <image src="{{item.from_thumb_img}}"></image>
+                </view>
+                <view class="two">
+                    <view class="top">{{item.from_nickname}}</view>
+                    <view class="di">{{filter.numberToFixed(item.createtime)}}</view>
+                </view>
+            </view>
+            <view class="text">
+                <view class="biaoti">{{item.reply_msg}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <input class="inp" value="{{inputValue}}" bindinput="bindKeyInput" type="text" placeholder-class="pla" placeholder="" />
+    <text bind:tap="submit" class="fabu">发布</text>
+</view>

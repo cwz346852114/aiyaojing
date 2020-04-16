@@ -1,0 +1,23 @@
+<view class="bgImg">
+    <view></view>
+    <view class="my_box">
+        <view class="title">
+            <view class="left">创建话题</view>
+            <view class="right">
+                <view bind:tap="submit" class="add">创建</view>
+            </view>
+        </view>
+        <view class="content">
+            <view bind:tap="unload" class="Add">
+                <image src="{{show?approot+img:img1}}"></image>
+                <view>点击上传封面</view>
+            </view>
+            <view class="titles">话题名称</view>
+            <van-field value="{{ title }}" input-class="inp" maxlength="15" clearable  border="{{ false }}" bind:change="onChange1" />
+            <view class="titles">关注者</view>
+            <van-field value="{{ guanzhu }}" input-class="inp" placeholder="给关注者起个称号吧" clearable maxlength="10" border="{{ false }}" bind:change="onChange2" />
+            <view class="titles">话题描述</view>
+            <textarea  value="{{ content }}" class="inp1" maxlength="200" placeholder="200字以内" clearable type="textarea" maxlength="40"  border="{{ false }}" bindinput="onChange3" />
+        </view>
+    </view>
+</view>

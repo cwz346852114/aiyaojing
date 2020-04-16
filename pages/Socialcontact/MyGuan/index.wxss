@@ -1,0 +1,304 @@
+.container {
+  background: #f2f2f2;
+}
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.container .bgPic .title {
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-left: 20rpx;
+  padding: 33rpx 0rpx;
+}
+.container .bgPic .center {
+  text-align: center;
+}
+.container .bgPic .lunbo {
+  overflow: hidden;
+  padding: 20rpx;
+  white-space: nowrap;
+  height: 300rpx;
+}
+.container .bgPic .lunbo .bgImg1 {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/DIlb4w8OB4gibuIWI4L5u0pLlsO40V.png') no-repeat;
+  width: 550rpx;
+  height: 280rpx;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+  border-radius: 30rpx;
+}
+.container .bgPic .lunbo .bgImg1 .top {
+  padding: 20rpx 31rpx 0rpx 31rpx;
+  display: flex;
+}
+.container .bgPic .lunbo .bgImg1 .top .left {
+  flex: 1;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view {
+  height: 45rpx;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view image {
+  width: 52rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view text {
+  color: #505D98;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-left: 26rpx;
+  width: 200rpx;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .bgPic .lunbo .bgImg1 .top .right {
+  flex: 1;
+  text-align: right;
+}
+.container .bgPic .lunbo .bgImg1 .top .right image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  line-height: 300rpx;
+  margin-top: 40rpx;
+  margin-right: 40rpx;
+  border: 2rpx solid white;
+  box-shadow: 10rpx 10rpx 0rpx #757A97;
+}
+.container .bgPic .lunbo .bgImg1 .bottom {
+  margin-top: 35rpx;
+}
+.container .bgPic .lunbo .bgImg1 .bottom text {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #363F67;
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg1 .bottom .imgs {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 80rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/psz3vyD83lxS3yXysxyTD7t0svsyoD.png');
+  width: 550rpx;
+  height: 280rpx;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+  border-radius: 30rpx;
+}
+.container .bgPic .lunbo .bgImg2 .top {
+  padding: 20rpx 31rpx 0rpx 31rpx;
+  display: flex;
+}
+.container .bgPic .lunbo .bgImg2 .top .left {
+  flex: 1;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view {
+  height: 45rpx;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view image {
+  width: 52rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view text {
+  color: #505D98;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-left: 26rpx;
+  width: 200rpx;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .bgPic .lunbo .bgImg2 .top .right {
+  flex: 1;
+  text-align: right;
+}
+.container .bgPic .lunbo .bgImg2 .top .right image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  line-height: 300rpx;
+  margin-top: 40rpx;
+  margin-right: 40rpx;
+  border: 2rpx solid white;
+  box-shadow: 10rpx 10rpx 0rpx #ffc0cb;
+}
+.container .bgPic .lunbo .bgImg2 .bottom {
+  margin-top: 35rpx;
+}
+.container .bgPic .lunbo .bgImg2 .bottom text {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #363F67;
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 .bottom .imgs {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 80rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .show {
+  height: 300rpx;
+  line-height: 40rpx;
+}
+.container .bgPic .lunbo .show1 {
+  height: 300rpx;
+  line-height: 40rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .bgPic .ping {
+  width: 710rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+  display: flex;
+  background: white;
+  text-align: center;
+}
+.container .bgPic .ping .ping_box {
+  flex: 1;
+  padding: 30rpx 0rpx;
+}
+.container .bgPic .ping .ping_box image {
+  width: 59rpx;
+  height: 58rpx;
+}
+.container .bgPic .ping .ping_box view {
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .list_box {
+  width: 750rpx;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  background: white;
+  margin-top: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+.container .list_box .bottom {
+  display: flex;
+  border-bottom: 1px solid #f2f2f2;
+  height: 100rpx;
+}
+.container .list_box .bottom .one {
+  flex: 1;
+  padding: 22rpx 0rpx;
+}
+.container .list_box .bottom .one image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.container .list_box .bottom .one text {
+  margin-left: 20rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100rpx;
+}
+.container .list_box .bottom .two {
+  flex: 1;
+  vertical-align: middle;
+  padding: 17rpx 0rpx;
+  line-height: 76rpx;
+}
+.container .list_box .bottom .two view {
+  font-size: 26rpx;
+  display: inline-block;
+}
+.container .list_box .bottom .three {
+  font-size: 26rpx;
+  flex: 1;
+  text-align: center;
+  padding: 17rpx;
+}
+.container .list_box .bottom .three .bgs {
+  display: inline-block;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/POvkQ1FP1xVmEmv33QOMB1Ly99Zvex.png') no-repeat;
+  height: 56rpx;
+  width: 144rpx;
+  line-height: 20rpx;
+  margin-top: 8rpx;
+}
+.container .list_box .bottom .left {
+  flex: 1;
+  padding: 22rpx 0rpx;
+}
+.container .list_box .bottom .left image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.container .list_box .bottom .center {
+  flex: 2;
+  vertical-align: middle;
+  padding: 17rpx 0rpx;
+  line-height: 76rpx;
+}
+.container .list_box .bottom .center image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  vertical-align: top;
+}
+.container .list_box .bottom .center text {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  width: 100rpx;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .list_box .bottom .right {
+  font-size: 26rpx;
+  flex: 2;
+  text-align: center;
+  padding: 17rpx;
+}
+.container .list_box .bottom .right .bgs {
+  display: inline-block;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/POvkQ1FP1xVmEmv33QOMB1Ly99Zvex.png') no-repeat;
+  height: 56rpx;
+  width: 144rpx;
+  line-height: 56rpx;
+  margin-top: 8rpx;
+}
+.container .list_box .di {
+  text-align: center;
+  padding: 37rpx 0rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .btn {
+  width: 200rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+  font-size: 24rpx;
+  text-align: center;
+  background: url('https://file.icaohejing.com/Files/Images/20190911/8ece4d2775e648f2a61ab810b1069d8c.png') no-repeat center;
+  background-size: 100% 100%;
+  margin: 58rpx auto 199rpx;
+}

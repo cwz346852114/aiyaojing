@@ -1,0 +1,164 @@
+.container {
+  background: #f2f2f2;
+  height: 5000rpx;
+}
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+}
+.container .bgPic .title {
+  padding: 26rpx 20rpx;
+}
+.container .bgPic .pingjia {
+  margin-left: 20rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190909/023098058ab945f08c18ad1db620476c.png') no-repeat;
+  background-size: 100%;
+  width: 710rpx;
+  height: 280rpx;
+  position: relative;
+}
+.container .bgPic .pingjia .ping_view {
+  padding: 20rpx;
+  height: 280rpx;
+  display: flex;
+}
+.container .bgPic .pingjia .ping_view .one {
+  flex: 5;
+  font-size: 48rpx;
+  font-weight: 600;
+  margin-top: 40rpx;
+}
+.container .bgPic .pingjia .ping_view .one view {
+  text-align: center;
+}
+.container .bgPic .pingjia .ping_view .two {
+  flex: 4;
+  text-align: right;
+  margin-right: 10rpx;
+  margin-top: -20rpx;
+}
+.container .bgPic .pingjia .ping_view .two view {
+  height: 24rpx;
+  padding: 5rpx;
+}
+.container .bgPic .pingjia .ping_view .two view image {
+  width: 24rpx;
+  height: 24rpx;
+  margin: 0rpx 3rpx;
+}
+.container .bgPic .pingjia .ping_view .three {
+  flex: 7;
+  text-align: right;
+}
+.container .bgPic .pingjia .ping_view .three progress:nth-child(1) {
+  margin-top: 0rpx;
+}
+.container .bgPic .pingjia .ping_view .three progress {
+  margin-top: 20rpx;
+}
+.container .bgPic .pingjia .ping_view .three text {
+  font-size: 22rpx;
+  color: #403B3B;
+}
+.container .bgPic .pingjia .ping_text {
+  display: flex;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+}
+.container .bgPic .pingjia .ping_text view {
+  flex: 1;
+  text-align: center;
+  margin: 15rpx 0rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.container .list_box {
+  background: white;
+  min-height: 700rpx;
+  width: 100%;
+  margin-top: 20rpx;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+}
+.container .list_box .list_detail {
+  display: flex;
+  padding: 20rpx;
+}
+.container .list_box .list_detail .list_img {
+  flex: 1;
+}
+.container .list_box .list_detail .list_img image {
+  width: 63rpx;
+  height: 63rpx;
+  border-radius: 50%;
+}
+.container .list_box .list_detail .list_content {
+  position: relative;
+  flex: 8;
+  padding: 0rpx 30rpx 0rpx 0rpx;
+}
+.container .list_box .list_detail .list_content text {
+  font-size: 22rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+.container .list_box .list_detail .list_content .actFont {
+  color: black;
+}
+.container .list_box .list_detail .list_content .content {
+  margin-top: 28rpx;
+  line-height: 38rpx;
+  text-align: justify;
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .list_box .list_detail .list_content .content1 {
+  margin-top: 28rpx;
+  line-height: 38rpx;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .list_box .list_detail .list_content .tupian .image {
+  width: 72rpx;
+  height: 30rpx;
+}
+.container .list_box .list_detail .list_content .imgList {
+  margin-top: 40rpx;
+}
+.container .list_box .list_detail .list_content .imgList image:nth-child(1) {
+  margin-left: 0rpx;
+}
+.container .list_box .list_detail .list_content .imgList image:nth-child(4) {
+  margin-left: 0rpx;
+}
+.container .list_box .list_detail .list_content .imgList image:nth-child(7) {
+  margin-left: 0rpx;
+}
+.container .list_box .list_detail .list_content .imgList image {
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .list_box .list_detail .list_content .imgList video {
+  width: 100%;
+}
+.container .list_box .list_detail .list_content .pinglun {
+  text-align: right;
+  font-size: 20rpx;
+  color: #666666;
+}
+.container .list_box .list_detail .list_content .pinglun text {
+  vertical-align: middle;
+}
+.container .list_box .list_detail .list_content .pinglun image {
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}

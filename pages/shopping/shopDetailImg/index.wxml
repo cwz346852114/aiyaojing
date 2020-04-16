@@ -1,0 +1,42 @@
+<view class="container">
+    <view class="bgPic">
+        <view>
+            <view class="box">
+                <text bind:tap="img" class="img {{show==true?'img1':'shipin1'}}">图片</text>
+                <text bind:tap="video" class="shipin {{show==false?'img1':'shipin1'}}">视频</text>
+            </view>
+        </view>
+        <view wx:if="{{show}}">
+            <van-cell bindtap="routeDetail1" title=" 产品图片">
+                <van-icon slot="right-icon" bind:tap="Toqqiang1" name="arrow" class="custom-icon" />
+            </van-cell>
+            <view class="shoplist">
+                <view>
+                    <image wx:for="{{list}}" mode="aspectFill" bind:tap="fangda1" data-index="{{index}}" data-id="{{item.id}}" wx:if="{{index<2 && list}}" data-url="{{item.g_url}}" wx:key="{{index}}" src="{{item.approot+item.g_url}}" alt=""></image>
+                </view>
+            </view>
+            <view class="shoplist">
+                <text>妖精图片</text>
+                <view>
+                    <image wx:for="{{list1}}" mode="aspectFill" wx:if="{{list1}}" bind:tap="fangda"  data-index="{{index}}"  data-id="{{item.id}}" data-url="{{item.r_url}}" wx:key="{{index}}" src="{{item.r_url}}" alt="" />
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <van-cell title="产品视频">
+                <van-icon slot="right-icon" bind:tap="Toqqiang2" name="arrow" class="custom-icon" />
+            </van-cell>
+            <view class="shoplist">
+                <view>
+                    <video wx:for="{{videoList1}}" wx:key="{{index}}" wx:if="{{videoList1 && index<2}}" wx:if="{{videoList.length>0}}" src="{{item.gurl}}"></video>
+                </view>
+            </view>
+            <view class="shoplist">
+                <text>妖精视频</text>
+                <view>
+                    <video wx:for="{{videoList}}" wx:key="{{index}}" wx:if="{{videoList}}" src="{{item.rurl}}"></video>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

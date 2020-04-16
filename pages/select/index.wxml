@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="bgPic">
+        
+    </view>
+    <view class="list_box">
+            <view bind:tap="getId" wx:for="{{list}}" data-index="{{index}}" data-id="{{item.id}}" wx:key="index" class="li">
+                <view class="title">
+                    <image src="{{qianzhui}}{{item.head_img}}"></image>
+                </view>
+                <view class="content">{{item.pet_name}}</view>
+            </view>
+        </view>
+</view>

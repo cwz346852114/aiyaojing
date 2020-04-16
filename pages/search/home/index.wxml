@@ -1,0 +1,29 @@
+<view class="big">
+    <view class="header">
+        <view class="search">
+            <image class="serchImg" src="/image/serch.png"></image>
+            <input placeholder="输入商品、品牌、话题、用户" value="{{key}}" bindinput="shuru"  bindconfirm="sousuo" placeholder-class="placeholderStyle" class="search-input" type="text" />
+        </view>
+        <view bindtap="clear" class="clear">取消</view>
+    </view>
+    <view class="history">
+        <view class="title">
+            <view class="left">最近搜索</view>
+            <view class="right">
+                <image bind:tap="remove" src="/image/my/icon_delete.png"></image>
+            </view>
+        </view>
+        <view bind:tap="history" class="content">
+            <text>呵呵</text>
+        </view>
+    </view>
+      <view class="history">
+        <view class="title">
+            <view class="left">常用关键字</view>
+
+        </view>
+        <view wx:for="{{list}}" wx:key="{{index}}" data-name="{{item.name}}"  bind:tap="changyong" class="content">
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+</view>

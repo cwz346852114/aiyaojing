@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="box">
+            <view class="head">
+                <view>
+                    <image class="title" src="{{post+list.head_img}}"></image>
+                    <text>{{list.pet_name}}</text>
+                    <image bind:tap="close" class="quxiao" src="/image/release/quxiao.png"></image>
+                    <image bind:tap="submit" class="fabu" src="/image/release/fabu.png"></image>
+                </view>
+            </view>
+            <view class="inp">
+                <van-cell-group>
+                    <textarea  value="{{ value }}" maxlength="100"  placeholder="{{list.pet_name}}最想表达什么..." bindinput="length" autosize border="{{ false }}" />
+                </van-cell-group>
+                <view class="inp_length">{{length}}/100</view>
+            </view>
+            <view class="footer">
+                <image bind:tap="unload" src="/image/release/tianjia.png"></image>
+            </view>
+            <view>
+                <view class="img" wx:for="{{img}}" wx:key="{{index}}">
+                    <image  class="imgs" catch:tap="remove" data-index="{{index}}" src="/image/cricle/delete.png"></image>
+                    <image mode="aspectFill" src="{{post}}{{item.image}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

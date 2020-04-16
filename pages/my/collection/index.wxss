@@ -1,0 +1,94 @@
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+}
+.container .bgPic .list {
+  background: white;
+  height: 250rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+.container .bgPic .list .left {
+  flex: 1;
+  text-align: center;
+}
+.container .bgPic .list .center {
+  padding: 45rpx 0rpx 45rpx 20rpx;
+  flex: 2;
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .bgPic .list .center image {
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .bgPic .list .right {
+  flex: 6;
+}
+.container .bgPic .list .right .title {
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 32rpx;
+  font-weight: 600;
+  width: 500rpx;
+}
+.container .bgPic .list .right .shoucang {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .bgPic .list .right .content {
+  display: flex;
+  margin-top: 16rpx;
+  vertical-align: middle;
+}
+.container .bgPic .list .right .content view {
+  flex: 1;
+}
+.container .bgPic .list .right .content view text {
+  font-size: 28rpx;
+  color: #FC4056;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.container .bgPic .list .right .content .gouwu {
+  text-align: right;
+  vertical-align: middle;
+}
+.container .bgPic .list .right .content .gouwu text {
+  display: inline-block;
+  background: #DDDDDD;
+  vertical-align: middle;
+  width: 100rpx;
+  height: 40rpx;
+  text-align: center;
+}
+.container .bgPic .list .right .content .gouwu image {
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+}
+.container .large_box {
+  text-align: center;
+  width: 550rpx;
+}
+.container .large_box image {
+  margin-top: 64rpx;
+  width: 252rpx;
+  height: 234rpx;
+}
+.container .large_box text {
+  display: inline-block;
+  margin-top: 41rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+.container .bgImg {
+  width: 262rpx;
+  height: 76rpx;
+  background: url('https://file.icaohejing.com/Files/Images/20190911/8ece4d2775e648f2a61ab810b1069d8c.png') no-repeat center;
+  background-size: 100% 100%;
+  text-align: center;
+  margin-left: 145rpx;
+  line-height: 76rpx;
+}

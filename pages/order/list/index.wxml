@@ -1,0 +1,72 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="container">
+    <view bind:tap="Todizhi" class="head">
+        <view class="left">
+            <image src="/image/dizhi.png"></image>
+        </view>
+        <view class="center">
+            <view>
+                <text class="title">{{address.realname}}</text>
+                <text class="phone">{{address.mobile}}</text>
+            </view>
+            <view class="content">
+                {{address.province}}{{address.city}}{{address.area}}{{address.address}}
+            </view>
+        </view>
+        <view style="line-height:180rpx" class="right">
+            <van-icon name="arrow" />
+        </view>
+    </view>
+    <image class="di" src="/image/dizhitiao.png"></image>
+    <view wx:for="{{list}}" wx:key="{{index}}" class="list">
+        <view class="section">
+            <view class="left">
+                <image src="{{item.thumb}}"></image>
+            </view>
+            <view class="right">
+                <view class="title">{{item.title}}</view>
+                <view class="content">
+                    <view>￥{{item.promotionprice}}</view>
+                    <view>x{{item.total}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{cross_border}}" class="nameBox">
+        <van-cell-group>
+            <van-field value="{{ name }}" clearable label="真实姓名" placeholder="请输入您的真实姓名"  border="{{ false }}"    bind:change="onChange1" />
+            <view style="height:1px;color:#f2f2f2;;margin:0rpx 20rpx;"></view>
+            <van-field value="{{ shenfenid }}" maxlength="18"  label="身份证号码" placeholder="请输入您的身份证号码" border="{{ false }}"    bind:change="onChange2" />
+        </van-cell-group>
+    </view>
+        <view wx:if="{{cross_border}}" class="zhushi">*跨境商品需填写身份证和真实姓名</view>
+     <view class="nameBox1">
+     <view class="title">买家留言</view>
+        <textarea class="textarea" value="{{liuyan}}" auto-height bindinput="bindinput" name="" id="" cols="30" rows="10"></textarea>
+    </view>
+
+    <view class="jiage">
+        <view class='shopcard'>
+            <view class="checkbox">
+                <view class="left">
+                    <image src="/image/idcard/shui.png"></image>
+                    可用{{filter.numberToFixed3(good_feednum*100)}}罐头抵用{{good_feednum}}元
+                </view>
+                <view class="right">
+                    <van-checkbox border="{{false}}" value="{{ checked }}" bind:change="onChange"></van-checkbox>
+                </view>
+            </view>
+            <view class="bottom">我们将为您尽快安排发货</view>
+        </view>
+        <van-cell border="{{false}}" title="{{type==3?'拼团金额':'商品金额'}}" value="￥{{type==3?realprice:filter.numberToFixed4(goodsprice)}}" />
+        <view class="view"></view>
+        <van-cell border="{{false}}" title="运费" value="￥{{dispatch_price}}" />
+        <view class="view"></view>
+        <van-cell border="{{false}}" title="罐头抵用" value="-￥{{integral}}" />
+    </view>
+    <view style="height:300rpx;"></view>
+    <van-submit-bar price="{{ realprice*100 }}" button-text="提交订单" bind:submit="onSubmit" />
+    <van-popup show="{{show}}" bind:close="onClose" position="bottom">
+        <van-picker show-toolbar title="标题" columns="{{ columns }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+    </van-popup>
+</view>

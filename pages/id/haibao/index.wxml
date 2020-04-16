@@ -1,0 +1,11 @@
+    <view class="BigBox">
+        <view class="top">
+            <image class="img" mode="top" src="{{link}}"></image>
+        </view>
+
+        <view class="nav">
+            <view></view>
+                <view class="bgImg" style="margin-top:30rpx" bindtap="fangda">生成专属海报</view>
+            <view></view>
+        </view>
+    </view>

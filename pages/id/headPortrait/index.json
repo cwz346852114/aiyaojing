@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+
+  },
+  "navigationBarTitleText": "填写资料",
+ 
+  "navigationBarBackgroundColor": "#FFE000",
+  "navigationBarTextStyle": "black"
+}

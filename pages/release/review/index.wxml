@@ -1,0 +1,62 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="box">
+            <view class="title">选择宠物卡</view>
+            <view class="content">
+                <view bindtap="onshow" wx:for="{{list}}" data-nationality="{{item.nationality}}" data-id="{{item.id}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" data-breed_id="{{item.breed_id}}" class="{{show==index?'bg1':'bg2'}}">
+                    {{item.pet_name}}
+                </view>
+            </view>
+        </view>
+        <van-cell class="box1" bind:tap="goSelect" is-link>
+            <view slot="title">
+                <image src="{{approot+good_img}}"></image>
+                <view style="display:inline-block;margin-left:30rpx;margin-top:13rpx" class="van-cell-text">
+                    {{goods_name!=''?goods_name:'请选择商品'}}
+                </view>
+            </view>
+        </van-cell>
+        <view class="box2">
+            <view wx:for="{{list1}}" wx:key="{{index}}">
+                <text class="two">{{item.comment_name}}</text>
+                <van-rate style="display:inline-block;vertical-align: middle;" size="22" data-id="{{item.id}}" data-index="{{index}}" bind:change="onChange" />
+            </view>
+            <view wx:if="{{istrue}}">
+                <text class="two">总评</text>
+                <van-rate style="display:inline-block;vertical-align: middle;" readonly size="22" value="{{zongji}}" allow-half></van-rate>
+            </view>
+            <textarea  value="{{ message }}" maxlength="200" input-class="inp1"  placeholder="请输入评价" autosize border="{{ false }}" bindinput="liuyan" />
+            <view wx:for="{{img}}" wx:key="{{index}}" class="img">
+                <image class="imgs" catch:tap="remove" mode="center" data-index="{{index}}" src="/image/cricle/delete.png"></image>
+                <image mode="aspectFill" wx:key="{{index}}" src="{{approot+item.image}}"></image>
+            </view>
+            <view class="video">
+                <view style="display:inline-block">
+                    <image class="imgs" wx:if="{{src}}" catch:tap="removeVideo" src="/image/cricle/delete.png"></image>
+                    <video wx:if="{{src}}" wx:key="{{index}}" src="{{src}}" class="ved"></video>
+                </view>
+            </view>
+            <view class="footer">
+                <view bindtap="unload">
+                    <image src="/image/release/camera.png"></image>
+                    <text>上传图片</text>
+                </view>
+                <view bind:tap="uploadVideo">
+                    <image src="/image/release/video.png"></image>
+                    <text>上传视频</text>
+                </view>
+            </view>
+            <view>
+                <van-field value="{{ money }}" type="digit" label="价格  ￥   " bind:change="money" placeholder="请输入购买金额" border="{{ false }}" />
+            </view>
+        </view>
+        <view class="nav">
+            <view class="left">
+                <view class="bgImg1" style="margin-top:30rpx" bindtap="onClose3">取消</view>
+            </view>
+            <view class="right">
+                <view class="bgImg2" style="margin-top:30rpx" bindtap="submit">发布</view>
+            </view>
+        </view>
+    </view>
+</view>

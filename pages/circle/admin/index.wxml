@@ -1,0 +1,68 @@
+<view class="bgImg">
+    <view style="height:30rpx;"></view>
+    <view class="head">
+        <view class="top">
+            <view class="left">
+                <image src="/image/01.png"></image>
+            </view>
+            <view class="right">
+                <view class="title">{{list.title}}</view>
+                <view class="guanzhu">{{list.follower}}:886</view>
+            </view>
+        </view>
+        <view class="footer">
+            <view class="content">{{list.desc}}</view>
+        </view>
+    </view>
+</view>
+<view class="my_box">
+    <view class="title">
+        <view class="left">小话事人</view>
+    </view>
+    <view class="content">
+        <view  wx:if="{{index<3}}" wx:for="{{list.things_people}}" wx:key="{{index}}" class="flex">
+            <view class="left">
+                <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="center">{{item.nickname}}</view>
+            <view  class="right">
+                <text data-id="{{item.id}}"  catch:tap="quxiao">取消权限</text>
+            </view>
+        </view>
+     
+    </view>
+</view>
+<view class="my_box">
+    <view class="title">
+        <view class="left">被禁言用户</view>
+    </view>
+    <view class="content">
+        <view wx:if="{{index<3}}" wx:for="{{jinyan}}" wx:key="{{index}}" class="flex">
+            <view class="left">
+                <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="center">{{item.nickname}}</view>
+            <view class="right">
+                <text  data-id="{{item.id}}" data-openid="{{item.openid}}" catch:tap="quxiaojinyan">取消禁言</text>
+            </view>
+        </view>
+        <view wx:if="{{jinyan.length>0}}" catch:tap="gengduo" class="footer">更多</view>
+    </view>
+</view>
+<view class="my_box">
+    <view class="title">
+        <view class="left">被拉黑用户</view>
+    </view>
+    <view class="content">
+        <view wx:if="{{index<3}}" wx:for="{{lahei}}" wx:key="{{index}}" class="flex">
+            <view class="left">
+                <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="center">{{item.nickname}}</view>
+            <view class="right">
+                <text  data-id="{{item.id}}" data-openid="{{item.openid}}" catch:tap="quxiaolahei">取消拉黑</text>
+            </view>
+        </view>
+        <view wx:if="{{lahei.length>0}}" catch:tap="gengduo1" class="footer">更多</view>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+<view wx:if="{{show}}" class="container">
+    <view class="bgPic">
+        <view wx:for="{{list}}" wx:key="{{index}}">
+            <van-swipe-cell id="swipe-cell" data-id="{{item.id}}" data-index='{{index}}' right-width="{{ 50 }}" async-close bind:close="onClose">
+                <view class="list">
+                    <view class="left">
+                        <van-checkbox  checked-color="red" style="position: relative;left: 8rpx;top: 38rpx;" value="{{ item.selected==1?true:false }}" data-id="{{item.id}}" data-index="{{index}}" bind:change="onChange" />
+                    </view>
+                    <view class="center">
+                        <image src="{{item.thumb}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="title">{{item.title}}</view>
+                        <view class="content">
+                            <view>
+                                <text>￥{{item.marketprice}}</text>
+                            </view>
+                            <view class="gouwu">
+                                <van-stepper  plus-class="add" minus-class="remove" data-id="{{item.id}}" data-index="{{index}}"  value="{{ item.total }}" bind:change="onChange2" />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view style="background:black;height:198rpx;color:#FFE000;font-size:24rpx;line-height:198rpx;padding:0rpx 30rpx" slot="right">
+                    删除
+                </view>
+            </van-swipe-cell>
+        </view>
+    </view>
+    <van-submit-bar price="{{ totalprice }}" button-text="去结算({{total}})" bind:submit="onClickButton" tip="{{ true }}">
+        <van-checkbox style="position:absolute;left:10rpx;bottom:30rpx" checked-color="red"  value="{{ checked }}" bind:change="onChange1">
+            全选
+        </van-checkbox>
+    </van-submit-bar>
+</view>
+<view wx:else class="container">
+    <view class="large_box">
+        <view>
+            <image src="/image/car.png"></image>
+        </view>
+        <view>
+            <text>那么多好商品，您都不加购物车吗？</text>
+        </view>
+        <view class="bgImg" style="margin-top:66rpx" bindtap="onClose3">去逛逛</view>
+    </view>
+</view>

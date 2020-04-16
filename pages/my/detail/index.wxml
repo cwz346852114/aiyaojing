@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="box">
+        <van-cell-group>
+            <van-field value="{{ realname }}"  bind:input="name" placeholder="请输入姓名" clearable label="姓名:" />
+            <van-field value="{{ mobile }}" type="number" label="手机号:" placeholder="请输入手机号" bind:input="phone" border="{{ false }}" />
+           
+            <van-cell   bind:tap="onshow" is-link>
+                <view slot="title">
+                    <view style="display:inline-block" class="van-cell-text">省市区:</view>
+                    <text style="margin-left:40rpx;">{{address[0].name}} {{address[1].name}} {{address[2].name}}</text>
+                </view>
+            </van-cell>
+              <van-field value="{{ infoAddress }}" bind:input="dizhi" placeholder="请输入详细地址" clearable label="详细地址:" />
+        </van-cell-group>
+    </view>
+    <view class="box" style="margin-top:20rpx">
+        <van-switch-cell active-color="#FFE000" title="是否为默认地址" checked="{{ checked }}" bind:change="onChange" />
+    </view>
+     <view class="bgImg" style="margin-top:66rpx" bindtap="add">确认</view>
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+        <van-area bind:cancel="onCancel" bind:confirm="onConfirm" area-list="{{ areaList }}" value="110101" />
+    </van-popup>
+</view>

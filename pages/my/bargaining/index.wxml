@@ -1,0 +1,27 @@
+<!-- <wxs module="filter" src="../../wxs/index.wxs"></wxs> -->
+<view class="container">
+    <view class="bgPic">
+        <view wx:for="{{list}}" wx:key="{{index}}" class="list_box">
+            <view class="head"> 
+                <view class="left">
+                    <view>发起了砍价</view>
+                    <view>{{item.created_time}}</view>
+                </view>
+                
+                <view class="right">{{item.status_name}}</view>
+            </view>
+            <view class="center">
+                <view class="left">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.goods_name}}</view>
+                    <view class="bottom">￥{{item.end_price}}</view>
+                </view>
+            </view>
+            <view catch:tap="ToDetail" data-id="{{item.id}}" data-goods_id="{{item.goods_id}}" class="footer">
+                <view>查看砍价</view>
+            </view>
+        </view>
+    </view>
+</view>

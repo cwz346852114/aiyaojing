@@ -1,0 +1,50 @@
+.container {
+    background: #f2f2f2;
+    min-height: 100vh;
+
+    .bgPic {
+        width: 100%;
+        background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png')no-repeat;
+        height: 188rpx;
+        background-size: 100%;
+    }
+
+
+    .list_box {
+        width: 710rpx;
+        margin-top: 20rpx;
+        border-radius: 30rpx;
+        background: white;
+        min-height:100vh;
+        .li {
+
+
+            display: flex;
+
+            .title {
+                padding: 12rpx 20rpx;
+                image {
+                    width: 64rpx;
+                    height: 64rpx;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    flex: 1;
+                }
+
+            }
+
+            .content {
+                flex: 10;
+                border-bottom: 1px solid #f2f2f2;
+                vertical-align: middle;
+                margin-left: 14rpx;
+                line-height: 88rpx;
+                display: inline-block;
+                width: 500rpx;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+}

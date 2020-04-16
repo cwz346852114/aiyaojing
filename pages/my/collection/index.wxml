@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="bgPic">
+        <view>
+            <van-swipe-cell id="swipe-cell" bind:click="ToDetail" data-goodsid="{{item.goodsid}}" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" right-width="{{ 50 }}" async-close catch:close="onClose">
+                <view class="list">
+                    <view class="center">
+                        <image src="{{item.thumb}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="title">{{item.title}}</view>
+                        <view class="shoucang">7198人收藏</view>
+                        <view class="content">
+                            <view>
+                                <text>￥{{item.marketprice}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view style="background:black;height:250rpx;color:#FFE000;font-size:24rpx;line-height:250rpx;padding:0rpx 30rpx" slot="right">
+                    删除
+                </view>
+            </van-swipe-cell>
+            <view style="font-size:24rpx;color:black;text-align:center;line-height:60rpx;margin-top:100rpx" wx:if="{{list.length==0}}">
+                暂无数据
+            </view>
+        </view>
+    </view>
+</view>

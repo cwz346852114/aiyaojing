@@ -1,0 +1,30 @@
+<view class="bgPic">
+    <view class="box">
+        <view class="top">{{list.tuan_first_order.success==1?"拼团成功":"开团成功"}}</view>
+        <view class="section" wx:if="{{list.tuan_first_order.success!=1}}">
+            还差
+            <text>{{list.n}}</text>
+            人即可成团
+        </view>
+        <view class="time">
+            剩余
+            <van-count-down wx:if="{{show}}" style="display:inline-block" use-slot time="{{ time }}" bind:change="onChange">
+                <text class="item">{{ timeData.hours }}</text>
+                <text class="item">{{ timeData.minutes }}</text>
+                <text class="item">{{ timeData.seconds }}</text>
+            </van-count-down>
+            结束
+        </view>
+        <view class="list">
+            <image wx:for="{{image}}" src="{{item}}" wx:key="{{index}}" class="imgs">
+                <image wx:if="{{index==0}}" src="/image/tuanz.png"></image>
+            </image>
+        </view>
+        <button wx:if="{{list.myorder.status==1 && list.tuan_first_order.success!=1}}" class="btn" openType="share">
+            再邀请{{list.n}}位好友成团
+        </button>
+        <view bind:tap="lijicantuan" class="btn" wx:if="{{list.myorder==false && list.tuan_first_order.endtime}}">
+            立即参团
+        </view>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="bgImg">
+    <view class="bgImg1">
+        <view class="box">
+            <view>1、话题贡献值(至少大于20）排名前100且关注话题的柚子可入榜。</view>
+            <view>2、贡献值每月1日清零并重新排名。</view>
+        </view>
+    </view>
+</view>
+<view class="list">
+    <view class="head">
+        <view>排行</view>
+        <view>昵称</view>
+        <view>贡献值</view>
+    </view>
+    <view wx:for="{{list}}" data-index="{{index}}" wx:key="{{index}}" class="bottom">
+        <view class="left">
+            <image wx:if="{{index==0}}" src="/image/cricle/1.png"></image>
+            <image wx:elif="{{index==1}}" src="/image/cricle/2.png"></image>
+            <image wx:elif="{{index==2}}" src="/image/cricle/3.png"></image>
+            <view wx:else>{{item.ranking}}</view>
+        </view>
+        <view class="center">
+            <image src="{{item.avatar}}"></image>
+            <text>{{item.nickname}}</text>
+        </view>
+        <view class="right">{{item.contribution_value}}</view>
+    </view>
+</view>
+<view class="footer">
+    <view class="left">
+        <image src="{{my[0].avatar}}"></image>
+    </view>
+    <view class="center">
+        <view class="title">{{my[0].nickname}}</view>
+        <view class="content">贡献值：{{my[0].contribution_value}}</view>
+    </view>
+    <view class="right">
+        <image src="/image/cricle/dashen.png"></image>
+        <text>{{my[0].ranking>100?"暂无排名":my[0].ranking}}</text>
+    </view>
+</view>

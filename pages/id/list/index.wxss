@@ -1,0 +1,367 @@
+.container {
+  background: #f2f2f2;
+}
+.container .shouquan {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 5000;
+  display: flex;
+}
+.container .shouquan .left {
+  flex: 1;
+}
+.container .shouquan .center {
+  flex: 2;
+  margin-top: 480rpx;
+}
+.container .shouquan .center view {
+  background: #ffcc33;
+  color: black;
+  padding: 30rpx;
+  border-radius: 50rpx;
+  text-align: center;
+}
+.container .bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190905/28c5e750166545dab8f1bc4b108e5a50.png') no-repeat;
+  background-size: 100%;
+}
+.container .bgPic .title {
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-left: 20rpx;
+  padding: 33rpx 0rpx;
+}
+.container .bgPic .lunbo {
+  overflow: hidden;
+  padding: 20rpx;
+  white-space: nowrap;
+  height: 300rpx;
+}
+.container .bgPic .lunbo .bgImg1 {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/DIlb4w8OB4gibuIWI4L5u0pLlsO40V.png') no-repeat;
+  width: 550rpx;
+  height: 280rpx;
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+  border-radius: 30rpx;
+}
+.container .bgPic .lunbo .bgImg1 .top {
+  padding: 20rpx 31rpx 0rpx 31rpx;
+  display: flex;
+}
+.container .bgPic .lunbo .bgImg1 .top .left {
+  flex: 1;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view {
+  height: 45rpx;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view image {
+  width: 52rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg1 .top .left view text {
+  color: #505D98;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-left: 26rpx;
+  display: inline-block;
+  width: 200rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .bgPic .lunbo .bgImg1 .top .right {
+  flex: 1;
+  text-align: right;
+}
+.container .bgPic .lunbo .bgImg1 .top .right image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  line-height: 300rpx;
+  margin-top: 40rpx;
+  margin-right: 40rpx;
+  border: 2rpx solid white;
+  box-shadow: 10rpx 10rpx 0rpx #757A97;
+}
+.container .bgPic .lunbo .bgImg1 .bottom {
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+}
+.container .bgPic .lunbo .bgImg1 .bottom text {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #363F67;
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg1 .bottom .imgs {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 80rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/psz3vyD83lxS3yXysxyTD7t0svsyoD.png') no-repeat;
+  width: 550rpx;
+  height: 280rpx;
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+  border-radius: 30rpx;
+}
+.container .bgPic .lunbo .bgImg2 .top {
+  padding: 20rpx 31rpx 0rpx 31rpx;
+  display: flex;
+}
+.container .bgPic .lunbo .bgImg2 .top .left {
+  flex: 1;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view {
+  height: 45rpx;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view image {
+  width: 52rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 .top .left view text {
+  color: #505D98;
+  font-size: 24rpx;
+  vertical-align: middle;
+  margin-left: 26rpx;
+  width: 200rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+.container .bgPic .lunbo .bgImg2 .top .right {
+  flex: 1;
+  text-align: right;
+}
+.container .bgPic .lunbo .bgImg2 .top .right image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  line-height: 300rpx;
+  margin-top: 40rpx;
+  margin-right: 40rpx;
+  border: 2rpx solid white;
+  box-shadow: 10rpx 10rpx 0rpx #ffc0cb;
+}
+.container .bgPic .lunbo .bgImg2 .bottom {
+  margin-top: 35rpx;
+}
+.container .bgPic .lunbo .bgImg2 .bottom text {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #363F67;
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .bgImg2 .bottom .imgs {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 80rpx;
+  vertical-align: middle;
+}
+.container .bgPic .lunbo .show {
+  height: 300rpx;
+  line-height: 40rpx;
+}
+.container .bgPic .lunbo .add {
+  display: inline-block;
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/sPc652ox3xRpCX5FroZXtLx3cCO532.png') no-repeat;
+  background-size: 93%;
+  width: 550rpx;
+  height: 300rpx;
+  vertical-align: top;
+  margin-top: 10rpx;
+}
+.container .bgPic .ping {
+  width: 710rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+  display: flex;
+  background: white;
+  text-align: center;
+}
+.container .bgPic .ping .ping_box {
+  flex: 1;
+  padding: 30rpx 0rpx;
+}
+.container .bgPic .ping .ping_box image {
+  width: 59rpx;
+  height: 58rpx;
+}
+.container .bgPic .ping .ping_box view {
+  font-size: 24rpx;
+  color: #666666;
+}
+.container .list_box {
+  width: 750rpx;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  background: white;
+  margin-top: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+.container .list_box .content {
+  border-top: 1px solid #f2f2f2;
+}
+.container .list_box .content .time {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 26rpx;
+}
+.container .list_box .content .title {
+  margin-top: 10rpx;
+}
+.container .list_box .content .title text {
+  font-size: 26rpx;
+}
+.container .list_box .content .title .left {
+  color: #999999;
+  display: inline-block;
+  word-break: break-all;
+  /*允许在单词内换行*/
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .list_box .content .title .right {
+  display: inline-block;
+  margin-left: 20rpx;
+  font-weight: bold;
+  width: 500rpx;
+  word-break: break-all;
+  /*允许在单词内换行*/
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+  /*不换行 控制单行文本*/
+}
+.container .list_box .content .star {
+  vertical-align: middle;
+  padding: 13rpx 0rpx 34rpx 0rpx;
+  margin-left: 102rpx;
+}
+.container .list_box .content .star image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+.container .list_box .content .star text {
+  font-size: 22rpx;
+  color: black;
+  vertical-align: middle;
+  margin-left: 11rpx;
+}
+.container .list_box .content .review {
+  background: url('https://admin.ayjpet.com/attachment//images/applet/22/LL3L85RpfaLf8svTr45L1jM3mmmV5f.png') no-repeat;
+  background-size: 100% 100%;
+  height: 222rpx;
+  position: relative;
+}
+.container .list_box .content .review .left {
+  position: absolute;
+  left: 40rpx;
+  top: 34rpx;
+  text-align: center;
+}
+.container .list_box .content .review .left .title {
+  line-height: 48rpx;
+  font-size: 48rpx;
+}
+.container .list_box .content .review .right {
+  position: absolute;
+  right: 180rpx;
+  top: 20rpx;
+  font-size: 24rpx;
+}
+.container .list_box .content .review .right text {
+  display: inline-block;
+  width: 100rpx;
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  /*不换行 控制单行文本*/
+}
+.container .list_box .ImgList {
+  display: flex;
+  padding: 64rpx 0rpx 24rpx 0rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.container .list_box .ImgList view {
+  flex: 4;
+  line-height: 122rpx;
+}
+.container .list_box .ImgList view image {
+  width: 122rpx;
+  height: 122rpx;
+}
+.container .list_box .ImgList .left_time {
+  flex: 5;
+  font-size: 28rpx;
+  color: #000000;
+}
+.container .list_box .ImgList .right_content {
+  flex: 10;
+  font-size: 28rpx;
+  color: #000000;
+  word-break: break-all;
+  /*允许在单词内换行*/
+  text-overflow: ellipsis;
+  /*显示省略符号来代表被修剪的文本*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .btn {
+  width: 200rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+  font-size: 24rpx;
+  text-align: center;
+  background: url('https://file.icaohejing.com/Files/Images/20190911/8ece4d2775e648f2a61ab810b1069d8c.png') no-repeat center;
+  background-size: 100% 100%;
+  margin: 58rpx auto 199rpx;
+}
+.whiteBox {
+  background: white;
+  width: 600rpx;
+  height: 300rpx;
+}
+.whiteBox .top {
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 600;
+  padding-top: 50rpx;
+}
+.whiteBox .bottom {
+  text-align: center;
+  margin-top: 30rpx;
+}
+.whiteBox .bottom .left {
+  display: inline-block;
+  width: 150rpx;
+  margin: 0rpx 20rpx;
+  background: #ffcc33;
+  padding: 30rpx 30rpx;
+  border-radius: 50rpx;
+  color: black;
+}

@@ -1,0 +1,79 @@
+.big {
+  margin: 0rpx 17rpx 0rpx 20rpx;
+}
+.big .header {
+  margin-top: 20rpx;
+}
+.big .header view {
+  display: inline-block;
+}
+.big .header .search {
+  vertical-align: middle;
+  box-shadow: 1px 2px 0px grey;
+  padding: 0rpx;
+  border-radius: 30rpx;
+  background: white;
+  width: 606rpx;
+  flex: 6;
+  height: 54rpx;
+  border: 2px solid black;
+}
+.big .header .search .serchImg {
+  float: left;
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 12rpx;
+  margin-left: 50rpx;
+}
+.big .header .search .search-input {
+  float: left;
+  width: 80%;
+  margin-top: 4rpx;
+  margin-left: 11rpx;
+}
+.big .header .search .placeholderStyle {
+  font-size: 26rpx;
+  color: #bbbbbb;
+}
+.big .header .clear {
+  vertical-align: middle;
+  margin-left: 34rpx;
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.big .history {
+  margin-top: 50rpx;
+  min-height: 130rpx;
+}
+.big .history .title {
+  display: flex;
+}
+.big .history .title view {
+  flex: 1;
+}
+.big .history .title .left {
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.big .history .title .right {
+  text-align: right;
+}
+.big .history .title .right image {
+  width: 32rpx;
+  height: 32rpx;
+}
+.big .history .content text {
+  display: inline-block;
+  width: 140rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  border: 1px solid #dddddd;
+  background: #dddddd;
+  color: #666666;
+  font-size: 24rpx;
+  line-height: 54rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}

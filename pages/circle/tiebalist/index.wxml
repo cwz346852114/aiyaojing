@@ -1,0 +1,168 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view style="height:30rpx;"></view>
+    <view class="head">
+        <view class="top">
+            <view class="left">
+                <image src="{{approot}}{{list.logo}}"></image>
+            </view>
+            <view class="right">
+                <view class="title">{{list.title}}</view>
+                <view class="content">{{list.desc}}</view>
+                <view catch:tap="Todashen" class="bang">
+                    <image class="bang_1" src="/image/cricle/dashen.png"></image>
+                    <text>大神榜：</text>
+                    <image class="bang_2" wx:if="{{index<3}}" wx:for="{{DashenList}}" wx:key="{{index}}" src="{{item.avatar}}"></image>
+                    <image class="bang_3" src="/image/cricle/gengduo.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="center">
+            <view class="left">{{list.attention}}:{{list.follower?list.follower:'无'}}</view>
+            <view class="zhong">我的贡献值:{{list.contribution_value}}</view>
+            <view class="right">
+                <view wx:if="{{list.show}}" bind:tap="guanzhu">
+                    {{list.isdeleted==true?'取消关注':"关注"}}
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+            <view bind:tap="huashiren" wx:if="{{list.things_people.length>0}}">
+                <image src="/image/cricle/huangguan.png"></image>
+                话事人
+                <view class="inline">
+                    <image wx:for="{{list.things_people}}" wx:key="{{index}}" src="{{item.avatar}}"></image>
+                    <image src="/image/cricle/gengduo.png"></image>
+                </view>
+            </view>
+            <view class="zhiding" wx:for="{{zhiDingList}}" wx:key="{{index}}" data-id="{{item.id}}">
+                <image src="/image/cricle/zhiding.png"></image>
+                {{item.content}}
+            </view>
+        </view>
+    </view>
+</view>
+<van-tabs bind:click="onClick">
+    <van-tab title="新帖">
+        <view bind:tap="ToHuaDetail" data-id="{{item.id}}" wx:for-index="bindex" wx:for="{{list1}}" wx:key="{{index}}" class="box">
+            <view class="title">
+                <view catch:tap="ToChong" data-openid="{{item.openid}}" class="left">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="center">
+                    <view class="tian">{{item.nickname}}</view>
+                    <view class="xia">{{filter.numberToFixed(item.createtime)}}</view>
+                </view>
+                <view class="right">
+                    <image catch:tap="shows" wx:if="{{checked}}" data-openid="{{item.openid}}" data-id="{{item.id}}" src="/image/cricle/icon.png"></image>
+                </view>
+            </view>
+            <view class="contents">{{item.content}}</view>
+            <view class="imgs">
+                <block wx:if="{{item.images.length>1}}">
+                    <image  wx:for="{{item.images}}" mode="aspectFill" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{index}}" src="{{approot}}{{item.image}}"></image>
+                </block>
+                <block wx:else>
+                    <image wx:for="{{item.images}}" mode="widthFix" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{index}}" src="{{approot}}{{item.image}}"></image>
+                </block>
+               </view>
+            <view>
+                <video catch:tap="kanshipin" wx:if="{{item.video.length>0}}" class="video" src="{{item.video[0].video}}"></video>
+            </view>
+            <view catch:tap="Togood" data-good_id="{{list.good_id}}" wx:if="{{item.title}}" class="smallBox">
+                <image src="{{approot}}{{item.thumb}}"></image>
+                <text style="margin-left:20rpx">{{item.title}}</text>
+            </view>
+            <view wx:if="{{item.post_comment_list}}" catch:tap="Topin2" data-index="{{index}}" wx:key="{{index}}" class="shenpin">
+                <view class="header">
+                    <view class="left">
+                        <image src="/image/cricle/icon_shenping.png"></image>
+                    </view>
+                    <view catch:tap="zanPin" data-index="{{bindex}}" class="right">
+                        <image src="{{item.post_comment_list.deleted?img:img1}}"></image>
+                        <text>{{item.post_comment_list.zan_count}}</text>
+                    </view>
+                </view>
+                <view class="footer">{{item.post_comment_list.reply_msg}}</view>
+            </view>
+            <view class="di">
+                <view class="left">
+                    <button class="btn" plain='true' data-id="{{item.id}}" catch:tap="fenxiang" open-type='share'>
+                        <image src="/image/idcard/fenxiang.png"></image>
+                        <text>0</text>
+                    </button>
+                </view>
+                <view catch:tap="ToHuaDetail" data-id="{{item.id}}" class="center">
+                    <image src="/image/cricle/icon_xinxi.png"></image>
+                    <text>{{item.replynum}}</text>
+                </view>
+                <view class="right">
+                    <image catch:tap="dianzan" data-id="{{item.id}}" data-index="{{bindex}}" src="{{item.deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                </view>
+            </view>
+        </view>
+    </van-tab>
+    <van-tab title="热帖">
+        <view bind:tap="ToHuaDetail" data-id="{{item.id}}" wx:for-index="bindex" wx:for="{{list1}}" wx:key="{{index}}" class="box">
+            <view class="title">
+                <view catch:tap="ToChong" data-openid="{{item.openid}}" class="left">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="center">
+                    <view class="tian">{{item.nickname}}</view>
+                    <view class="xia">{{filter.numberToFixed(item.createtime)}}</view>
+                </view>
+                <view class="right">
+                    <image catch:tap="shows" wx:if="{{checked}}" data-openid="{{item.openid}}" data-id="{{item.id}}" src="/image/cricle/icon.png"></image>
+                </view>
+            </view>
+            <view class="contents">{{item.content}}</view>
+            <view class="imgs">
+                <block wx:if="{{item.images.length>1}}">
+                    <image  wx:for="{{item.images}}" mode="aspectFill" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{index}}" src="{{approot}}{{item.image}}"></image>
+                </block>
+                <block wx:else>
+                    <image wx:for="{{item.images}}" mode="widthFix" catch:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" data-image="{{item.image}}" wx:key="{{index}}" src="{{approot}}{{item.image}}"></image>
+                </block>
+            </view>
+            <view>
+                <video catch:tap="kanshipin" wx:if="{{item.video.length>0}}" class="video" src="{{item.video[0].video}}"></video>
+            </view>
+            <view catch:tap="Togood" data-good_id="{{list.good_id}}" wx:if="{{item.title}}" class="smallBox">
+                <image src="{{approot}}{{item.thumb}}"></image>
+                <text style="margin-left:20rpx">{{item.title}}</text>
+            </view>
+            <view wx:if="{{item.post_comment_list}}" catch:tap="Topin2" data-index="{{index}}" wx:key="{{index}}" class="shenpin">
+                <view class="header">
+                    <view class="left">
+                        <image src="/image/cricle/icon_shenping.png"></image>
+                    </view>
+                    <view catch:tap="zanPin" data-index="{{bindex}}" class="right">
+                        <image src="{{item.post_comment_list.deleted?img:img1}}"></image>
+                        <text>{{item.post_comment_list.zan_count}}</text>
+                    </view>
+                </view>
+                <view class="footer">{{item.post_comment_list.reply_msg}}</view>
+            </view>
+            <view class="di">
+                <view class="left">
+                    <button class="btn" plain='true' data-id="{{item.id}}" catch:tap="fenxiang" open-type='share'>
+                        <image src="/image/idcard/fenxiang.png"></image>
+                        <text>0</text>
+                    </button>
+                </view>
+                <view catch:tap="ToHuaDetail" data-id="{{item.id}}" class="center">
+                    <image src="/image/cricle/icon_xinxi.png"></image>
+                    <text>{{item.replynum}}</text>
+                </view>
+                <view class="right">
+                    <image catch:tap="dianzan" data-id="{{item.id}}" data-index="{{bindex}}" src="{{item.deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                </view>
+            </view>
+        </view>
+    </van-tab>
+</van-tabs>
+<image class="fiexd" bind:tap="add" src="/image/cricle/icon_bainji.png"></image>
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" />

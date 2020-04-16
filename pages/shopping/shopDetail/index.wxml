@@ -1,0 +1,8 @@
+<view class="bgPic">
+    <view class="shoplist">
+        <view>
+            <image wx:if="{{id==1}}" mode="aspectFill" wx:for="{{list}}" data-index="{{index}}" bind:tap="fangda" wx:key="{{index}}" src="{{item.approot+item.g_url}}" alt=""></image>
+             <video wx:if="{{id==2}}" wx:for="{{list}}" data-id="{{item.id}}"  wx:key="{{index}}" src="{{item.gurl}}" alt=""></video>
+        </view>
+    </view>
+</view>

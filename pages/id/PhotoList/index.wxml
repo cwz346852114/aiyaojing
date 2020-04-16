@@ -1,0 +1,21 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view class="box">
+        <view class="head">
+            <image  src="{{approot+list[0].head_img}}"></image>
+            <text>{{list[0].pet_name}}的写真集</text>
+            <!-- <image src="/image/cricle/fenxiang.png"></image> -->
+                    
+        </view>
+        <view wx:for="{{list2}}" wx:key="{{index}}" data-id="{{item.id}}" wx:for-index="bindex" class="ImgList">
+            <view class="box">
+                <view>{{filter.numberToFixed2(item.create_time)}}</view>
+                <view class="right">
+                        <image class="img" catch:tap="dianzan" data-id="{{item.id}}" data-index="{{bindex}}" src="{{item.deleted?img:img1}}"></image>
+                </view>
+            </view>
+            
+            <image class="fangda" wx:for="{{item.images}}" mode="aspectFill" bind:tap="fangda" data-bindex="{{bindex}}" data-index="{{index}}" wx:key="{{index}}" src="{{approot}}{{item.image}}" ></image>
+        </view>
+    </view>
+</view>

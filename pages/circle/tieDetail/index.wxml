@@ -1,0 +1,109 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="bgImg">
+    <view class="box">
+        <view class="title">
+            <view catch:tap="ToChong" data-openid="{{list.openid}}" class="left">
+                <image src="{{list.avatar}}"></image>
+            </view>
+            <view class="center">
+                <view class="tian">{{list.nickname}}</view>
+                <view class="xia">{{filter.numberToFixed(list.createtime)}}</view>
+            </view>
+        </view>
+        <view class="contents">{{list.content}}</view>
+        <view class="imgs">
+            <block wx:if="{{list.images.length>1}}">
+                 <image  wx:for="{{list.images}}" mode="aspectFill" bind:tap="fangda" data-index="{{index}}" wx:key="{{index}}" src="{{approot+item.image}}"></image>
+           </block>
+                <block wx:else>
+              <image  wx:for="{{list.images}}" mode="widthFix" bind:tap="fangda" data-index="{{index}}" wx:key="{{index}}" src="{{approot+item.image}}"></image>
+          </block>
+            </view>
+        <view>
+            <video wx:if="{{list.video.length>0}}" class="video" src="{{list.video[0].video}}"></video>
+        </view>
+        <view catch:tap="ToDetail1" data-good_id="{{list.good_id}}" wx:if="{{list.good_title}}" class="smallBox">
+            <image src="{{approot}}{{list.thumb}}"></image>
+            <text>{{list.good_title}}</text>
+        </view>
+        <view catch:tap="ToQuan" data-id="{{list.bid}}" class="tag">
+            <image src="{{approot}}{{list.logo}}"></image>
+            <text>{{list.b_title}}</text>
+        </view>
+        <view wx:if="{{list1.length>0 &&index<1}}" wx:for="{{list1}}" wx:key="{{index}}" data-id="{{item.id}}" catch:tap="shenping" class="shenpin">
+            <view class="header">
+                <view class="left">
+                    <image src="/image/cricle/icon_shenping.png"></image>
+                </view>
+                <view catch:tap="dianzan1" data-index="{{index}}" data-id="{{item.id}}" class="right">
+                    <image src="{{item.is_deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                </view>
+            </view>
+            <view class="footers">{{item.reply_msg}}</view>
+        </view>
+        <view class="di">
+            <view class="left">
+                <button class="btn" plain='true' catch:tap="fenxiang" open-type='share'>
+                    <image src="/image/idcard/fenxiang.png"></image>
+                    <text>0</text>
+                </button>
+            </view>
+            <view class="center">
+                <image catch:tap="ToPin" src="/image/cricle/icon_xinxi.png"></image>
+                <text>{{list.replynum}}</text>
+            </view>
+            <view catch:tap="dianzan" class="right">
+                <image src="{{list.is_deleted?img:img1}}"></image>
+                <text>{{list.zan_count}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view id="pin" class="bgImg1">
+    <view class="title">
+        <view class="left">评论</view>
+        <view class="right">
+            <view class="add">
+                <text>最热</text>
+                <image src="/image/cricle/sort.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <image wx:if="{{list1.length>0}}" class="shen" src="/image/cricle/tuoyuan.png"></image>
+        <view wx:for="{{list1}}" wx:key="{{index}}" bind:tap="ToDetail" data-id="{{item.id}}" data-index="{{item.index}}" class="list">
+            <view class="pinlun">
+                <view catch:tap="ToChong" data-openid="{{item.openid}}" class="one">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="two">
+                    <view class="top">{{item.nickname}}</view>
+                    <view class="di">{{filter.numberToFixed(item.createtime)}}</view>
+                </view>
+                <view class="four">
+                    <image src="/image/cricle/icon_xinxi.png"></image>
+                    <text>{{item.reply_num}}</text>
+                </view>
+                <view catch:tap="dianzan1" data-index="{{index}}" data-id="{{item.id}}" class="four">
+                    <image src="{{item.is_deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                </view>
+            </view>
+            <view class="text">
+                <view class="biaoti">{{item.reply_msg}}</view>
+            </view>
+            <view wx:if="{{item.reply_list.length>0}}" class="small">
+                <view wx:for="{{item.reply_list}}" wx:key="{{i}}" wx:if="{{index<2}}" class="hui">
+                    <text class="left">{{item.from_nickname}}:</text>
+                    <text class="right">{{item.reply_msg}}...</text>
+                </view>
+                <view class="chakan">查看{{item.reply_num}}条评论</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <input class="inp" value="{{inputValue}}" bindinput="bindKeyInput" type="text" placeholder-class="pla" placeholder="没有你的评论是不完整的" />
+    <text bind:tap="submit" class="fabu">发布</text>
+</view>

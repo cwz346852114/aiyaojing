@@ -1,0 +1,92 @@
+<view class="container">
+  <view bindtap="tankuang" wx:if="{{!openid}}" class="shouquan"></view>
+  <view class="nav-search">
+    <view wx:if="{{list.length>0}}" class="select">
+      <view bindtap="showPopup1">
+        {{list[0].pet_name}}
+        <image src="/image/jiantou.png"></image>
+      </view>
+    </view>
+    <image wx:if="{{list.length==0}}" bind:tap="add" class="wu" src="/image/wu.png"></image>
+    <!-- 搜索 -->
+    <view bindtap="sousuo" class="search">
+      <image class="serchImg" src="/image/serch.png"></image>
+      <text class="placeholderStyle">输入商品、品牌、话题、用户</text>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="swiper-position">
+    <swiper indicator-dots indicator-color="white" indicator-active-color="red" circular duration="500" :current="swiperCurrent" autoplay="true">
+      <swiper-item wx:for="{{imgUrls}}" wx:key="i">
+        <navigator url="{{item.link}}">
+          <image style="border-radius:30rpx;height:300rpx;" src="{{approot}}{{item.thumb}}" class="slide-image"></image>
+          <textarea name id cols="30" rows="10"></textarea>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 导航模块 -->
+  <view class="nav-bar">
+    <view class="uls1">
+      <view class="lis" wx:for="{{tabbar1}}" wx:key="i">
+        <view bind:tap="togoodList" data-index="{{index}}" data-title="{{item.title}}" data-menu_id="{{item.menu_id}}">
+          <image src="{{item.url}}"></image>
+          <view>{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 左右广告 -->
+  <view class="advertising">
+    <view bindtap="ToMiaosha" class="advertising-left">
+      <image src="https://testadmin.ayjpet.com/attachment//images/applet/22/AIoimOblW3boF9R2J2GF2mB2lGZA22.png" />
+    </view>
+    <view bindtap="ToKanjia" class="advertising-right">
+      <image style="margin-left:10rpx;" src="https://testadmin.ayjpet.com/attachment//images/applet/22/e2OpZfphyP2O4pRp4153or7ZfP4f1a.png" />
+    </view>
+  </view>
+  <!-- 瀑布流 -->
+  <view class="tu">
+    <view class="title">#你想看的，都在这里#</view>
+    <view class="box">
+      <view wx:for="{{list1}}" wx:key="{{index}}" class="box-img">
+        <image bind:tap="ToTieDetail" mode="aspectFill" data-id="{{item.id}}" wx:if="{{item.images.length>0 && item.video.length==0}}" src="{{approot+item.images[0].image}}" alt />
+        <video data- class="video" wx:if="{{item.video.length>0}}" src="{{item.video[0].video}}"></video>
+        <image bind:tap="ToTieDetail" data-id="{{item.id}}" wx:if="{{item.images.length==0 && item.video.length==0}}" src="https://admin.ayjpet.com/attachment//images/applet/22/arZswnh46WIokiH7Iwv6kVbVUkIYNr.png"></image>
+        <view bind:tap="ToTieDetail" data-id="{{item.id}}" class="text">{{item.content}}</view>
+        <view class="footer">
+          <view style="padding-left:20rpx">
+            <image class="headImg" src="{{item.avatar}}" alt />
+            <text>{{item.nickname2}}</text>
+          </view>
+          <view catch:tap="dianzan" data-index="{{index}}" data-id="{{item.id}}" style="text-align:right;padding-right:20rpx;">
+            <image class="heartImg" src="{{item.deleted?img:img1}}" alt />
+            <text>{{item.zan_count}}</text>
+          </view>
+        </view>
+      </view>
+      <view style="margin-top:80rpx;text-align: center;" wx:if="{{list1.length==0}}">
+        <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+        <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{meng && openid}}" z-index="1000" bind:close="onClose">
+  <view class="bg">
+    <image bind:tap="tianjia" class="img1" src="/image/btn.png"></image>
+  </view>
+  <image bind:tap="onClose" class="img2" src="/image/guan.png"></image>
+</van-popup>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{shows}}" z-index="9999" bind:close="onClose1">
+  <view class="whiteBox">
+    <view class="top">您还未登录，请您先登录</view>
+    <view class="bottom">
+      <view class="left" bind:tap="onClose1">取消登录</view>
+      <view class="left" bind:tap="login">微信登录</view>
+    </view>
+  </view>
+</van-popup>
+<van-popup custom-style="background: transparent;" overfly="true" show="{{statu&&openid}}" z-index="9999" bind:close="onClose2">
+  <image class="fuceng" wx:for="{{yinimg}}" wx:key="{{index}}" data-index="{{index}}" wx:if="{{number==index}}" mode="widthFix" bindtap="editIndex" data-index='{{index}}' src="{{approot+item.thumb}}"></image>
+</van-popup>

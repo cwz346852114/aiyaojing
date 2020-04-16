@@ -1,0 +1,148 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="container">
+    <view class="bgPic">
+        <view class="title">我的宠物卡</view>
+        <view class="lunbo">
+         <scroll-view wx:if="{{list.length>1}}" class="scroll-view_x " scroll-x>
+                <view wx:for="{{list}}" bind:tap="select" wx:key="index" data-index="{{index}}" data-id="{{item.id}}" class="{{item.sex=='男'?'bgImg1':'bgImg2'}} {{index==bindex?'show':''}}">
+                    <view class="top">
+                        <view class="left">
+                            <view>
+                                <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_name.png"></image>
+                                <image wx:else src="/image/idcard/name.png"></image>
+                                <text>{{item.pet_name}}</text>
+                            </view>
+                            <view>
+                                <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_xingbie.png"></image>
+                                <image wx:else src="/image/idcard/xingbie.png"></image>
+                                <text>{{item.sex}}</text>
+                            </view>
+                            <view>
+                                <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_pinz.png"></image>
+                                <image wx:else src="/image/idcard/pinzhong.png"></image>
+                                <text>{{item.breed_name}}</text>
+                            </view>
+                            <view>
+                                <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_riqi.png"></image>
+                                <image wx:else src="/image/idcard/riqi.png"></image>
+                                <text>{{filter.numberToFixed(item.birthday)}}</text>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <image src="{{post+item.head_img}}"></image>
+                        </view>
+                        <image catch:tap="dianzan" data-id="{{item.id}}" class="position" data-index="{{index}}" src="{{item.deleted==false?image:image1}}"></image>
+                    </view>
+                    <view class="bottom">
+                        <text>宠物身份号码:{{item.card_code}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+            <view wx:if="{{index<1}}" wx:for="{{list}}" bind:tap="select" wx:key="index" data-index="{{index}}" data-id="{{item.id}}" class="{{item.sex=='男'?'bgImg1':'bgImg2'}} {{index==bindex?'show1':''}}">
+                <view class="top">
+                    <view class="left">
+                        <view>
+                            <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_name.png"></image>
+                            <image wx:else src="/image/idcard/name.png"></image>
+                            <text>{{item.pet_name}}</text>
+                        </view>
+                        <view>
+                            <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_xingbie.png"></image>
+                            <image wx:else src="/image/idcard/xingbie.png"></image>
+                            <text>{{item.sex}}</text>
+                        </view>
+                        <view>
+                            <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_pinz.png"></image>
+                            <image wx:else src="/image/idcard/pinzhong.png"></image>
+                            <text>{{item.breed_name}}</text>
+                        </view>
+                        <view>
+                            <image wx:if="{{item.sex=='女'}}" src="/image/idcard/icon_riqi.png"></image>
+                            <image wx:else src="/image/idcard/riqi.png"></image>
+                            <text>{{filter.numberToFixed(item.birthday)}}</text>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <image src="{{post+item.head_img}}"></image>
+                    </view>
+                    <image catch:tap="dianzan" data-id="{{item.id}}" class="position" data-index="{{index}}" src="{{item.deleted==false?image:image1}}"></image>
+                </view>
+                <view class="bottom">
+                    <text>宠物身份号码:{{item.card_code}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="ping">
+            <view bind:tap="jilu" class="ping_box">
+                <image src="/image/idcard/shui.png" />
+                <view>拥有罐头({{petFoodCantotal}})</view>
+            </view>
+          
+            <view  class="ping_box">
+                <image src="/image/idcard/touwei.png" />
+                <view>已投喂({{feed?feed:0}})</view>
+            </view>
+              <view class="ping_box">
+                <image src="/image/idcard/xin.png" />
+                <view>粉丝({{zan_count}})</view>
+            </view>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <view class="list_box">
+        <van-tabs type="card" active="{{ active }}" bind:change="onChange">
+            <van-tab title="我关注的">
+                <view wx:if="{{list1.length>0}}">
+                    <view wx:for="{{list1}}" data-index="{{index}}" wx:key="{{index}}" class="bottom">
+                        <view catch:tap="toukan1"  data-openid="{{item.openid}}" data-topetid="{{item.topetid}}" class="one">
+                            <image src="{{post+item.head_img}}"></image>
+                            <text>{{item.pet_name}}</text>
+                        </view>
+                        <view class="two">
+                                <view style="color:red;">
+                                    {{item.integral==null?0:item.integral}}
+                                </view>
+                                罐头
+                        </view>
+                        <view class="three">
+                            <text catch:tap="touguantou" data-openid="{{item.openid}}" data-id="{{item.topetid}}" class="bgs">
+                                偷罐头
+                            </text>
+                        </view>
+                    </view>
+                    <view bind:tap="ToList1" class="di">查看更多</view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+                </view>
+            </van-tab>
+            <van-tab title="排行榜">
+                <view>
+                    <view bind:tap="toukan"  data-openid="{{item.openid}}" data-id="{{item.id}}" wx:for="{{list2}}" data-index="{{index}}" wx:key="{{index}}" class="bottom">
+                        <view class="left">
+                            <image wx:if="{{index==0}}" src="/image/idcard/jin.png"></image>
+                            <image wx:elif="{{index==1}}" src="/image/idcard/yin.png"></image>
+                            <image wx:elif="{{index==2}}" src="/image/idcard/tong.png"></image>
+                            <view wx:else>{{item.ranking}}</view>
+                        </view>
+                        <view class="center">
+                            <image src="{{post+item.head_img}}"></image>
+                            <text>{{item.pet_name}}</text>
+                        </view>
+                        <view class="right">
+                            <view  class="bgs">
+                                偷看一下
+                            </view>
+                        </view>
+                    </view>
+                    <view bind:tap="ToList2" class="di">查看更多</view>
+                </view>
+                <view style="margin-top:80rpx;text-align: center;" wx:if="{{list2.length==0}}">
+                    <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+                    <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>

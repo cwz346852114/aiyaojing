@@ -1,0 +1,79 @@
+<view class="container">
+    <view class="bgPic">
+        <view class="title">{{list.good_title}}</view>
+        <view class="pingjia">
+            <view class="ping_view">
+                <view class="one">
+                    <view>{{list.sum_start}}</view>
+                    <view style="margin-top:-30rpx">
+                        <van-rate allow-half readonly size="12" value="{{ list.grand_average }}" />
+                    </view>
+                </view>
+                <view class="two">
+                    <view>
+                        <image wx:key="{{index}}" wx:for="{{imgs1}}" key="{{index}}" src="{{item.url}}" alt="" />
+                    </view>
+                    <view>
+                        <image wx:key="{{index}}" wx:for="{{imgs2}}" key="{{index}}" src="{{item.url}}" alt="" />
+                    </view>
+                    <view>
+                        <image wx:key="{{index}}" wx:for="{{imgs3}}" key="{{index}}" src="{{item.url}}" alt="" />
+                    </view>
+                    <view>
+                        <image wx:key="{{index}}" wx:for="{{imgs4}}" key="{{index}}" src="{{item.url}}" alt="" />
+                    </view>
+                    <view>
+                        <image src="/image/1x.png" alt="" />
+                    </view>
+                </view>
+                <view class="three">
+                    <progress percent="{{list.start_list.five_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                    <progress percent="{{list.start_list.four_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                    <progress percent="{{list.start_list.three_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                    <progress percent="{{list.start_list.two_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                    <progress percent="{{list.start_list.one_start*100}}" activeColor="#F8D352" backgroundColor="#999999" />
+                    <text>{{list.pet_total}}</text>
+                </view>
+          
+            </view>
+            <view class="ping_text">
+                <view class="weidu" wx:if="{{index<5}}" wx:for="{{list.remarks_comment_list}}" wx:key="{{index}}">
+                    {{item.comment_name}}:{{item.average_score}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="list_box">
+        <view wx:if="{{list1.length>0}}" bind:tap="ToChongPin" data-index="{{index}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:for="{{list1}}" wx:for-index="pindex" wx:key="{{index}}" class="list_detail">
+            <view class="list_img">
+                <image catch:tap="ToDetail"  data-openid="{{item.openid}}" src="{{approot+item.head_img}}"></image>
+            </view>
+            <view class="list_content">
+                <view class="title">{{item.pet_name}} {{item.breed_name}}</view>
+                <view class="tags">
+                    <van-rate readonly style="display:inline-block" size="12" value="{{ item.grand_average }}" />
+                    <text class="actFont">{{item.sum_start}}</text>
+                    <text>参考价:￥{{item.price}}元</text>
+                </view>
+                <view data-id="{{item.id}}" class="{{show==item.id?'content':'content1'}}">
+                    {{item.remark}}
+                </view>
+                <view class="tupian">
+                    <image catch:tap="xianshi" data-id="{{item.id}}" class="image" src="{{show==item.id?image1:image}}"></image>
+                </view>
+                <view class="imgList">
+                    <image wx:if="{{index>0}}" wx:for="{{item.images}}" mode="aspectFill"   data-bindex="{{pindex}}"  catch:tap="fangda" data-index="{{index}}" wx:key="{{index}}" src="{{approot+item.image}}" alt="" />
+                      <image wx:if="{{index<1}}" wx:for="{{item.images}}" mode="widthFix"    data-bindex="{{pindex}}"  catch:tap="fangda" data-index="{{index}}" wx:key="{{index}}" src="{{approot+item.image}}" alt="" />
+                </view>
+                  <view wx:if="{{item.videos.length>0}}" class="imgList">
+                    <video wx:for="{{item.videos}}"  catch:tap="fangda" data-index="{{index}}" wx:key="{{index}}" src="{{item.video}}" alt="" />
+                </view>
+                <view class="pinglun">
+                    <image catch:tap="dianzan" data-id="{{item.id}}"  data-bindex="{{pindex}}"   src="{{item.deleted?img:img1}}"></image>
+                    <text>{{item.zan_count}}</text>
+                
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

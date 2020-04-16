@@ -1,0 +1,77 @@
+.container {
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.bgPic {
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190910/764169755bc84b1d864ce828916c98a2.png') no-repeat;
+  background-size: 100% 80%;
+}
+.bgPic .box {
+  text-align: center;
+}
+.bgPic .box .img {
+  border-radius: 50rpx 0 0 50rpx;
+  padding: 18rpx 71rpx;
+  display: inline-block;
+  background: black;
+  color: #FFE000;
+}
+.bgPic .box .shipin {
+  padding: 18rpx 71rpx;
+  border-radius: 0 50rpx 50rpx 0%;
+  display: inline-block;
+  background: white;
+  color: black;
+}
+.bgPic .xiangji {
+  position: absolute;
+  right: 19rpx;
+  top: 14rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+.bgPic .van-cell {
+  background-color: #FFE000;
+}
+.bgPic .shoplist {
+  width: 710rpx;
+  margin-left: 20rpx;
+  padding-top: 30rpx;
+}
+.bgPic .shoplist text {
+  display: inline-block;
+  padding: 30rpx 0rpx 30rpx 0rpx;
+}
+.bgPic .shoplist video {
+  width: 345rpx;
+  height: 345rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.bgPic .shoplist video:nth-child(even) {
+  margin-left: 20rpx;
+}
+.bgPic .shoplist image {
+  width: 345rpx;
+  height: 345rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.bgPic .shoplist image .imgTitle {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 55rpx;
+  width: 100%;
+  background: url('https://file.icaohejing.com/Files/Images/20190910/029db1d58e7a4a72816f5fe0216e05e4.png') no-repeat;
+  background-size: 100% 100%;
+  line-height: 55rpx;
+  text-align: center;
+  color: white;
+  border-radius: 0rpx 0prx 30rpx 30rpx;
+  font-size: 26rpx;
+}
+.bgPic .shoplist image:nth-child(even) {
+  margin-left: 20rpx;
+}

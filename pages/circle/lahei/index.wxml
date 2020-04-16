@@ -1,0 +1,19 @@
+<view class="bgImg">
+    <scroll-view scoll-y>
+        <view  class="my_box">
+            <view class="content">
+                <view wx:for="{{list}}"  wx:key="{{index}}" class="flex">
+                    <view class="left">
+                        <image src="{{item.avatar}}"></image>
+                    </view>
+                    <view class="center">{{item.nickname}}</view>
+                    <view class="right">
+                        <text catch:tap="quxiaojinyan" data-openid="{{item.openid}}" wx:if="{{lie==1}}">取消禁言</text>
+                       <text catch:tap="quxiaolahei" data-openid="{{item.openid}}" wx:if="{{lie==2}}">取消拉黑</text>
+                    </view>
+                </view>
+                
+            </view>
+        </view>
+    </scroll-view>
+</view>

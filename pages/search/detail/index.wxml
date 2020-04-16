@@ -1,0 +1,147 @@
+<view class="big">
+    <view class="header">
+        <view class="search">
+            <image class="serchImg" src="/image/serch.png"></image>
+            <input placeholder="输入商品、品牌、话题、用户" bindinput="shuru" value="{{key}}"  bindconfirm="sousuo" placeholder-class="placeholderStyle" class="search-input" type="text" />
+        </view>
+        <view bindtap="clear" class="clear">取消</view>
+    </view>
+</view>
+<van-tabs nav-class="nav-class" bind:change="onChange" active="{{ active }}">
+    <van-tab title="全部">
+        <view wx:if="{{good_list}}" class="title">
+            <view class="left">商品</view>
+            <view  bind:tap="ToShopping" class="right">更多></view>
+        </view>
+        <view  class="list">
+            <view wx:if="{{good_list &&index<2}}"  bind:tap="ToGood" wx:key="{{index}}" wx:for="{{good_list}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.approot+item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+           
+        </view>
+        <view  wx:if="{{brandlist}}" class="title">
+            <view class="left">品牌</view>
+            <view  bind:tap="Topinpai" class="right">更多></view>
+        </view>
+        <view class="list">
+            <view wx:for="{{brandlist}}" bind:tap="ToPin" wx:if="{{brandlist && index<2}}" wx:key="{{index}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.approot+item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{list}}" class="title">
+            <view class="left">话题</view>
+            <view  bind:tap="Tohuati" class="right">更多></view>
+        </view>
+        <view class="list">
+            <view wx:for="{{list}}" bind:tap="ToHua" data-id="{{item.id}}" wx:key="{{index}}" wx:if="{{list && index<2}}" class="box">
+                <view class="left">
+                    <image src="{{approot+item.logo}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.desc}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{petlist}}" class="title">
+            <view class="left">用户</view>
+            <view  bind:tap="Toyonghu" class="right">更多></view>
+        </view>
+        <view class="list">
+            <view wx:for="{{petlist}}" bind:tap="ToChong" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:key="{{index}}" wx:if="{{petlist && index<2}}" class="box">
+                <view class="left">
+                    <image src="{{approot+item.head_img}}"></image>
+                </view>
+                <view class="right">
+                    <view class="chongwu">{{item.pet_name}}</view>
+                 
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{!list&&!brandlist&&!good_list&&!petlist}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab title="商品">
+     <view  class="list top">
+            <view wx:if="{{good_list}}" bind:tap="ToGood" wx:key="{{index}}" wx:for="{{good_list}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.approot+item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+           
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{good_list.length==0}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab title="品牌">
+    <view class="list top">
+            <view wx:for="{{brandlist}}"  bind:tap="ToPin"  wx:if="{{brandlist}}" wx:key="{{index}}" data-id="{{item.id}}" class="box">
+                <view class="left">
+                    <image src="{{item.approot+item.thumb}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.subtitle}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{brandlist.length==0}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab title="话题">
+        <view class="list top">
+            <view wx:for="{{list}}"    bind:tap="ToHua" data-id="{{item.id}}" wx:key="{{index}}" wx:if="{{list}}" class="box">
+                <view class="left">
+                    <image src="{{approot+item.logo}}"></image>
+                </view>
+                <view class="right">
+                    <view class="top">{{item.title}}</view>
+                    <view class="bottom">{{item.desc}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{list.length==0}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+    <van-tab title="宠物卡">
+      <view class="list top">
+            <view wx:for="{{petlist}}" wx:key="{{index}}" data-id="{{item.id}}" data-openid="{{item.openid}}" bind:tap="ToChong" wx:if="{{petlist}}" class="box">
+                <view class="left">
+                    <image src="{{approot+item.head_img}}"></image>
+                </view>
+                <view class="right">
+                    <view class="chongwu">{{item.pet_name}}</view>
+                 
+                </view>
+            </view>
+        </view>
+        <view style="margin-top:80rpx;text-align: center;" wx:if="{{petlist.length==0}}">
+            <image style="width: 156rpx;height: 156rpx;" src="/image/icons.png"></image>
+            <view style="margin-top: 40rpx;font-size: 24rpx;color: #666666;">暂无数据</view>
+        </view>
+    </van-tab>
+</van-tabs>

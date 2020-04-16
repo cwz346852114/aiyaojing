@@ -1,0 +1,197 @@
+.container view {
+  width: 100%rpx;
+}
+.container .head {
+  display: flex;
+  background: white;
+  width: 710rpx;
+  height: 180rpx;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  margin-top: 20rpx;
+}
+.container .head .left {
+  flex: 2;
+  text-align: center;
+}
+.container .head .left image {
+  margin-top: 64rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.container .head .center {
+  margin-top: 20rpx;
+  flex: 12;
+}
+.container .head .center .title {
+  color: #333333;
+  font-size: 26rpx;
+}
+.container .head .center .phone {
+  color: #999999;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+.container .head .center .content {
+  margin-top: 7rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.container .head .right {
+  flex: 2;
+  text-align: right;
+  margin-right: 20rpx;
+}
+.container .di {
+  height: 11rpx;
+  width: 710rpx;
+}
+.container .list {
+  width: 710rpx;
+  border-radius: 30rpx;
+  background: white;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.container .list .section {
+  display: flex;
+  height: 157rpx;
+}
+.container .list .section .left image {
+  width: 120rpx;
+  height: 120rpx;
+  flex: 1;
+  padding: 20rpx 30rpx;
+}
+.container .list .section .right {
+  flex: 3;
+  margin-top: 30rpx;
+  margin-left: 19rpx;
+}
+.container .list .section .right .title {
+  font-size: 26rpx;
+  width: 487rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333333;
+}
+.container .list .section .right .content {
+  display: flex;
+}
+.container .list .section .right .content view {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .list .section .right .content view:nth-child(2) {
+  text-align: right;
+  margin-right: 20rpx;
+  font-size: 22rpx;
+  color: #666666;
+}
+.container .nameBox {
+  width: 700rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+  background: white;
+}
+.container .nameBox1 {
+  width: 700rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+  background: white;
+}
+.container .nameBox1 .title {
+  font-size: 26rpx;
+  color: #333333;
+  padding: 24rpx 0rpx 0rpx 22rpx;
+}
+.container .nameBox1 .textarea {
+  width: 660rpx;
+  background: #DDDDDD;
+  margin: 16rpx 20rpx 34rpx 20rpx;
+  border-radius: 10rpx;
+  height: 104rpx;
+}
+.container .zhushi {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: left;
+  padding: 11rpx 0rpx 13rpx 120rpx;
+  width: 100%;
+  letter-spacing: 2px;
+}
+.container .jiage {
+  width: 710rpx;
+  margin-top: 20rpx;
+  background: white;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.container .jiage .shopcard {
+  width: 670rpx;
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  padding-top: 10rpx;
+  background: white;
+}
+.container .jiage .shopcard .checkbox {
+  display: flex;
+  color: #333333;
+  font-size: 26rpx;
+}
+.container .jiage .shopcard .left {
+  flex: 10;
+}
+.container .jiage .shopcard .left image {
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+.container .jiage .shopcard .right {
+  flex: 1;
+  text-align: right;
+}
+.container .jiage .shopcard .van-cell {
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+}
+.container .jiage .shopcard .gouwu {
+  display: flex;
+  padding: 28rpx 40rpx 28rpx 40rpx;
+}
+.container .jiage .shopcard .gouwu view {
+  flex: 1;
+}
+.container .jiage .shopcard .gouwu text {
+  display: inline-block;
+  background: #DDDDDD;
+  vertical-align: middle;
+  width: 100rpx;
+  height: 40rpx;
+  text-align: center;
+}
+.container .jiage .shopcard .gouwu image {
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+}
+.container .jiage .shopcard .gouwu .num {
+  color: #666666;
+  font-size: 26rpx;
+}
+.container .jiage .shopcard .bottom {
+  font-size: #FCC83B;
+  border-bottom: 1px solid #dddddd;
+  width: 650rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 0rpx;
+  font-size: 22rpx;
+  color: #FCC83B;
+}
+.container .jiage .view {
+  background: #dddddd;
+  height: 1rpx;
+  width: 670rpx;
+  margin-left: 20rpx;
+}

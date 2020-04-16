@@ -1,0 +1,40 @@
+<wxs module="filter" src="../../wxs/index.wxs"></wxs>
+<view class="container">
+    <view class="bgPic">
+        <view class="list">
+            <view class="one">
+                <image src="/image/wen.png" alt="" />
+                <text>{{list.question}}</text>
+            </view>
+            <view class="two">
+                <text>提问于{{list.create_time}}</text>
+            </view>
+        </view>
+        <view wx:if="{{answer&&answer.length>0}}" class="pinglun">
+            <view wx:for="{{answer}}" wx:key="{{index}}" class="box">
+                <view class="tupian">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="peopleDetail">
+                    <view class="title">{{item.nickname}}</view>
+                    <view class="date">{{filter.numberToFixed(item.create_time)}}</view>
+                    <view class="pinglun_content">{{item.content}}</view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{answer&&answer.length==0}}" class="header_title">
+            <text style="display:inline-block;vertical-align: middle;">暂无回答，来创建一个回答吧</text>
+        </view>
+    </view>
+    <van-popup style="height:200rpx" show="true" overlay="{{shows}}" position="{{positions}}" bind:close="onClose">
+        <view style="height:120rpx;"></view>
+        <view class="footer">
+            <view class="left">
+                <input type="text" adjust-position="{{false}}" placeholder="评论长度为4-200字" placeholder-style="font-size:24rpx;margin-left:37rpx;" maxlength="200" value="{{inputValue}}" bindtap="getfouces" bindinput="bindKeyInput" />
+            </view>
+            <view class="right">
+                <image bind:tap="huida" src="/image/huida.png"></image>
+            </view>
+        </view>
+    </van-popup>
+</view>

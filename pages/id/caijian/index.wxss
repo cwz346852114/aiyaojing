@@ -1,0 +1,15 @@
+@import "../../../style/common.wxss";
+page{
+height: 100%
+}
+.cropper{
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.cropper-buttons{
+background:rgba(0, 0, 0, 0.95);
+color: #04b00f;
+padding: 20rpx;
+}
